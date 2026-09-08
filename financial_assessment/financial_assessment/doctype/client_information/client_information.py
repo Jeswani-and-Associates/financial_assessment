@@ -44,3 +44,76 @@ class ClientInformation(Document):
                 self.email_address,
                 "Email Address"
             )
+
+        if self.date_of_birth_incorporation:
+            if self.date_of_birth_incorporation > frappe.utils.today():
+                frappe.throw(
+                    "Date of Birth / Date of Incorporation cannot be a future date."
+                )
+
+    def after_insert(self):
+        frappe.log_error(
+            "ClientInformation after_insert executed",
+            "Client Information Test"
+        )
+
+        self.db_set(
+            "status",
+            "Client Information Completed"
+        )
+
+@frappe.whitelist()
+def create_income_and_expense(docname):
+
+    # Check whether Client Information exists
+    if not frappe.db.exists("Client Information", docname):
+        frappe.throw("Client Information record does not exist.")
+
+    # Check whether Income And Expenses already exists
+    existing_record = frappe.db.exists(
+        "Income And Expenses",
+        {
+            "identifier": docname
+        }
+    )
+
+    if existing_record:
+        return existing_record
+
+    # Create new Income And Expenses document
+    income_expense = frappe.new_doc("Income And Expenses")
+
+    # Link it to Client Information
+    income_expense.identifier = docname
+
+    # Insert as Draft
+    income_expense.insert()
+
+    return income_expense.name
+
+
+# @frappe.whitelist()
+# def create_income_and_expense(docname):
+
+#     existing_record = frappe.db.exists(
+#         "Income And Expenses",
+#         {
+#             "identifier": docname
+#         }
+#     )
+
+#     if existing_record:
+#         return {
+#             "name": existing_record,
+#             "created": False
+#         }
+
+#     income_expense = frappe.new_doc("Income And Expenses")
+#     income_expense.identifier = docname
+#     income_expense.insert()
+
+#     return {
+#         "name": income_expense.name,
+#         "created": True
+#     }
+                

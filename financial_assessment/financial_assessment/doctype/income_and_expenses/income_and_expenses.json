@@ -1,0 +1,152 @@
+{
+ "actions": [],
+ "allow_bulk_edit": 1,
+ "allow_rename": 1,
+ "autoname": "I_E-.#",
+ "creation": "2026-09-07 15:16:39.501648",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "amended_from",
+  "identifier",
+  "total_annual_income",
+  "total_annual_expenses",
+  "column_break1",
+  "annual_surplus_deficit",
+  "monthly_surplus_deficit",
+  "status",
+  "column_break2",
+  "savings_rate",
+  "emergency_fund_target",
+  "section_break3",
+  "annual_income_source_child",
+  "section_break4",
+  "annual_expense_and_outflow"
+ ],
+ "fields": [
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Income And Expenses",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
+  },
+  {
+   "fieldname": "total_annual_income",
+   "fieldtype": "Int",
+   "in_list_view": 1,
+   "label": "Total Annual Income (\u20b9)",
+   "non_negative": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "total_annual_expenses",
+   "fieldtype": "Int",
+   "in_list_view": 1,
+   "label": "Total Annual Expenses (\u20b9)",
+   "non_negative": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "annual_surplus_deficit",
+   "fieldtype": "Int",
+   "label": "Annual Surplus / (Deficit) (\u20b9)",
+   "non_negative": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "monthly_surplus_deficit",
+   "fieldtype": "Int",
+   "label": "Monthly Surplus / (Deficit) (\u20b9)",
+   "non_negative": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "savings_rate",
+   "fieldtype": "Percent",
+   "label": "Savings Rate (%)",
+   "non_negative": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "emergency_fund_target",
+   "fieldtype": "Int",
+   "label": "Emergency Fund Target (\u20b9)",
+   "non_negative": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_break3",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "annual_income_source_child",
+   "fieldtype": "Table",
+   "label": "Annual Income Source",
+   "options": "Annual Income Source"
+  },
+  {
+   "fieldname": "section_break4",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "annual_expense_and_outflow",
+   "fieldtype": "Table",
+   "label": "Annual Expense And Outflow",
+   "options": "Annual Expense And Outflow"
+  },
+  {
+   "fieldname": "column_break1",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break2",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "identifier",
+   "fieldtype": "Link",
+   "label": "Client Information",
+   "options": "Client Information"
+  },
+  {
+   "default": "Draft",
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "label": "Status",
+   "options": "Draft\nIncome And Expenses Completed",
+   "read_only": 1
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2026-09-08 14:45:13.251640",
+ "modified_by": "Administrator",
+ "module": "Financial Assessment",
+ "name": "Income And Expenses",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": []
+}

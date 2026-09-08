@@ -1,7 +1,7 @@
 {
  "app": "financial_assessment",
  "charts": [],
- "content": "[{\"id\":\"QNIB5eZTl9\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Welcome to the Financial Assessment workspace</span>\",\"col\":12}},{\"id\":\"HAtODcWEW-\",\"type\":\"card\",\"data\":{\"card_name\":\"Client Information\",\"col\":4}},{\"id\":\"Hmtz2W2Co3\",\"type\":\"card\",\"data\":{\"card_name\":\"Masters\",\"col\":4}}]",
+ "content": "[{\"id\":\"QNIB5eZTl9\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Welcome to the Financial Assessment workspace</span>\",\"col\":12}},{\"id\":\"HAtODcWEW-\",\"type\":\"card\",\"data\":{\"card_name\":\"Client Information\",\"col\":4}},{\"id\":\"zGm24S3k-x\",\"type\":\"card\",\"data\":{\"card_name\":\"Income & Expenses\",\"col\":4}},{\"id\":\"Hmtz2W2Co3\",\"type\":\"card\",\"data\":{\"card_name\":\"Masters\",\"col\":4}}]",
  "creation": "2026-09-05 10:59:13.171867",
  "custom_blocks": [],
  "docstatus": 0,
@@ -17,7 +17,7 @@
    "hidden": 0,
    "is_query_report": 0,
    "label": "Client Information",
-   "link_count": 1,
+   "link_count": 3,
    "link_type": "DocType",
    "onboard": 0,
    "type": "Card Break"
@@ -35,28 +35,9 @@
   {
    "hidden": 0,
    "is_query_report": 0,
-   "label": "Masters",
-   "link_count": 4,
-   "link_type": "DocType",
-   "onboard": 0,
-   "type": "Card Break"
-  },
-  {
-   "hidden": 0,
-   "is_query_report": 0,
    "label": "Family And Dependent Master",
    "link_count": 0,
    "link_to": "Family And Dependent Master",
-   "link_type": "DocType",
-   "onboard": 0,
-   "type": "Link"
-  },
-  {
-   "hidden": 0,
-   "is_query_report": 0,
-   "label": "Financial Year Master",
-   "link_count": 0,
-   "link_to": "Financial Year Master",
    "link_type": "DocType",
    "onboard": 0,
    "type": "Link"
@@ -74,15 +55,73 @@
   {
    "hidden": 0,
    "is_query_report": 0,
+   "label": "Masters",
+   "link_count": 2,
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Financial Year Master",
+   "link_count": 0,
+   "link_to": "Financial Year Master",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
    "label": "Advisor Master",
    "link_count": 0,
    "link_to": "Advisor Master",
    "link_type": "DocType",
    "onboard": 0,
    "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Income & Expenses",
+   "link_count": 3,
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Income And Expenses",
+   "link_count": 0,
+   "link_to": "Income And Expenses",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Annual Income Source Master",
+   "link_count": 0,
+   "link_to": "Annual Income Source Master",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Annual Expense And Outflow Master",
+   "link_count": 0,
+   "link_to": "Annual Expense And Outflow Master",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
   }
  ],
- "modified": "2026-09-07 10:43:42.783515",
+ "modified": "2026-09-07 16:10:33.406155",
  "modified_by": "Administrator",
  "module": "Financial Assessment",
  "name": "Financial Assessment",

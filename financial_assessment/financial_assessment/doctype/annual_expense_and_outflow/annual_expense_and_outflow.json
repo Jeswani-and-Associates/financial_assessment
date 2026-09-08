@@ -1,0 +1,66 @@
+{
+ "actions": [],
+ "allow_bulk_edit": 1,
+ "allow_rename": 1,
+ "creation": "2026-09-07 15:05:20.723410",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "expense_category",
+  "monthly_expense",
+  "annual_expense",
+  "income_expense_percentage",
+  "expense_remark"
+ ],
+ "fields": [
+  {
+   "fieldname": "monthly_expense",
+   "fieldtype": "Int",
+   "in_list_view": 1,
+   "label": "Monthly Expense (\u20b9)",
+   "non_negative": 1,
+   "reqd": 1
+  },
+  {
+   "fieldname": "annual_expense",
+   "fieldtype": "Int",
+   "label": "Annual Expense (\u20b9)",
+   "non_negative": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "income_expense_percentage",
+   "fieldtype": "Percent",
+   "label": "% of Income Expense",
+   "non_negative": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "expense_remark",
+   "fieldtype": "Data",
+   "label": "Remark"
+  },
+  {
+   "fieldname": "expense_category",
+   "fieldtype": "Link",
+   "label": "Expense Category",
+   "options": "Annual Expense And Outflow Master"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2026-09-07 17:15:36.192884",
+ "modified_by": "Administrator",
+ "module": "Financial Assessment",
+ "name": "Annual Expense And Outflow",
+ "owner": "Administrator",
+ "permissions": [],
+ "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": []
+}
