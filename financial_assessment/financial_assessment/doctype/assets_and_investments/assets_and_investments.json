@@ -1,0 +1,204 @@
+{
+ "actions": [],
+ "allow_bulk_edit": 1,
+ "allow_rename": 1,
+ "autoname": "A_I-.#",
+ "creation": "2026-09-08 16:03:44.039892",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "section_break_s1q6",
+  "identifier",
+  "financial_assets_current_market_value",
+  "financial_assets_invested_value",
+  "column_break1",
+  "real_estate_purchase_value",
+  "real_estate_assets_current_market_value",
+  "real_estate_annual_rental_income",
+  "section_break5",
+  "business_assets_estimated_market_value",
+  "business_assets_book_value_of_capital",
+  "business_assets_annual_drawings_dividend",
+  "column_break3",
+  "other_assets_estimated_current_value",
+  "gross_total_assets",
+  "status",
+  "section_break1",
+  "assets_and_investments_financial_assets",
+  "section_break2",
+  "assets_and_investments_real_estate_assets",
+  "section_break3",
+  "assets_and_investments_business_assets",
+  "section_break4",
+  "assets_and_investments_other_assets"
+ ],
+ "fields": [
+  {
+   "fieldname": "section_break_s1q6",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "financial_assets_current_market_value",
+   "fieldtype": "Int",
+   "label": "Financial Assets \u2014 Current Market Value",
+   "non_negative": 1
+  },
+  {
+   "fieldname": "financial_assets_invested_value",
+   "fieldtype": "Int",
+   "label": "Financial Assets \u2014 Invested Value (\u20b9)",
+   "non_negative": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "real_estate_purchase_value",
+   "fieldtype": "Int",
+   "label": "Real Estate Assets \u2014 Purchase Value (\u20b9)",
+   "non_negative": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "real_estate_assets_current_market_value",
+   "fieldtype": "Int",
+   "label": "Real Estate Assets Current Market Value (\u20b9)",
+   "non_negative": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "real_estate_annual_rental_income",
+   "fieldtype": "Int",
+   "label": "Real Estate Assets \u2014 Annual Rental Income (\u20b9)",
+   "non_negative": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "business_assets_estimated_market_value",
+   "fieldtype": "Int",
+   "label": "Business Assets \u2014 Estimated Market Value",
+   "non_negative": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "business_assets_book_value_of_capital",
+   "fieldtype": "Int",
+   "label": "Business Assets \u2014 Book Value of Capital",
+   "non_negative": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "business_assets_annual_drawings_dividend",
+   "fieldtype": "Int",
+   "label": "Business Assets \u2014 Annual Drawings / Dividend (\u20b9)",
+   "non_negative": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "other_assets_estimated_current_value",
+   "fieldtype": "Int",
+   "label": "Other Assets \u2014 Estimated Current Value (\u20b9)",
+   "non_negative": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "gross_total_assets",
+   "fieldtype": "Int",
+   "label": "GROSS TOTAL ASSETS",
+   "non_negative": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break1",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break3",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break1",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "assets_and_investments_financial_assets",
+   "fieldtype": "Table",
+   "label": "Assets And Investments Financial Assets",
+   "options": "Assets And Investments Financial Assets"
+  },
+  {
+   "fieldname": "section_break2",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "assets_and_investments_real_estate_assets",
+   "fieldtype": "Table",
+   "label": "Assets And Investments Real Estate Assets",
+   "options": "Assets And Investments Real Estate Assets"
+  },
+  {
+   "fieldname": "section_break3",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "assets_and_investments_business_assets",
+   "fieldtype": "Table",
+   "label": "Assets and Investments Business Assets",
+   "options": "Assets and Investments Business Assets"
+  },
+  {
+   "fieldname": "section_break4",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "assets_and_investments_other_assets",
+   "fieldtype": "Table",
+   "label": "Assets And Investments Other Assets",
+   "options": "Assets And Investments Other Assets"
+  },
+  {
+   "fieldname": "identifier",
+   "fieldtype": "Link",
+   "label": "Client Information",
+   "options": "Client Information"
+  },
+  {
+   "fieldname": "section_break5",
+   "fieldtype": "Section Break"
+  },
+  {
+   "default": "Draft",
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "label": "Status",
+   "options": "Draft\nAssets And Investments Completed",
+   "read_only": 1
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2026-09-09 10:10:40.364034",
+ "modified_by": "Administrator",
+ "module": "Financial Assessment",
+ "name": "Assets And Investments",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": []
+}

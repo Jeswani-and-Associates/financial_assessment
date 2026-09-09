@@ -172,3 +172,46 @@ function calculate_parent_totals(frm) {
 		emergency_fund_target
 	);
 }
+
+frappe.ui.form.on("Income And Expenses", {
+
+	refresh(frm) {
+
+		if (!frm.is_new() && frm.doc.identifier) {
+
+			frm.add_custom_button(
+				"Create Assets And Investments",
+				function () {
+
+					frappe.call({
+						method: "financial_assessment.financial_assessment.doctype.income_and_expenses.income_and_expenses.create_assets_and_investments",
+						args: {
+							docname: frm.doc.name
+						},
+						freeze: true,
+						freeze_message: "Creating Assets And Investments...",
+						callback: function (r) {
+
+							if (r.message) {
+
+								frappe.show_alert({
+									message: "Assets And Investments created successfully.",
+									indicator: "green"
+								});
+
+								frappe.set_route(
+									"Form",
+									"Assets And Investments",
+									r.message
+								);
+							}
+						}
+					});
+
+				}
+			);
+
+		}
+	}
+
+});

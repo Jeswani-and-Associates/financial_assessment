@@ -1,0 +1,100 @@
+{
+ "actions": [],
+ "allow_bulk_edit": 1,
+ "allow_rename": 1,
+ "creation": "2026-09-08 16:10:31.721105",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "section_break_ozyq",
+  "entity_business_name",
+  "nature_of_interest",
+  "ownership_percentage",
+  "column_break1",
+  "book_value_of_capital",
+  "estimated_market_value",
+  "annual_drawings_dividend",
+  "column_break2",
+  "succession_plan",
+  "remark"
+ ],
+ "fields": [
+  {
+   "fieldname": "section_break_ozyq",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "entity_business_name",
+   "fieldtype": "Data",
+   "label": "Entity / Business Name"
+  },
+  {
+   "fieldname": "nature_of_interest",
+   "fieldtype": "Data",
+   "label": "Nature of Interest"
+  },
+  {
+   "fieldname": "ownership_percentage",
+   "fieldtype": "Data",
+   "label": "Ownership %"
+  },
+  {
+   "fieldname": "book_value_of_capital",
+   "fieldtype": "Int",
+   "in_list_view": 1,
+   "label": "Book Value of Capital (\u20b9)",
+   "non_negative": 1,
+   "reqd": 1
+  },
+  {
+   "fieldname": "estimated_market_value",
+   "fieldtype": "Int",
+   "in_list_view": 1,
+   "label": "Estimated Market Value (\u20b9)",
+   "non_negative": 1,
+   "reqd": 1
+  },
+  {
+   "fieldname": "annual_drawings_dividend",
+   "fieldtype": "Int",
+   "in_list_view": 1,
+   "label": "Annual Drawings / Dividend (\u20b9)",
+   "non_negative": 1,
+   "reqd": 1
+  },
+  {
+   "fieldname": "succession_plan",
+   "fieldtype": "Data",
+   "label": "Succession Plan?"
+  },
+  {
+   "fieldname": "remark",
+   "fieldtype": "Small Text",
+   "label": "Remarks"
+  },
+  {
+   "fieldname": "column_break1",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break2",
+   "fieldtype": "Column Break"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2026-09-09 11:07:25.281262",
+ "modified_by": "Administrator",
+ "module": "Financial Assessment",
+ "name": "Assets and Investments Business Assets",
+ "owner": "Administrator",
+ "permissions": [],
+ "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": []
+}

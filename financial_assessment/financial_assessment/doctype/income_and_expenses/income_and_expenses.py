@@ -2,6 +2,7 @@
 # For license information, please see license.txt
 
 from frappe.model.document import Document
+import frappe
 
 
 class IncomeAndExpenses(Document):
@@ -43,8 +44,6 @@ class IncomeAndExpenses(Document):
         for row in self.annual_expense_and_outflow or []:
             row.annual_expense = (row.monthly_expense or 0) * 12
 
-            # Expense percentage is based on
-            # TOTAL ANNUAL INCOME
             if total_annual_income:
                 row.income_expense_percentage = (
                     row.annual_expense / total_annual_income
@@ -69,14 +68,7 @@ class IncomeAndExpenses(Document):
             for row in self.annual_expense_and_outflow or []
         )
 
-        # -----------------------------------------
-        # Set Total Annual Income
-        # -----------------------------------------
         self.total_annual_income = total_annual_income
-
-        # -----------------------------------------
-        # Set Total Annual Expenses
-        # -----------------------------------------
         self.total_annual_expenses = total_annual_expenses
 
         # -----------------------------------------
@@ -143,3 +135,52 @@ class IncomeAndExpenses(Document):
             self.status = "Income And Expenses Completed"
         else:
             self.status = "Draft"
+
+
+# =====================================================
+# CREATE ASSETS AND INVESTMENTS
+# =====================================================
+
+@frappe.whitelist()
+def create_assets_and_investments(docname):
+
+    if not frappe.db.exists("Income And Expenses", docname):
+        frappe.throw("Income And Expenses record does not exist.")
+
+    income_expense = frappe.get_doc(
+        "Income And Expenses",
+        docname
+    )
+
+    if not income_expense.identifier:
+        frappe.throw(
+            "Identifier is not set in Income And Expenses."
+        )
+
+    # Check whether Assets And Investments
+    # already exists for this identifier
+    existing_record = frappe.db.exists(
+        "Assets And Investments",
+        {
+            "identifier": income_expense.identifier
+        }
+    )
+
+    if existing_record:
+        return existing_record
+
+    # Create new Assets And Investments
+    assets_and_investments = frappe.new_doc(
+        "Assets And Investments"
+    )
+
+    assets_and_investments.identifier = (
+        income_expense.identifier
+    )
+
+    assets_and_investments.status = "Draft"
+
+    assets_and_investments.insert()
+
+    return assets_and_investments.name
+

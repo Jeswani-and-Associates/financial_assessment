@@ -1,0 +1,66 @@
+{
+ "actions": [],
+ "allow_bulk_edit": 1,
+ "allow_rename": 1,
+ "creation": "2026-09-08 16:11:03.285694",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "section_break_3wgk",
+  "other_asset",
+  "description_details",
+  "estimated_current_value",
+  "column_break1",
+  "remark"
+ ],
+ "fields": [
+  {
+   "fieldname": "section_break_3wgk",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "other_asset",
+   "fieldtype": "Link",
+   "label": "Other Asset",
+   "options": "Assets And Investments Other Assets Master"
+  },
+  {
+   "fieldname": "description_details",
+   "fieldtype": "Data",
+   "label": "Description / Details"
+  },
+  {
+   "fieldname": "estimated_current_value",
+   "fieldtype": "Int",
+   "in_list_view": 1,
+   "label": "Estimated Current Value (\u20b9)",
+   "non_negative": 1,
+   "reqd": 1
+  },
+  {
+   "fieldname": "remark",
+   "fieldtype": "Small Text",
+   "label": "Remark"
+  },
+  {
+   "fieldname": "column_break1",
+   "fieldtype": "Column Break"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2026-09-09 11:07:52.458600",
+ "modified_by": "Administrator",
+ "module": "Financial Assessment",
+ "name": "Assets And Investments Other Assets",
+ "owner": "Administrator",
+ "permissions": [],
+ "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": []
+}

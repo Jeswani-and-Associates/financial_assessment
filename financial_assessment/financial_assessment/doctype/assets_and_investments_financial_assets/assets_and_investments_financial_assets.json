@@ -1,0 +1,104 @@
+{
+ "actions": [],
+ "allow_bulk_edit": 1,
+ "allow_rename": 1,
+ "creation": "2026-09-08 16:05:46.884000",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "section_break_uzzg",
+  "asset_category",
+  "institution_scheme_bank",
+  "invested_value",
+  "column_break1",
+  "current_market_value",
+  "return_rate",
+  "maturity_review_date",
+  "column_break2",
+  "liquidity",
+  "nomination",
+  "remark"
+ ],
+ "fields": [
+  {
+   "fieldname": "section_break_uzzg",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "asset_category",
+   "fieldtype": "Link",
+   "label": "Asset Category",
+   "options": "Assets And Investments Financial Assets Master"
+  },
+  {
+   "fieldname": "institution_scheme_bank",
+   "fieldtype": "Data",
+   "label": "Institution / Scheme / Bank"
+  },
+  {
+   "fieldname": "invested_value",
+   "fieldtype": "Int",
+   "in_list_view": 1,
+   "label": "Invested Value (\u20b9)",
+   "non_negative": 1,
+   "reqd": 1
+  },
+  {
+   "fieldname": "current_market_value",
+   "fieldtype": "Int",
+   "in_list_view": 1,
+   "label": "Current Market Value (\u20b9)",
+   "non_negative": 1,
+   "reqd": 1
+  },
+  {
+   "fieldname": "return_rate",
+   "fieldtype": "Percent",
+   "label": "Return / Rate (%)"
+  },
+  {
+   "fieldname": "maturity_review_date",
+   "fieldtype": "Data",
+   "label": "Maturity / Review Date"
+  },
+  {
+   "fieldname": "liquidity",
+   "fieldtype": "Data",
+   "label": "Liquidity"
+  },
+  {
+   "fieldname": "nomination",
+   "fieldtype": "Data",
+   "label": "Nomination?"
+  },
+  {
+   "fieldname": "remark",
+   "fieldtype": "Small Text",
+   "label": "Remarks"
+  },
+  {
+   "fieldname": "column_break1",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break2",
+   "fieldtype": "Column Break"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2026-09-09 11:05:24.729820",
+ "modified_by": "Administrator",
+ "module": "Financial Assessment",
+ "name": "Assets And Investments Financial Assets",
+ "owner": "Administrator",
+ "permissions": [],
+ "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": []
+}

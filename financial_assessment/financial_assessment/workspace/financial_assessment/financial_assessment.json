@@ -1,7 +1,7 @@
 {
  "app": "financial_assessment",
  "charts": [],
- "content": "[{\"id\":\"QNIB5eZTl9\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Welcome to the Financial Assessment workspace</span>\",\"col\":12}},{\"id\":\"HAtODcWEW-\",\"type\":\"card\",\"data\":{\"card_name\":\"Client Information\",\"col\":4}},{\"id\":\"zGm24S3k-x\",\"type\":\"card\",\"data\":{\"card_name\":\"Income & Expenses\",\"col\":4}},{\"id\":\"Hmtz2W2Co3\",\"type\":\"card\",\"data\":{\"card_name\":\"Masters\",\"col\":4}}]",
+ "content": "[{\"id\":\"QNIB5eZTl9\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Welcome to the Financial Assessment workspace</span>\",\"col\":12}},{\"id\":\"HAtODcWEW-\",\"type\":\"card\",\"data\":{\"card_name\":\"Client Information\",\"col\":4}},{\"id\":\"zGm24S3k-x\",\"type\":\"card\",\"data\":{\"card_name\":\"Income & Expenses\",\"col\":4}},{\"id\":\"K4EK1spzTh\",\"type\":\"card\",\"data\":{\"card_name\":\"Assets & Investments\",\"col\":4}},{\"id\":\"Hmtz2W2Co3\",\"type\":\"card\",\"data\":{\"card_name\":\"Masters\",\"col\":4}}]",
  "creation": "2026-09-05 10:59:13.171867",
  "custom_blocks": [],
  "docstatus": 0,
@@ -119,9 +119,58 @@
    "link_type": "DocType",
    "onboard": 0,
    "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Assets & Investments",
+   "link_count": 4,
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Assets And Investments",
+   "link_count": 0,
+   "link_to": "Assets And Investments",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Assets And Investments Financial Assets Master",
+   "link_count": 0,
+   "link_to": "Assets And Investments Financial Assets Master",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Assets And Investments Real Estate Assets Master",
+   "link_count": 0,
+   "link_to": "Assets And Investments Real Estate Assets Master",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Assets And Investments Other Assets Master",
+   "link_count": 0,
+   "link_to": "Assets And Investments Other Assets Master",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
   }
  ],
- "modified": "2026-09-07 16:10:33.406155",
+ "modified": "2026-09-09 11:19:06.970233",
  "modified_by": "Administrator",
  "module": "Financial Assessment",
  "name": "Financial Assessment",
