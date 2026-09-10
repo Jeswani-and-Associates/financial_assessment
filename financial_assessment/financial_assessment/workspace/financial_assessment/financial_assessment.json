@@ -1,7 +1,7 @@
 {
  "app": "financial_assessment",
  "charts": [],
- "content": "[{\"id\":\"QNIB5eZTl9\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Welcome to the Financial Assessment workspace</span>\",\"col\":12}},{\"id\":\"HAtODcWEW-\",\"type\":\"card\",\"data\":{\"card_name\":\"Client Information\",\"col\":4}},{\"id\":\"zGm24S3k-x\",\"type\":\"card\",\"data\":{\"card_name\":\"Income & Expenses\",\"col\":4}},{\"id\":\"K4EK1spzTh\",\"type\":\"card\",\"data\":{\"card_name\":\"Assets & Investments\",\"col\":4}},{\"id\":\"5ghn_rDC8c\",\"type\":\"card\",\"data\":{\"card_name\":\"Loans and Liabilities\",\"col\":4}},{\"id\":\"Hmtz2W2Co3\",\"type\":\"card\",\"data\":{\"card_name\":\"Masters\",\"col\":4}}]",
+ "content": "[{\"id\":\"QNIB5eZTl9\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Welcome to the Financial Assessment workspace</span>\",\"col\":12}},{\"id\":\"HAtODcWEW-\",\"type\":\"card\",\"data\":{\"card_name\":\"Client Information\",\"col\":4}},{\"id\":\"zGm24S3k-x\",\"type\":\"card\",\"data\":{\"card_name\":\"Income & Expenses\",\"col\":4}},{\"id\":\"K4EK1spzTh\",\"type\":\"card\",\"data\":{\"card_name\":\"Assets & Investments\",\"col\":4}},{\"id\":\"5ghn_rDC8c\",\"type\":\"card\",\"data\":{\"card_name\":\"Loans and Liabilities\",\"col\":4}},{\"id\":\"xx5ewBcVjc\",\"type\":\"card\",\"data\":{\"card_name\":\"Insurance Coverage\",\"col\":4}},{\"id\":\"Hmtz2W2Co3\",\"type\":\"card\",\"data\":{\"card_name\":\"Masters\",\"col\":4}}]",
  "creation": "2026-09-05 10:59:13.171867",
  "custom_blocks": [],
  "docstatus": 0,
@@ -183,7 +183,7 @@
    "is_query_report": 0,
    "label": "Loans and Liabilities",
    "link_count": 0,
-   "link_to": "Loans and Liabilities",
+   "link_to": "Loans And Liabilities",
    "link_type": "DocType",
    "onboard": 0,
    "type": "Link"
@@ -197,9 +197,58 @@
    "link_type": "DocType",
    "onboard": 0,
    "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Insurance Coverage",
+   "link_count": 4,
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Insurance Coverage",
+   "link_count": 0,
+   "link_to": "Insurance Coverage",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Insurance Coverage Insurance Company Master",
+   "link_count": 0,
+   "link_to": "Insurance Coverage Insurance Company Master",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Insurance Coverage Insurer Master",
+   "link_count": 0,
+   "link_to": "Insurance Coverage Insurer Master",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Insurance Coverage Type of Insurance",
+   "link_count": 0,
+   "link_to": "Insurance Coverage Type of Insurance",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
   }
  ],
- "modified": "2026-09-09 15:17:49.532901",
+ "modified": "2026-09-10 19:05:42.024444",
  "modified_by": "Administrator",
  "module": "Financial Assessment",
  "name": "Financial Assessment",
