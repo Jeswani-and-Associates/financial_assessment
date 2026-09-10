@@ -5,6 +5,59 @@ frappe.ui.form.on("Assets And Investments", {
 
     refresh(frm) {
         calculate_asset_values(frm);
+
+        // =====================================================
+        // CREATE LOANS AND LIABILITIES BUTTON
+        // =====================================================
+
+        if (!frm.is_new() && frm.doc.identifier) {
+
+            frm.add_custom_button(
+                "Create Loans And Liabilities",
+                function () {
+
+                    frappe.call({
+
+                        method:
+                            "financial_assessment.financial_assessment.doctype.assets_and_investments.assets_and_investments.create_loans_and_liabilities",
+
+                        args: {
+                            docname: frm.doc.name
+                        },
+
+                        freeze: true,
+
+                        freeze_message:
+                            "Creating Loans And Liabilities...",
+
+                        callback: function (r) {
+
+                            if (r.message) {
+
+                                frappe.show_alert({
+                                    message:
+                                        "Loans And Liabilities created successfully.",
+                                    indicator: "green"
+                                });
+
+                                frappe.set_route(
+                                    "Form",
+                                    "Loans and Liabilities",
+                                    r.message
+                                );
+
+                            }
+
+                        }
+
+                    });
+
+                }
+            );
+
+        }
+
+
     },
 
     validate(frm) {

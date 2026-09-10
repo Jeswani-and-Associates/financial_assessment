@@ -1,0 +1,134 @@
+{
+ "actions": [],
+ "allow_bulk_edit": 1,
+ "allow_rename": 1,
+ "creation": "2026-09-09 13:37:22.989159",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "section_break_ra1f",
+  "loan_type",
+  "lender_bank",
+  "purpose_asset_financed",
+  "column_break1",
+  "original_loan_amount",
+  "outstanding_principal",
+  "monthly_emi",
+  "column_break2",
+  "interest_rate",
+  "remaining_tenure_months",
+  "loan_start_date",
+  "column_break3",
+  "security_collateral",
+  "prepayment_penalty",
+  "remark"
+ ],
+ "fields": [
+  {
+   "fieldname": "section_break_ra1f",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "loan_type",
+   "fieldtype": "Link",
+   "label": "Loan Type",
+   "options": "Loans And Liabilities Loan Type Master"
+  },
+  {
+   "fieldname": "lender_bank",
+   "fieldtype": "Data",
+   "label": "Lender / Bank"
+  },
+  {
+   "fieldname": "purpose_asset_financed",
+   "fieldtype": "Data",
+   "label": "Purpose / Asset Financed"
+  },
+  {
+   "fieldname": "column_break1",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "original_loan_amount",
+   "fieldtype": "Int",
+   "in_list_view": 1,
+   "label": "Original Loan Amount (\u20b9)",
+   "non_negative": 1,
+   "reqd": 1
+  },
+  {
+   "fieldname": "outstanding_principal",
+   "fieldtype": "Int",
+   "in_list_view": 1,
+   "label": "Outstanding Principal (\u20b9)",
+   "non_negative": 1,
+   "reqd": 1
+  },
+  {
+   "fieldname": "monthly_emi",
+   "fieldtype": "Int",
+   "in_list_view": 1,
+   "label": "Monthly EMI (\u20b9)",
+   "non_negative": 1,
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break2",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "interest_rate",
+   "fieldtype": "Percent",
+   "in_list_view": 1,
+   "label": "Interest Rate (%)",
+   "non_negative": 1,
+   "reqd": 1
+  },
+  {
+   "fieldname": "remaining_tenure_months",
+   "fieldtype": "Int",
+   "label": "Remaining Tenure (Months)",
+   "non_negative": 1
+  },
+  {
+   "fieldname": "loan_start_date",
+   "fieldtype": "Date",
+   "label": "Loan Start Date"
+  },
+  {
+   "fieldname": "column_break3",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "security_collateral",
+   "fieldtype": "Data",
+   "label": "Security / Collateral"
+  },
+  {
+   "fieldname": "prepayment_penalty",
+   "fieldtype": "Data",
+   "label": "Pre-payment Penalty?"
+  },
+  {
+   "fieldname": "remark",
+   "fieldtype": "Small Text",
+   "label": "remarks"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2026-09-09 18:54:55.478005",
+ "modified_by": "Administrator",
+ "module": "Financial Assessment",
+ "name": "Loans And Liabilities Comprehensive Loan Schedule Child",
+ "owner": "Administrator",
+ "permissions": [],
+ "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": []
+}

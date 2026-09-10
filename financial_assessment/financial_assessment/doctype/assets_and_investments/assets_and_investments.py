@@ -1,6 +1,6 @@
 # Copyright (c) 2026, DigiOpen Services Pvt Ltd and contributors
 # For license information, please see license.txt
-
+import frappe
 from frappe.model.document import Document
 
 
@@ -207,4 +207,52 @@ class AssetsAndInvestments(Document):
             + business_assets_estimated_market_value
             + other_assets_estimated_current_value
         )
+
+@frappe.whitelist()
+def create_loans_and_liabilities(docname):
+
+    if not frappe.db.exists("Assets And Investments", docname):
+        frappe.throw(
+            "Assets And Investments record does not exist."
+        )
+
+    assets_and_investments = frappe.get_doc(
+        "Assets And Investments",
+        docname
+    )
+
+    if not assets_and_investments.identifier:
+        frappe.throw(
+            "Identifier is not set in Assets And Investments."
+        )
+
+    # Check if Loans And Liabilities already exists
+    existing_record = frappe.db.exists(
+        "Loans And Liabilities",
+        {
+            "identifier": assets_and_investments.identifier
+        }
+    )
+
+    if existing_record:
+        return existing_record
+
+    # Create new Loans And Liabilities record
+    loans_and_liabilities = frappe.new_doc(
+        "Loans And Liabilities"
+    )
+
+    loans_and_liabilities.identifier = (
+        assets_and_investments.identifier
+    )
+
+    loans_and_liabilities.status = "Draft"
+
+    loans_and_liabilities.insert()
+
+    return loans_and_liabilities.name
+
+
+
+        
 
