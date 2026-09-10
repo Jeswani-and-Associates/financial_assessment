@@ -41,7 +41,8 @@
    "fieldname": "financial_assets_current_market_value",
    "fieldtype": "Int",
    "label": "Financial Assets \u2014 Current Market Value",
-   "non_negative": 1
+   "non_negative": 1,
+   "read_only": 1
   },
   {
    "fieldname": "financial_assets_invested_value",
@@ -176,7 +177,7 @@
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2026-09-09 10:10:40.364034",
+ "modified": "2026-09-10 14:12:19.520135",
  "modified_by": "Administrator",
  "module": "Financial Assessment",
  "name": "Assets And Investments",

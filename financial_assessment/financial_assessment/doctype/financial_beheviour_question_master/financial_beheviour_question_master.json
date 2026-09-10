@@ -2,7 +2,7 @@
  "actions": [],
  "allow_bulk_edit": 1,
  "allow_rename": 1,
- "autoname": "format:{question}",
+ "autoname": "FBQM-.####",
  "creation": "2026-09-05 12:13:06.527777",
  "doctype": "DocType",
  "engine": "InnoDB",
@@ -33,11 +33,11 @@
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2026-09-05 16:55:20.886529",
+ "modified": "2026-09-10 13:43:25.300070",
  "modified_by": "Administrator",
  "module": "Financial Assessment",
  "name": "Financial Beheviour Question Master",
- "naming_rule": "Expression (old style)",
+ "naming_rule": "Expression",
  "owner": "Administrator",
  "permissions": [
   {

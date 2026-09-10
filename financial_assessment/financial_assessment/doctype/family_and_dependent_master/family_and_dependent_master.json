@@ -2,7 +2,7 @@
  "actions": [],
  "allow_bulk_edit": 1,
  "allow_rename": 1,
- "autoname": "format:{members}",
+ "autoname": "FADM-.####",
  "creation": "2026-09-05 12:11:22.152367",
  "doctype": "DocType",
  "engine": "InnoDB",
@@ -33,11 +33,11 @@
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2026-09-05 16:56:27.318002",
+ "modified": "2026-09-10 11:47:12.938816",
  "modified_by": "Administrator",
  "module": "Financial Assessment",
  "name": "Family And Dependent Master",
- "naming_rule": "Expression (old style)",
+ "naming_rule": "Expression",
  "owner": "Administrator",
  "permissions": [
   {

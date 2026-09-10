@@ -2,7 +2,7 @@
  "actions": [],
  "allow_bulk_edit": 1,
  "allow_rename": 1,
- "autoname": "format:{income_source}",
+ "autoname": "AISM-.####",
  "creation": "2026-09-07 15:03:07.772670",
  "doctype": "DocType",
  "editable_grid": 1,
@@ -32,11 +32,11 @@
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2026-09-07 19:01:59.395804",
+ "modified": "2026-09-10 12:02:16.337639",
  "modified_by": "Administrator",
  "module": "Financial Assessment",
  "name": "Annual Income Source Master",
- "naming_rule": "Expression (old style)",
+ "naming_rule": "Expression",
  "owner": "Administrator",
  "permissions": [
   {

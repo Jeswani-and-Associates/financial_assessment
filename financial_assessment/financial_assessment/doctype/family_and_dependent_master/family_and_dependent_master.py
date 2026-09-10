@@ -1,9 +1,17 @@
-# Copyright (c) 2026, DigiOpen Services Pvt Ltd and contributors
-# For license information, please see license.txt
-
-# import frappe
 from frappe.model.document import Document
+
+from financial_assessment.utils.master_validation import (
+    validate_unique_master_value,
+)
 
 
 class FamilyAndDependentMaster(Document):
-	pass
+
+    def validate(self):
+        validate_unique_master_value(
+            doctype="Family And Dependent Master",
+            fieldname="members",
+            value=self.members,
+            current_name=self.name,
+            label="Member",
+        )
