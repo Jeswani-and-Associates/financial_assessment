@@ -206,3 +206,46 @@ class LoansAndLiabilities(Document):
             gross_total_assets
             - total_outstanding_debt
         )
+
+@frappe.whitelist()
+def create_insurance_coverage(docname):
+    if not frappe.db.exists(
+        "Loans And Liabilities",
+        docname
+    ):
+        frappe.throw(
+            "Loans and Liabilities record does not exist."
+        )
+
+    loans_and_liabilities = frappe.get_doc(
+        "Loans And Liabilities",
+        docname
+    )
+
+    if not loans_and_liabilities.identifier:
+        frappe.throw(
+            "Client Information is required before creating Insurance Coverage."
+        )
+
+    identifier = loans_and_liabilities.identifier
+
+    existing_record = frappe.db.exists(
+        "Insurance Coverage",
+        {
+            "identifier": identifier
+        }
+    )
+
+    if existing_record:
+        return existing_record
+
+    insurance_coverage = frappe.new_doc(
+        "Insurance Coverage"
+    )
+
+    insurance_coverage.identifier = identifier
+    insurance_coverage.status = "Draft"
+
+    insurance_coverage.insert()
+
+    return insurance_coverage.name        

@@ -2,6 +2,51 @@
 // For license information, please see license.txt
 
 frappe.ui.form.on("Loans And Liabilities", {
+    refresh(frm) {
+        if (
+            !frm.is_new()
+            && frm.doc.identifier
+            && frm.doc.status === "Loans And Liabilities Completed"
+        ) {
+            frm.add_custom_button(
+                "Create Insurance Coverage",
+                function () {
+                    create_insurance_coverage(frm);
+                }
+            );
+        }
+    }
+});
+
+
+function create_insurance_coverage(frm) {
+    if (!frm.doc.identifier) {
+        frappe.msgprint(
+            "Client Information is required before creating Insurance Coverage."
+        );
+        return;
+    }
+
+    frappe.call({
+        method:
+            "financial_assessment.financial_assessment.doctype.loans_and_liabilities.loans_and_liabilities.create_insurance_coverage",
+        args: {
+            docname: frm.doc.name
+        },
+        callback: function (r) {
+            if (r.message) {
+                frappe.set_route(
+                    "Form",
+                    "Insurance Coverage",
+                    r.message
+                );
+            }
+        }
+    });
+}
+
+
+frappe.ui.form.on("Loans And Liabilities", {
 
     refresh(frm) {
         calculate_loan_values(frm);

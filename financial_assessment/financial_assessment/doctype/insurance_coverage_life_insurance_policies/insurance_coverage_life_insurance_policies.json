@@ -1,0 +1,123 @@
+{
+ "actions": [],
+ "allow_bulk_edit": 1,
+ "allow_rename": 1,
+ "creation": "2026-09-10 15:40:14.036750",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "section_break_bukj",
+  "insurance_company",
+  "policy_name_number",
+  "policy_type",
+  "column_break1",
+  "sum_assured",
+  "annual_premium",
+  "policy_term_years",
+  "column_break2",
+  "ppt_years",
+  "start_date",
+  "maturity_date",
+  "column_break3",
+  "nominee_name",
+  "status"
+ ],
+ "fields": [
+  {
+   "fieldname": "section_break_bukj",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "insurance_company",
+   "fieldtype": "Link",
+   "label": "Insurance Company",
+   "options": "Insurance Coverage Insurance Company Master"
+  },
+  {
+   "fieldname": "policy_name_number",
+   "fieldtype": "Data",
+   "label": "Policy Name / Number"
+  },
+  {
+   "fieldname": "policy_type",
+   "fieldtype": "Data",
+   "label": "Policy Type"
+  },
+  {
+   "fieldname": "sum_assured",
+   "fieldtype": "Int",
+   "in_list_view": 1,
+   "label": "Sum Assured (\u20b9)",
+   "non_negative": 1,
+   "reqd": 1
+  },
+  {
+   "fieldname": "annual_premium",
+   "fieldtype": "Int",
+   "in_list_view": 1,
+   "label": "Annual Premium (\u20b9)",
+   "non_negative": 1,
+   "reqd": 1
+  },
+  {
+   "fieldname": "policy_term_years",
+   "fieldtype": "Int",
+   "label": "Policy Term (Yrs)",
+   "non_negative": 1
+  },
+  {
+   "fieldname": "ppt_years",
+   "fieldtype": "Int",
+   "label": "PPT (Yrs)",
+   "non_negative": 1
+  },
+  {
+   "fieldname": "start_date",
+   "fieldtype": "Date",
+   "label": "Start Date"
+  },
+  {
+   "fieldname": "maturity_date",
+   "fieldtype": "Date",
+   "label": "Maturity Date"
+  },
+  {
+   "fieldname": "nominee_name",
+   "fieldtype": "Data",
+   "label": "Nominee Name"
+  },
+  {
+   "fieldname": "status",
+   "fieldtype": "Data",
+   "label": "Status"
+  },
+  {
+   "fieldname": "column_break1",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break2",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break3",
+   "fieldtype": "Column Break"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2026-09-10 17:18:09.686225",
+ "modified_by": "Administrator",
+ "module": "Financial Assessment",
+ "name": "Insurance Coverage Life Insurance Policies",
+ "owner": "Administrator",
+ "permissions": [],
+ "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": []
+}

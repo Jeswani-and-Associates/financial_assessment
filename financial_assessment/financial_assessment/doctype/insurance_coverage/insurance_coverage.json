@@ -1,0 +1,208 @@
+{
+ "actions": [],
+ "allow_bulk_edit": 1,
+ "allow_rename": 1,
+ "autoname": "I_C-.#",
+ "creation": "2026-09-10 15:28:37.629773",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "section_break_kyxb",
+  "identifier",
+  "life_insurance_sum_assured",
+  "life_insurance_annual_premium",
+  "column_break1",
+  "health_insurance_annual_premium",
+  "health_insurance_sum_insured",
+  "total_life_cover_in_force",
+  "column_break2",
+  "annual_income",
+  "recommended_life_cover",
+  "life_insurance_adequacy_ratio",
+  "life_cover_gap_surplus",
+  "column_break3",
+  "total_health_cover_all_policies",
+  "total_annual_insurance_premiums",
+  "premium_as_percentage_of_annual_income",
+  "status",
+  "column_break4",
+  "insurance_coverage_life_insurance_policies",
+  "section_break1",
+  "insurance_coverage_health_insurance_policies",
+  "section_break2",
+  "insurance_coverage_general_and_other_insurance"
+ ],
+ "fields": [
+  {
+   "fieldname": "section_break_kyxb",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "life_insurance_sum_assured",
+   "fieldtype": "Int",
+   "label": "LIFE INSURANCE POLICIES - Sum Assured (\u20b9)",
+   "non_negative": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "life_insurance_annual_premium",
+   "fieldtype": "Int",
+   "label": "LIFE INSURANCE POLICIES - Annual Premium (\u20b9)",
+   "non_negative": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "health_insurance_sum_insured",
+   "fieldtype": "Int",
+   "label": "HEALTH INSURANCE POLICIES - Sum Insured (\u20b9)",
+   "non_negative": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break1",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "health_insurance_annual_premium",
+   "fieldtype": "Int",
+   "label": "HEALTH INSURANCE POLICIES - Annual Premium (\u20b9)",
+   "non_negative": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "total_life_cover_in_force",
+   "fieldtype": "Int",
+   "label": "Total Life Cover in Force (\u20b9)",
+   "non_negative": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "annual_income",
+   "fieldtype": "Int",
+   "label": "Annual Income",
+   "non_negative": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break2",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "recommended_life_cover",
+   "fieldtype": "Int",
+   "label": "Recommended Life Cover (HLV \u00d7 25) (\u20b9)",
+   "non_negative": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "life_insurance_adequacy_ratio",
+   "fieldtype": "Percent",
+   "label": "Life Insurance Adequacy Ratio (%)",
+   "non_negative": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "life_cover_gap_surplus",
+   "fieldtype": "Int",
+   "label": "Life Cover Gap / (Surplus) (\u20b9)",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break3",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "total_health_cover_all_policies",
+   "fieldtype": "Int",
+   "label": "Total Health Cover \u2014 All Policies (\u20b9)",
+   "non_negative": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "total_annual_insurance_premiums",
+   "fieldtype": "Int",
+   "label": "Total Annual Insurance Premiums (\u20b9)",
+   "non_negative": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "premium_as_percentage_of_annual_income",
+   "fieldtype": "Percent",
+   "label": "Premium as % of Annual Income",
+   "non_negative": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break4",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "insurance_coverage_life_insurance_policies",
+   "fieldtype": "Table",
+   "label": "Insurance Coverage Life Insurance Policies",
+   "options": "Insurance Coverage Life Insurance Policies"
+  },
+  {
+   "fieldname": "section_break1",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "insurance_coverage_health_insurance_policies",
+   "fieldtype": "Table",
+   "label": "Insurance Coverage Health Insurance Policies",
+   "options": "Insurance Coverage Health Insurance Policies"
+  },
+  {
+   "fieldname": "section_break2",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "insurance_coverage_general_and_other_insurance",
+   "fieldtype": "Table",
+   "label": "Insurance Coverage General And Other Insurance",
+   "options": "Insurance Coverage General And Other Insurance"
+  },
+  {
+   "default": "Draft",
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "label": "Status",
+   "options": "Draft\nInsurance Coverage Completed",
+   "read_only": 1
+  },
+  {
+   "fieldname": "identifier",
+   "fieldtype": "Link",
+   "label": "Client Information",
+   "options": "Client Information"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2026-09-10 18:53:31.176527",
+ "modified_by": "Administrator",
+ "module": "Financial Assessment",
+ "name": "Insurance Coverage",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": []
+}

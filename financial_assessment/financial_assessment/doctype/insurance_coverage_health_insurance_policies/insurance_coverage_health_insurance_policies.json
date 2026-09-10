@@ -1,0 +1,124 @@
+{
+ "actions": [],
+ "allow_bulk_edit": 1,
+ "allow_rename": 1,
+ "creation": "2026-09-10 15:49:05.184460",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "section_break_fxyy",
+  "insurer",
+  "policy_type",
+  "members_covered",
+  "column_break1",
+  "sum_insured",
+  "annual_premium",
+  "co_pay_percentage",
+  "column_break2",
+  "room_rent_sub_limit",
+  "critical_illness_cover",
+  "renewal_date",
+  "column_break3",
+  "status",
+  "remark"
+ ],
+ "fields": [
+  {
+   "fieldname": "section_break_fxyy",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "insurer",
+   "fieldtype": "Link",
+   "label": "Insurer",
+   "options": "Insurance Coverage Insurer Master"
+  },
+  {
+   "fieldname": "policy_type",
+   "fieldtype": "Data",
+   "label": "Policy Type"
+  },
+  {
+   "fieldname": "members_covered",
+   "fieldtype": "Data",
+   "label": "Members Covered"
+  },
+  {
+   "fieldname": "column_break1",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "sum_insured",
+   "fieldtype": "Int",
+   "in_list_view": 1,
+   "label": "Sum Insured (\u20b9)",
+   "non_negative": 1,
+   "reqd": 1
+  },
+  {
+   "fieldname": "annual_premium",
+   "fieldtype": "Int",
+   "in_list_view": 1,
+   "label": "Annual Premium (\u20b9)",
+   "non_negative": 1,
+   "reqd": 1
+  },
+  {
+   "fieldname": "co_pay_percentage",
+   "fieldtype": "Percent",
+   "label": "Co-pay %",
+   "non_negative": 1
+  },
+  {
+   "fieldname": "column_break2",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "room_rent_sub_limit",
+   "fieldtype": "Int",
+   "label": "Room Rent Sub-limit",
+   "non_negative": 1
+  },
+  {
+   "fieldname": "critical_illness_cover",
+   "fieldtype": "Int",
+   "label": "Critical Illness Cover (\u20b9)",
+   "non_negative": 1
+  },
+  {
+   "fieldname": "renewal_date",
+   "fieldtype": "Date",
+   "label": "Renewal Date"
+  },
+  {
+   "fieldname": "column_break3",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "status",
+   "fieldtype": "Data",
+   "label": "Status"
+  },
+  {
+   "fieldname": "remark",
+   "fieldtype": "Small Text",
+   "label": "Remark"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2026-09-10 17:18:29.244118",
+ "modified_by": "Administrator",
+ "module": "Financial Assessment",
+ "name": "Insurance Coverage Health Insurance Policies",
+ "owner": "Administrator",
+ "permissions": [],
+ "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": []
+}
