@@ -10,11 +10,4 @@ from financial_assessment.utils.master_validation import (
 
 class FutureGoalsPlanOrTopic(Document):
 
-    def validate(self):
-        validate_unique_master_value(
-            "Future Goals Plan Or Topic",
-            "reference_code",
-            self.reference_code,
-            self.name,
-            "Reference Code",
-        )
+    def validate(self): validate_unique_master_value( "Future Goals Plan Or Topic", "plan_topic", self.plan_topic, self.name, "Plan / Topic", )
