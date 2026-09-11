@@ -1,0 +1,135 @@
+{
+ "actions": [],
+ "allow_bulk_edit": 1,
+ "allow_rename": 1,
+ "creation": "2026-09-11 10:23:14.199400",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "section_break_vjro",
+  "financial_goal",
+  "target_year",
+  "years_remaining",
+  "column_break1",
+  "current_cost_today",
+  "inflation",
+  "future_value_required",
+  "column_break2",
+  "existing_corpus_savings",
+  "shortfall_surplus",
+  "monthly_sip_required",
+  "column_break3",
+  "assumed_return",
+  "priority"
+ ],
+ "fields": [
+  {
+   "fieldname": "section_break_vjro",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "financial_goal",
+   "fieldtype": "Link",
+   "label": "Financial Goal",
+   "options": "Future Goals Financial Goal Master"
+  },
+  {
+   "fieldname": "target_year",
+   "fieldtype": "Int",
+   "label": "Target Year",
+   "non_negative": 1,
+   "reqd": 1
+  },
+  {
+   "fieldname": "years_remaining",
+   "fieldtype": "Int",
+   "in_list_view": 1,
+   "label": "Years Remaining",
+   "non_negative": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break1",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "current_cost_today",
+   "fieldtype": "Int",
+   "label": "Current Cost Today (\u20b9)",
+   "non_negative": 1,
+   "reqd": 1
+  },
+  {
+   "fieldname": "inflation",
+   "fieldtype": "Percent",
+   "label": "Inflation (%)",
+   "non_negative": 1,
+   "reqd": 1
+  },
+  {
+   "fieldname": "future_value_required",
+   "fieldtype": "Int",
+   "in_list_view": 1,
+   "label": "Future Value Required (\u20b9)",
+   "non_negative": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break2",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "existing_corpus_savings",
+   "fieldtype": "Int",
+   "label": "Existing Corpus / Savings (\u20b9)",
+   "non_negative": 1,
+   "reqd": 1
+  },
+  {
+   "fieldname": "shortfall_surplus",
+   "fieldtype": "Int",
+   "in_list_view": 1,
+   "label": "Shortfall / (Surplus) (\u20b9)",
+   "read_only": 1
+  },
+  {
+   "fieldname": "monthly_sip_required",
+   "fieldtype": "Int",
+   "in_list_view": 1,
+   "label": "Monthly SIP Required (\u20b9)",
+   "non_negative": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break3",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "assumed_return",
+   "fieldtype": "Percent",
+   "label": "Assumed Return (%)",
+   "non_negative": 1
+  },
+  {
+   "fieldname": "priority",
+   "fieldtype": "Data",
+   "label": "Priority"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2026-09-11 13:28:59.922271",
+ "modified_by": "Administrator",
+ "module": "Financial Assessment",
+ "name": "Future Goal Based Financial Planning Matrix Child",
+ "owner": "Administrator",
+ "permissions": [],
+ "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": []
+}

@@ -155,3 +155,50 @@ class InsuranceCoverage(Document):
             self.status = "Insurance Coverage Completed"
         else:
             self.status = "Draft"
+
+# =====================================================
+# CREATE FUTURE GOALS
+# =====================================================
+
+@frappe.whitelist()
+def create_future_goals(docname):
+
+    if not frappe.db.exists("Insurance Coverage", docname):
+        frappe.throw("Insurance Coverage record does not exist.")
+
+    insurance_coverage = frappe.get_doc(
+        "Insurance Coverage",
+        docname
+    )
+
+    if not insurance_coverage.identifier:
+        frappe.throw(
+            "Identifier is not set in Insurance Coverage."
+        )
+
+    # Check whether Future Goals
+    # already exists for this identifier
+    existing_record = frappe.db.exists(
+        "Future Goals",
+        {
+            "identifier": insurance_coverage.identifier
+        }
+    )
+
+    if existing_record:
+        return existing_record
+
+    # Create new Future Goals
+    future_goals = frappe.new_doc(
+        "Future Goals"
+    )
+
+    future_goals.identifier = (
+        insurance_coverage.identifier
+    )
+
+    future_goals.status = "Draft"
+
+    future_goals.insert()
+
+    return future_goals.name            

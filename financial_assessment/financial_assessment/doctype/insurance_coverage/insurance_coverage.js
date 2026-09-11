@@ -115,7 +115,7 @@ async function calculate_insurance_values(frm) {
     // Total Annual Insurance Premiums
     let total_annual_insurance_premiums =
         life_insurance_annual_premium +
-        health_insurance_annual_premium 
+        health_insurance_annual_premium
 
     frm.set_value(
         "total_annual_insurance_premiums",
@@ -213,3 +213,46 @@ frappe.ui.form.on(
         }
     }
 );
+
+frappe.ui.form.on("Insurance Coverage", {
+
+    refresh(frm) {
+
+        if (!frm.is_new() && frm.doc.identifier) {
+
+            frm.add_custom_button(
+                "Create Future Goals",
+                function () {
+
+                    frappe.call({
+                        method: "financial_assessment.financial_assessment.doctype.insurance_coverage.insurance_coverage.create_future_goals",
+                        args: {
+                            docname: frm.doc.name
+                        },
+                        freeze: true,
+                        freeze_message: "Creating Future Goals...",
+                        callback: function (r) {
+
+                            if (r.message) {
+
+                                frappe.show_alert({
+                                    message: "Future Goals created successfully.",
+                                    indicator: "green"
+                                });
+
+                                frappe.set_route(
+                                    "Form",
+                                    "Future Goals",
+                                    r.message
+                                );
+                            }
+                        }
+                    });
+
+                }
+            );
+
+        }
+    }
+
+});
