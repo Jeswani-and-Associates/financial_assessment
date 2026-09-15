@@ -4,10 +4,28 @@
 from frappe.model.document import Document
 import frappe
 
+from financial_assessment.utils.identifier import (
+    find_existing_identifier
+)
+
 
 class IncomeAndExpenses(Document):
 
     def validate(self):
+        
+        existing_record = find_existing_identifier(
+            self.doctype,
+            self.identifier,
+            self.name
+        )
+
+        if existing_record:
+            frappe.throw(
+                f"An {self.doctype} record already exists "
+                f"for identifier <b>{self.identifier}</b>.<br>"
+                f"Existing record: <b>{existing_record}</b>"
+            )
+
         # Calculate child table values
         self.calculate_income_and_expense_values()
 

@@ -3,17 +3,41 @@
  "allow_bulk_edit": 1,
  "allow_rename": 1,
  "autoname": "F_S-.#",
- "creation": "2026-09-11 15:46:02.405394",
+ "creation": "2026-09-11 19:48:04.974720",
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
-  "section_break_jqzq",
+  "section_break_g7cq",
   "identifier",
-  "status"
+  "column_break0",
+  "status",
+  "section_break0",
+  "financial_assets_current_market_value",
+  "real_estate_assets_current_market_value",
+  "business_assets_estimated_market_value",
+  "column_break1",
+  "other_assets",
+  "total_assets",
+  "total_outstanding_loans",
+  "column_break2",
+  "total_liabilities",
+  "net_worth",
+  "section_break1",
+  "total_annual_income",
+  "total_annual_expenses",
+  "annual_surplus_deficit",
+  "column_break3",
+  "monthly_surplus_deficit",
+  "savings_rate",
+  "emergency_fund_target",
+  "column_break",
+  "total_monthly_emi",
+  "section_break2",
+  "finiancial_summary_key_financial_health_ratios_child"
  ],
  "fields": [
   {
-   "fieldname": "section_break_jqzq",
+   "fieldname": "section_break_g7cq",
    "fieldtype": "Section Break"
   },
   {
@@ -26,13 +50,144 @@
    "fieldname": "status",
    "fieldtype": "Select",
    "label": "Status",
-   "options": "Draft\nFinancial Summary Completed"
+   "options": "Draft\nFinanacial Summary Completed",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break1",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break1",
+   "fieldtype": "Section Break",
+   "label": "INCOME & CASH FLOW SUMMARY"
+  },
+  {
+   "fieldname": "financial_assets_current_market_value",
+   "fieldtype": "Int",
+   "label": "Financial Assets \u2014 Current Market Value",
+   "read_only": 1
+  },
+  {
+   "fieldname": "real_estate_assets_current_market_value",
+   "fieldtype": "Int",
+   "label": "Real Estate Assets \u2014 Current Market Value",
+   "read_only": 1
+  },
+  {
+   "fieldname": "business_assets_estimated_market_value",
+   "fieldtype": "Int",
+   "label": "Business Assets \u2014 Estimated Market Value",
+   "read_only": 1
+  },
+  {
+   "fieldname": "other_assets",
+   "fieldtype": "Int",
+   "label": "Other Assets",
+   "read_only": 1
+  },
+  {
+   "fieldname": "total_assets",
+   "fieldtype": "Int",
+   "label": "TOTAL ASSETS",
+   "read_only": 1
+  },
+  {
+   "fieldname": "total_outstanding_loans",
+   "fieldtype": "Int",
+   "label": "Total Outstanding Loans",
+   "read_only": 1
+  },
+  {
+   "fieldname": "total_liabilities",
+   "fieldtype": "Int",
+   "label": "TOTAL LIABILITIES",
+   "read_only": 1
+  },
+  {
+   "fieldname": "net_worth",
+   "fieldtype": "Int",
+   "label": "NET WORTH",
+   "read_only": 1
+  },
+  {
+   "fieldname": "total_annual_income",
+   "fieldtype": "Int",
+   "label": "Total Annual Income (\u20b9)",
+   "read_only": 1
+  },
+  {
+   "fieldname": "total_annual_expenses",
+   "fieldtype": "Int",
+   "label": "Total Annual Expenses (\u20b9)",
+   "read_only": 1
+  },
+  {
+   "fieldname": "annual_surplus_deficit",
+   "fieldtype": "Int",
+   "label": "Annual Surplus / (Deficit) (\u20b9)",
+   "read_only": 1
+  },
+  {
+   "fieldname": "monthly_surplus_deficit",
+   "fieldtype": "Int",
+   "label": "Monthly Surplus / (Deficit) (\u20b9)",
+   "read_only": 1
+  },
+  {
+   "fieldname": "savings_rate",
+   "fieldtype": "Percent",
+   "label": "Savings Rate (%)",
+   "read_only": 1
+  },
+  {
+   "fieldname": "emergency_fund_target",
+   "fieldtype": "Int",
+   "label": "Emergency Fund Target (\u20b9)",
+   "read_only": 1
+  },
+  {
+   "fieldname": "total_monthly_emi",
+   "fieldtype": "Int",
+   "label": "Total Monthly EMI (\u20b9)",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break0",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break0",
+   "fieldtype": "Section Break",
+   "label": "NET WORTH STATEMENT"
+  },
+  {
+   "fieldname": "column_break2",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break3",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break2",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "finiancial_summary_key_financial_health_ratios_child",
+   "fieldtype": "Table",
+   "label": "Finiancial Summary Key Financial Health Ratios Child",
+   "options": "Finiancial Summary Key Financial Health Ratios Child"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2026-09-11 16:02:26.334469",
+ "modified": "2026-09-15 18:33:46.758403",
  "modified_by": "Administrator",
  "module": "Financial Assessment",
  "name": "Financial Summary",

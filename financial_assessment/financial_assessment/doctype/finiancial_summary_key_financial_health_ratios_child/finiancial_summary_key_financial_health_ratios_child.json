@@ -1,0 +1,66 @@
+{
+ "actions": [],
+ "allow_bulk_edit": 1,
+ "allow_rename": 1,
+ "creation": "2026-09-15 12:39:15.356448",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "section_break_easz",
+  "metric",
+  "current_value",
+  "benchmark",
+  "status",
+  "advisors_observation"
+ ],
+ "fields": [
+  {
+   "fieldname": "section_break_easz",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "metric",
+   "fieldtype": "Link",
+   "label": "Metric",
+   "options": "Finiancial Summary Key Financial Health Ratios Master",
+   "read_only": 1
+  },
+  {
+   "fieldname": "current_value",
+   "fieldtype": "Data",
+   "label": "Current Value"
+  },
+  {
+   "fieldname": "benchmark",
+   "fieldtype": "Data",
+   "label": "Benchmark",
+   "read_only": 1
+  },
+  {
+   "fieldname": "status",
+   "fieldtype": "Data",
+   "label": "Status"
+  },
+  {
+   "fieldname": "advisors_observation",
+   "fieldtype": "Data",
+   "label": "Advisor's Observation"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2026-09-15 12:49:45.199482",
+ "modified_by": "Administrator",
+ "module": "Financial Assessment",
+ "name": "Finiancial Summary Key Financial Health Ratios Child",
+ "owner": "Administrator",
+ "permissions": [],
+ "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": []
+}

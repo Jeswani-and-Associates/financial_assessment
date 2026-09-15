@@ -2,11 +2,29 @@
 # For license information, please see license.txt
 import frappe
 from frappe.model.document import Document
+from financial_assessment.utils.identifier import (
+    find_existing_identifier
+)
 
 
 class AssetsAndInvestments(Document):
 
     def validate(self):
+
+        existing_record = find_existing_identifier(
+                    self.doctype,
+                    self.identifier,
+                    self.name
+                )
+            
+        if existing_record:
+                        frappe.throw(
+                            f"An {self.doctype} record already exists "
+                            f"for identifier <b>{self.identifier}</b>.<br>"
+                            f"Existing record: <b>{existing_record}</b>"
+                        )
+
+
         self.calculate_asset_values()
         self.update_status()
 
