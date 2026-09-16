@@ -1,0 +1,209 @@
+{
+ "actions": [],
+ "allow_bulk_edit": 1,
+ "allow_rename": 1,
+ "autoname": "A_A-.#",
+ "creation": "2026-09-16 10:53:56.887698",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "section_break_qb4a",
+  "identifier",
+  "column_break1",
+  "status",
+  "column_break8",
+  "assessment_date",
+  "next_review_date",
+  "services_proposed_to_client",
+  "column_break2",
+  "assigned_advisor_at_krb_and_co",
+  "review_frequency",
+  "client_acknowledgment_and_signoff",
+  "section_break1",
+  "key_observations_child",
+  "section_break2",
+  "insurance_recommendations_child",
+  "section_break3",
+  "investment_and_wealth_building_recommendations_child",
+  "section_break4",
+  "debt_management_recommendations_child",
+  "section_break5",
+  "tax_planning_recommendations_child",
+  "section_break6",
+  "estate_succession_and_legal_planning_child",
+  "section_break7",
+  "goal_planning_implementation_recommendations_child",
+  "section_break8",
+  "agreed_action_plan_immediate_next_steps_child"
+ ],
+ "fields": [
+  {
+   "fieldname": "section_break_qb4a",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "identifier",
+   "fieldtype": "Link",
+   "label": "Client Information",
+   "options": "Client Information"
+  },
+  {
+   "fieldname": "column_break1",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "label": "Status",
+   "options": "Draft\nAdvisory and Recommendations Completed",
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_break1",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "key_observations_child",
+   "fieldtype": "Table",
+   "label": "Key Observations Child",
+   "options": "Key Observations Child"
+  },
+  {
+   "fieldname": "section_break2",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "insurance_recommendations_child",
+   "fieldtype": "Table",
+   "label": "Insurance Recommendations Child",
+   "options": "Insurance Recommendations Child"
+  },
+  {
+   "fieldname": "section_break3",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "investment_and_wealth_building_recommendations_child",
+   "fieldtype": "Table",
+   "label": "Investment And Wealth Building Recommendations Child",
+   "options": "Investment And Wealth Building Recommendations Child"
+  },
+  {
+   "fieldname": "section_break4",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "debt_management_recommendations_child",
+   "fieldtype": "Table",
+   "label": "Debt Management Recommendations Child",
+   "options": "Debt Management Recommendations Child"
+  },
+  {
+   "fieldname": "section_break5",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "tax_planning_recommendations_child",
+   "fieldtype": "Table",
+   "label": "Tax Planning Recommendations Child",
+   "options": "Tax Planning Recommendations Child"
+  },
+  {
+   "fieldname": "section_break6",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "estate_succession_and_legal_planning_child",
+   "fieldtype": "Table",
+   "label": "Estate Succession And Legal Planning Child",
+   "options": "Estate Succession And Legal Planning Child"
+  },
+  {
+   "fieldname": "section_break7",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "goal_planning_implementation_recommendations_child",
+   "fieldtype": "Table",
+   "label": "Goal Planning Implementation Recommendations Child",
+   "options": "Goal Planning Implementation Recommendations Child"
+  },
+  {
+   "fieldname": "section_break8",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "agreed_action_plan_immediate_next_steps_child",
+   "fieldtype": "Table",
+   "label": "Agreed Action Plan Immediate Next Steps Child",
+   "options": "Agreed Action Plan Immediate Next Steps Child"
+  },
+  {
+   "fieldname": "column_break8",
+   "fieldtype": "Section Break",
+   "label": "Advisor Sign-Off & Next Review"
+  },
+  {
+   "fieldname": "assessment_date",
+   "fieldtype": "Date",
+   "label": "Assessment Date"
+  },
+  {
+   "fieldname": "next_review_date",
+   "fieldtype": "Date",
+   "label": "Next Review Date"
+  },
+  {
+   "fieldname": "services_proposed_to_client",
+   "fieldtype": "Data",
+   "label": "Services Proposed to Client"
+  },
+  {
+   "fieldname": "column_break2",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "assigned_advisor_at_krb_and_co",
+   "fieldtype": "Data",
+   "label": "Assigned Advisor at KRB & Co."
+  },
+  {
+   "fieldname": "review_frequency",
+   "fieldtype": "Data",
+   "label": "Review Frequency"
+  },
+  {
+   "fieldname": "client_acknowledgment_and_signoff",
+   "fieldtype": "Data",
+   "label": "Client Acknowledgment and Signoff"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2026-09-16 18:32:11.369796",
+ "modified_by": "Administrator",
+ "module": "Financial Assessment",
+ "name": "Advisory And Recommendations",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": []
+}

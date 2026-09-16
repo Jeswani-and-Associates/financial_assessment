@@ -19,7 +19,50 @@ frappe.ui.form.on("Financial Summary", {
                 "calculate_key_financial_health_ratios"
             );
         }
+
+        // Create Advisory And Recommendations button
+        if (!frm.is_new() && frm.doc.identifier) {
+
+            frm.add_custom_button(
+                "Create Advisory And Recommendations",
+                function () {
+
+                    frappe.call({
+                        method:
+                            "financial_assessment.financial_assessment.doctype.financial_summary.financial_summary.create_advisory_and_recommendations",
+
+                        args: {
+                            docname: frm.doc.name
+                        },
+
+                        freeze: true,
+                        freeze_message:
+                            "Creating Advisory And Recommendations...",
+
+                        callback: function (r) {
+
+                            if (r.message) {
+
+                                frappe.show_alert({
+                                    message:
+                                        "Advisory And Recommendations created successfully.",
+                                    indicator: "green"
+                                });
+
+                                frappe.set_route(
+                                    "Form",
+                                    "Advisory And Recommendations",
+                                    r.message
+                                );
+                            }
+                        }
+                    });
+
+                }
+            );
+        }
     },
+
 
 
     // ============================================================

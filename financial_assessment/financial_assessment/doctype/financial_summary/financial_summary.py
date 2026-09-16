@@ -6,9 +6,18 @@ from frappe.model.document import Document
 from financial_assessment.utils.identifier import (
     find_existing_identifier
 )
+from financial_assessment.utils.client_status import (
+    update_client_current_status
+)
 
 
 class FinancialSummary(Document):
+
+    def on_update(self):
+
+        update_client_current_status(
+            self.identifier
+        )
 
     def validate(self):
 
@@ -1110,3 +1119,56 @@ def get_key_financial_health_ratios(identifier):
                 insurance_premium_status
         }
     }
+
+# ====================================================================
+# CREATE ADVISORY AND RECOMMENDATIONS
+# ====================================================================
+
+@frappe.whitelist()
+def create_advisory_and_recommendations(docname):
+
+    if not frappe.db.exists(
+        "Financial Summary",
+        docname
+    ):
+        frappe.throw(
+            "Financial Summary record does not exist."
+        )
+
+    financial_summary = frappe.get_doc(
+        "Financial Summary",
+        docname
+    )
+
+    if not financial_summary.identifier:
+        frappe.throw(
+            "Identifier is not set in Financial Summary."
+        )
+
+    # Check whether Advisory And Recommendations
+    # already exists for this identifier
+    existing_record = frappe.db.exists(
+        "Advisory And Recommendations",
+        {
+            "identifier":
+                financial_summary.identifier
+        }
+    )
+
+    if existing_record:
+        return existing_record
+
+    # Create new Advisory And Recommendations
+    advisory = frappe.new_doc(
+        "Advisory And Recommendations"
+    )
+
+    advisory.identifier = (
+        financial_summary.identifier
+    )
+
+    advisory.status = "Draft"
+
+    advisory.insert()
+
+    return advisory.name

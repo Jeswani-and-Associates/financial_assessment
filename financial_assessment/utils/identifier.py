@@ -8,6 +8,7 @@ ALLOWED_IDENTIFIER_DOCTYPES = [
     "Insurance Coverage",
     "Future Goals",
     "Financial Summary",
+    "Advisory And Recommendations",
 ]
 
 

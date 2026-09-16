@@ -1,0 +1,45 @@
+.client-assessment-dashboard {
+    padding: 15px;
+}
+
+.dashboard-header {
+    margin-bottom: 20px;
+}
+
+.dashboard-header h3 {
+    margin: 0;
+}
+
+.assessment-table {
+    width: 100%;
+    min-width: 1200px;
+    background: white;
+}
+
+.assessment-table th {
+    white-space: nowrap;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.assessment-table td {
+    vertical-align: middle;
+    text-align: center;
+}
+
+.assessment-table td:first-child {
+    text-align: left;
+    font-weight: 500;
+}
+
+.assessment-status.completed {
+    font-weight: 600;
+}
+
+.assessment-status.draft {
+    font-weight: 600;
+}
+
+.assessment-status.not-created {
+    text-align: center;
+}

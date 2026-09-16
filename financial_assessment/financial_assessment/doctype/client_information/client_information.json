@@ -23,6 +23,7 @@
   "email_address",
   "next_review_date",
   "status",
+  "current_status",
   "section_break1",
   "address",
   "country",
@@ -195,12 +196,17 @@
    "label": "Status",
    "options": "Draft\nClient Information Completed",
    "read_only": 1
+  },
+  {
+   "fieldname": "current_status",
+   "fieldtype": "Data",
+   "label": "Current Status"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2026-09-08 13:34:05.658709",
+ "modified": "2026-09-16 16:02:57.358544",
  "modified_by": "Administrator",
  "module": "Financial Assessment",
  "name": "Client Information",

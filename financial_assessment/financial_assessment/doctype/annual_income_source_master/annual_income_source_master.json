@@ -32,7 +32,7 @@
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2026-09-10 12:02:16.337639",
+ "modified": "2026-09-16 11:38:31.684909",
  "modified_by": "Administrator",
  "module": "Financial Assessment",
  "name": "Annual Income Source Master",
@@ -49,6 +49,7 @@
    "report": 1,
    "role": "System Manager",
    "share": 1,
+   "submit": 1,
    "write": 1
   }
  ],

@@ -6,9 +6,18 @@ import frappe
 from financial_assessment.utils.identifier import (
     find_existing_identifier
 )
+from financial_assessment.utils.client_status import (
+    update_client_current_status
+)
 
 
 class FutureGoals(Document):
+
+    def on_update(self):
+
+        update_client_current_status(
+            self.identifier
+        )
 
     def validate(self):
 
