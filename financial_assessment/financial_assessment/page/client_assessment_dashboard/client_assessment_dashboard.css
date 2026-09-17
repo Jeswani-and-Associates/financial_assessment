@@ -1,6 +1,11 @@
 .client-assessment-dashboard {
-    padding: 15px;
+    padding: 20px;
 }
+
+
+/* ================================
+   Dashboard Header
+================================ */
 
 .dashboard-header {
     margin-bottom: 20px;
@@ -8,38 +13,354 @@
 
 .dashboard-header h3 {
     margin: 0;
+    font-size: 20px;
+    font-weight: 600;
 }
+
+
+/* ================================
+   Table Container
+================================ */
+
+.dashboard-table-container {
+    width: 100%;
+    overflow-x: auto;
+    border-radius: 8px;
+}
+
+
+/* ================================
+   Main Table
+================================ */
 
 .assessment-table {
     width: 100%;
-    min-width: 1200px;
-    background: white;
+    min-width: 1250px;
+    margin-bottom: 0;
+    background: #ffffff;
+    border-collapse: separate;
+    border-spacing: 0;
+    border-radius: 8px;
+    overflow: hidden;
 }
+
+
+/* ================================
+   Table Header
+================================ */
 
 .assessment-table th {
-    white-space: nowrap;
+    min-width: 145px;
+    padding: 14px 10px;
+    white-space: normal;
     text-align: center;
     vertical-align: middle;
+    font-size: 13px;
+    font-weight: 600;
+    line-height: 1.4;
+    border-bottom: 2px solid #d1d5db;
 }
+
+
+/* Client Header */
+
+.assessment-table th.client-header {
+    min-width: 180px;
+    text-align: left;
+    background: #f3f4f6;
+    color: #374151;
+}
+
+
+/* Income And Expenses */
+
+.assessment-table th.window-income {
+    background: #dbeafe;
+    color: #1e40af;
+}
+
+
+/* Assets And Investments */
+
+.assessment-table th.window-assets {
+    background: #dcfce7;
+    color: #166534;
+}
+
+
+/* Loans And Liabilities */
+
+.assessment-table th.window-loans {
+    background: #ede9fe;
+    color: #6d28d9;
+}
+
+
+/* Insurance Coverage */
+
+.assessment-table th.window-insurance {
+    background: #ffedd5;
+    color: #c2410c;
+}
+
+
+/* Future Goals */
+
+.assessment-table th.window-goals {
+    background: #ccfbf1;
+    color: #0f766e;
+}
+
+
+/* Financial Summary */
+
+.assessment-table th.window-summary {
+    background: #e0e7ff;
+    color: #3730a3;
+}
+
+
+/* Advisory And Recommendations */
+
+.assessment-table th.window-advisory {
+    background: #f3e8df;
+    color: #78350f;
+}
+
+
+/* ================================
+   Table Body
+================================ */
 
 .assessment-table td {
+    padding: 12px 10px;
     vertical-align: middle;
     text-align: center;
+    border-color: #e5e7eb;
+    font-size: 13px;
 }
 
-.assessment-table td:first-child {
+
+/* ================================
+   Client Column
+================================ */
+
+.assessment-table td.client-name-cell {
+    min-width: 180px;
     text-align: left;
     font-weight: 500;
+    background: #ffffff;
 }
 
-.assessment-status.completed {
+
+.client-link {
+    color: #2563eb;
     font-weight: 600;
+    text-decoration: none;
 }
+
+
+.client-link:hover {
+    text-decoration: underline;
+}
+
+
+/* ================================
+   Status Cells
+================================ */
+
+.assessment-status {
+    transition: background-color 0.15s ease;
+}
+
+
+/* Common Draft Colour */
 
 .assessment-status.draft {
+    background: #f3f4f6;
+    color: #4b5563;
+}
+
+
+/* ================================
+   Completed Colours
+================================ */
+
+
+/* Income And Expenses */
+
+.assessment-status.completed.income {
+    background: #dbeafe;
+    color: #1e40af;
+}
+
+
+/* Assets And Investments */
+
+.assessment-status.completed.assets {
+    background: #dcfce7;
+    color: #166534;
+}
+
+
+/* Loans And Liabilities */
+
+.assessment-status.completed.loans {
+    background: #ede9fe;
+    color: #6d28d9;
+}
+
+
+/* Insurance Coverage */
+
+.assessment-status.completed.insurance {
+    background: #ffedd5;
+    color: #c2410c;
+}
+
+
+/* Future Goals */
+
+.assessment-status.completed.goals {
+    background: #ccfbf1;
+    color: #0f766e;
+}
+
+
+/* Financial Summary */
+
+.assessment-status.completed.summary {
+    background: #e0e7ff;
+    color: #3730a3;
+}
+
+
+/* Advisory And Recommendations */
+
+.assessment-status.completed.advisory {
+    background: #f3e8df;
+    color: #78350f;
+}
+
+
+/* ================================
+   Not Started
+================================ */
+
+.assessment-status.not-created {
+    background: #fee2e2;
+    color: #b91c1c;
+}
+
+
+/* ================================
+   Status Badge
+================================ */
+
+.status-badge {
+    display: inline-block;
+    min-width: 80px;
+    padding: 5px 10px;
+    border-radius: 12px;
+    font-size: 12px;
     font-weight: 600;
 }
 
-.assessment-status.not-created {
-    text-align: center;
+
+/* ================================
+   Loading / Empty State
+================================ */
+
+.loading-cell,
+.no-data-cell {
+    padding: 30px !important;
+    color: #6b7280;
+    background: #ffffff;
+}
+
+
+/* ================================
+   Row Hover
+================================ */
+
+.assessment-table tbody tr:hover td.client-name-cell {
+    background: #f9fafb;
+}
+
+
+
+
+/* ================================
+   Dashboard Filters
+================================ */
+
+.dashboard-filters {
+    display: flex;
+    align-items: flex-end;
+    gap: 15px;
+    margin-bottom: 20px;
+    padding: 15px;
+    background: #f8f9fa;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    flex-wrap: wrap;
+}
+
+
+.filter-field {
+    width: 220px;
+}
+
+
+.filter-field label {
+    display: block;
+    margin-bottom: 6px;
+    font-size: 12px;
+    font-weight: 600;
+    color: #374151;
+}
+
+
+.filter-field .form-group {
+    margin-bottom: 0;
+}
+
+
+.filter-actions {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding-bottom: 0;
+}
+
+
+.filter-actions .btn {
+    height: 32px;
+}
+
+
+/* ================================
+   Responsive
+================================ */
+
+@media (max-width: 1200px) {
+
+    .client-assessment-dashboard {
+        padding: 12px;
+    }
+
+    .assessment-table th,
+    .assessment-table td {
+        font-size: 12px;
+    }
+
+    .dashboard-filters {
+        align-items: stretch;
+    }
+
+    .filter-field {
+        width: 100%;
+        max-width: 300px;
+    }
+
 }
