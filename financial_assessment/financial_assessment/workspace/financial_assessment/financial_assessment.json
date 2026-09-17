@@ -328,8 +328,27 @@
   {
    "hidden": 0,
    "is_query_report": 0,
-   "label": "Advisory And Recommendations",
+   "label": "Client Assessment Dashboard",
    "link_count": 1,
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Client Assessment Dashboard",
+   "link_count": 0,
+   "link_to": "client-assessment-dashboard",
+   "link_type": "Page",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Advisory And Recommendations",
+   "link_count": 9,
    "link_type": "DocType",
    "onboard": 0,
    "type": "Card Break"
@@ -347,24 +366,85 @@
   {
    "hidden": 0,
    "is_query_report": 0,
-   "label": "Client Assessment Dashboard",
-   "link_count": 1,
+   "label": " Key Observations Master",
+   "link_count": 0,
+   "link_to": "Key Observations Master",
    "link_type": "DocType",
    "onboard": 0,
-   "type": "Card Break"
+   "type": "Link"
   },
   {
    "hidden": 0,
    "is_query_report": 0,
-   "label": "Client Assessment Dashboard",
+   "label": " Insurance Recommendations Master",
    "link_count": 0,
-   "link_to": "client-assessment-dashboard",
-   "link_type": "Page",
+   "link_to": "Insurance Recommendations Master",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Investment And Wealth Building Recommendations Master",
+   "link_count": 0,
+   "link_to": "Investment And Wealth Building Recommendations Master",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Debt Management Recommendations Master",
+   "link_count": 0,
+   "link_to": "Debt Management Recommendations Master",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": " Tax Planning Recommendations Master",
+   "link_count": 0,
+   "link_to": "Tax Planning Recommendations Master",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": " Estate Succession And Legal Planning Master",
+   "link_count": 0,
+   "link_to": "Estate Succession And Legal Planning Master",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Goal Planning Implementation Recommendations Master",
+   "link_count": 0,
+   "link_to": "Goal Planning Implementation Recommendations Master",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": " Advisor SignOff And Next Review Master",
+   "link_count": 0,
+   "link_to": "Advisor SignOff And Next Review Master",
+   "link_type": "DocType",
    "onboard": 0,
    "type": "Link"
   }
  ],
- "modified": "2026-09-16 19:46:06.294963",
+ "modified": "2026-09-17 10:27:14.580785",
  "modified_by": "Administrator",
  "module": "Financial Assessment",
  "name": "Financial Assessment",
