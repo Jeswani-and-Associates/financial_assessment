@@ -1,0 +1,8 @@
+{
+    "doctype": "Page",
+    "name": "client-advisor-dashboard",
+    "page_name": "client-advisor-dashboard",
+    "title": "Client Advisor Dashboard",
+    "module": "Financial Assessment",
+    "standard": "Yes"
+}
