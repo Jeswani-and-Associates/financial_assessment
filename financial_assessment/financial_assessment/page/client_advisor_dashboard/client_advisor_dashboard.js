@@ -585,29 +585,22 @@ function render_advisor_chart(
 
 }
 
-
 // =============================================================
 // Render Client Table
 // =============================================================
 
-function render_client_table(
-    clients
-) {
-
+function render_client_table(clients) {
 
     const table_body =
         $("#client-information-body");
 
-
     table_body.empty();
-
 
     // =========================================================
     // No Client Data
     // =========================================================
 
     if (!clients.length) {
-
 
         table_body.html(`
             <tr>
@@ -622,11 +615,8 @@ function render_client_table(
             </tr>
         `);
 
-
         return;
-
     }
-
 
     // =========================================================
     // Create Client Rows
@@ -634,61 +624,62 @@ function render_client_table(
 
     clients.forEach(function (client) {
 
-
         const client_name =
             frappe.utils.escape_html(
                 client.client || "-"
             );
-
 
         const pan_tan =
             frappe.utils.escape_html(
                 client.pan_tan_no || "-"
             );
 
-
         const financial_year =
             frappe.utils.escape_html(
                 client.financial_year || "-"
             );
-
 
         const advisor =
             frappe.utils.escape_html(
                 client.advisor || "-"
             );
 
-
         const assessment_date =
             frappe.utils.escape_html(
                 client.date_of_assessment || "-"
             );
-
 
         const current_status =
             frappe.utils.escape_html(
                 client.current_status || "-"
             );
 
+        /*
+         * Escape the document name as well.
+         * This value is used only as a data attribute.
+         */
+        const client_identifier =
+            frappe.utils.escape_html(
+                client.name || ""
+            );
 
         const row = `
 
             <tr>
-
 
                 <!-- Client -->
 
                 <td>
 
                     <a
-                        href="#Form/Client Information/${encodeURIComponent(client.name)}"
-                        class="client-link"
+                        href="javascript:void(0);"
+                        class="client-link open-client-information"
+                        data-client-name="${client_identifier}"
                     >
                         ${client_name}
                     </a>
 
                 </td>
-
 
                 <!-- PAN / TAN -->
 
@@ -696,13 +687,11 @@ function render_client_table(
                     ${pan_tan}
                 </td>
 
-
                 <!-- Financial Year -->
 
                 <td>
                     ${financial_year}
                 </td>
-
 
                 <!-- Advisor -->
 
@@ -710,13 +699,11 @@ function render_client_table(
                     ${advisor}
                 </td>
 
-
                 <!-- Assessment Date -->
 
                 <td>
                     ${assessment_date}
                 </td>
-
 
                 <!-- Current Status -->
 
@@ -728,15 +715,49 @@ function render_client_table(
 
                 </td>
 
-
             </tr>
 
         `;
 
-
         table_body.append(row);
 
-
     });
+
+
+    // =========================================================
+    // Client Information Navigation
+    // =========================================================
+
+    table_body
+        .find(".open-client-information")
+        .off("click")
+        .on("click", function (e) {
+
+            e.preventDefault();
+
+            const client_name =
+                $(this).attr("data-client-name");
+
+            if (!client_name) {
+
+                frappe.msgprint(
+                    "Client Information identifier is missing."
+                );
+
+                return;
+            }
+
+            console.log(
+                "Opening Client Information:",
+                client_name
+            );
+
+            frappe.set_route(
+                "Form",
+                "Client Information",
+                client_name
+            );
+
+        });
 
 }
