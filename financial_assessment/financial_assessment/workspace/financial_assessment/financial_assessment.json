@@ -1,8 +1,8 @@
 {
- "app": "financial_assessment",
+ "app": "Financial Assessment",
  "charts": [],
- "content": "[{\"id\":\"QNIB5eZTl9\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Welcome to the Financial Assessment workspace</span>\",\"col\":12}},{\"id\":\"HAtODcWEW-\",\"type\":\"card\",\"data\":{\"card_name\":\"Client Information\",\"col\":4}},{\"id\":\"zGm24S3k-x\",\"type\":\"card\",\"data\":{\"card_name\":\"Income & Expenses\",\"col\":4}},{\"id\":\"K4EK1spzTh\",\"type\":\"card\",\"data\":{\"card_name\":\"Assets & Investments\",\"col\":4}},{\"id\":\"5ghn_rDC8c\",\"type\":\"card\",\"data\":{\"card_name\":\"Loans and Liabilities\",\"col\":4}},{\"id\":\"xx5ewBcVjc\",\"type\":\"card\",\"data\":{\"card_name\":\"Insurance Coverage\",\"col\":4}},{\"id\":\"UQnPuuo4Zx\",\"type\":\"card\",\"data\":{\"card_name\":\"Future Goals\",\"col\":4}},{\"id\":\"09K4J-Aaof\",\"type\":\"card\",\"data\":{\"card_name\":\"Finiancial Summary\",\"col\":4}},{\"id\":\"nPd3Ezdaez\",\"type\":\"card\",\"data\":{\"card_name\":\"Advisory And Recommendations\",\"col\":4}},{\"id\":\"ZwQ9qBgFjW\",\"type\":\"card\",\"data\":{\"card_name\":\"Dashboard\",\"col\":4}},{\"id\":\"Hmtz2W2Co3\",\"type\":\"card\",\"data\":{\"card_name\":\"Masters\",\"col\":4}}]",
- "creation": "2026-09-05 10:59:13.171867",
+ "content": "[{\"id\":\"LdXPSvRK_I\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Welcome to the Financial Assessment workspace</span>\",\"col\":12}},{\"id\":\"km10_-4ucQ\",\"type\":\"card\",\"data\":{\"card_name\":\"Masters\",\"col\":4}},{\"id\":\"QTKi00AvY7\",\"type\":\"card\",\"data\":{\"card_name\":\" Client Information\",\"col\":4}},{\"id\":\"6DRGQ4g0Y6\",\"type\":\"card\",\"data\":{\"card_name\":\"Income & Expenses\",\"col\":4}},{\"id\":\"hvdJEZk1rg\",\"type\":\"card\",\"data\":{\"card_name\":\"Assets And Investments\",\"col\":4}},{\"id\":\"VomXKII7ER\",\"type\":\"card\",\"data\":{\"card_name\":\"Loans and Liabilities\",\"col\":4}},{\"id\":\"Lb0dHiLgqs\",\"type\":\"card\",\"data\":{\"card_name\":\"Insurance Coverage\",\"col\":4}},{\"id\":\"PsX8R2RbqN\",\"type\":\"card\",\"data\":{\"card_name\":\"Future Goals \",\"col\":4}},{\"id\":\"Lc5y8qUXqW\",\"type\":\"card\",\"data\":{\"card_name\":\"Financial Summary \",\"col\":4}},{\"id\":\"PMm6h2uH20\",\"type\":\"card\",\"data\":{\"card_name\":\"Advisory And Recommendations\",\"col\":4}},{\"id\":\"ysAY5aulFH\",\"type\":\"card\",\"data\":{\"card_name\":\"Dashboard\",\"col\":4}}]",
+ "creation": "2026-09-23 15:46:30.210951",
  "custom_blocks": [],
  "docstatus": 0,
  "doctype": "Workspace",
@@ -16,7 +16,7 @@
   {
    "hidden": 0,
    "is_query_report": 0,
-   "label": "Client Information",
+   "label": " Client Information",
    "link_count": 3,
    "link_type": "DocType",
    "onboard": 0,
@@ -35,7 +35,7 @@
   {
    "hidden": 0,
    "is_query_report": 0,
-   "label": "Family And Dependent Master",
+   "label": "Family And Dependent Master ",
    "link_count": 0,
    "link_to": "Family And Dependent Master",
    "link_type": "DocType",
@@ -45,7 +45,7 @@
   {
    "hidden": 0,
    "is_query_report": 0,
-   "label": "Financial Beheviour Question Master",
+   "label": "Financial Beheviour Question Master ",
    "link_count": 0,
    "link_to": "Financial Beheviour Question Master",
    "link_type": "DocType",
@@ -94,7 +94,7 @@
   {
    "hidden": 0,
    "is_query_report": 0,
-   "label": "Assets & Investments",
+   "label": "Assets And Investments",
    "link_count": 4,
    "link_type": "DocType",
    "onboard": 0,
@@ -152,7 +152,7 @@
   {
    "hidden": 0,
    "is_query_report": 0,
-   "label": "Loans and Liabilities",
+   "label": "Loans And Liabilities",
    "link_count": 0,
    "link_to": "Loans And Liabilities",
    "link_type": "DocType",
@@ -166,6 +166,241 @@
    "link_count": 0,
    "link_to": "Loans And Liabilities Loan Type Master",
    "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Future Goals ",
+   "link_count": 3,
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Future Goals ",
+   "link_count": 0,
+   "link_to": "Future Goals",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Future Goals Financial Goal Master",
+   "link_count": 0,
+   "link_to": "Future Goals Financial Goal Master",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Future Goals Plan Or Topic",
+   "link_count": 0,
+   "link_to": "Future Goals Plan Or Topic",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Financial Summary ",
+   "link_count": 2,
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Financial Summary",
+   "link_count": 0,
+   "link_to": "Financial Summary",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Finiancial Summary Key Financial Health Ratios Master",
+   "link_count": 0,
+   "link_to": "Finiancial Summary Key Financial Health Ratios Master",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Advisory And Recommendations",
+   "link_count": 9,
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Advisory And Recommendations",
+   "link_count": 0,
+   "link_to": "Advisory And Recommendations",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Key Observations Master",
+   "link_count": 0,
+   "link_to": "Key Observations Master",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Insurance Recommendations Master",
+   "link_count": 0,
+   "link_to": "Insurance Recommendations Master",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Investment And Wealth Building Recommendations Master",
+   "link_count": 0,
+   "link_to": "Investment And Wealth Building Recommendations Master",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Debt Management Recommendations Master",
+   "link_count": 0,
+   "link_to": "Debt Management Recommendations Master",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Tax Planning Recommendations Master",
+   "link_count": 0,
+   "link_to": "Tax Planning Recommendations Master",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Estate Succession And Legal Planning Master",
+   "link_count": 0,
+   "link_to": "Estate Succession And Legal Planning Master",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Goal Planning Implementation Recommendations Master",
+   "link_count": 0,
+   "link_to": "Goal Planning Implementation Recommendations Master",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Advisor SignOff And Next Review Master",
+   "link_count": 0,
+   "link_to": "Advisor SignOff And Next Review Master",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Masters",
+   "link_count": 3,
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Financial Year Master",
+   "link_count": 0,
+   "link_to": "Financial Year Master",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Advisor Master",
+   "link_count": 0,
+   "link_to": "Advisor Master",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Region ",
+   "link_count": 0,
+   "link_to": "Region",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Dashboard",
+   "link_count": 2,
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Client Assessment Dashboard ",
+   "link_count": 0,
+   "link_to": "client-assessment-dashboard",
+   "link_type": "Page",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Client Advisor Dashboard ",
+   "link_count": 0,
+   "link_to": "client-advisor-dashboard",
+   "link_type": "Page",
    "onboard": 0,
    "type": "Link"
   },
@@ -217,244 +452,9 @@
    "link_type": "DocType",
    "onboard": 0,
    "type": "Link"
-  },
-  {
-   "hidden": 0,
-   "is_query_report": 0,
-   "label": "Future Goals",
-   "link_count": 3,
-   "link_type": "DocType",
-   "onboard": 0,
-   "type": "Card Break"
-  },
-  {
-   "hidden": 0,
-   "is_query_report": 0,
-   "label": "Future Goals",
-   "link_count": 0,
-   "link_to": "Future Goals",
-   "link_type": "DocType",
-   "onboard": 0,
-   "type": "Link"
-  },
-  {
-   "hidden": 0,
-   "is_query_report": 0,
-   "label": "Future Goals Financial Goal Master",
-   "link_count": 0,
-   "link_to": "Future Goals Financial Goal Master",
-   "link_type": "DocType",
-   "onboard": 0,
-   "type": "Link"
-  },
-  {
-   "hidden": 0,
-   "is_query_report": 0,
-   "label": "Future Goals Plan Or Topic",
-   "link_count": 0,
-   "link_to": "Future Goals Plan Or Topic",
-   "link_type": "DocType",
-   "onboard": 0,
-   "type": "Link"
-  },
-  {
-   "hidden": 0,
-   "is_query_report": 0,
-   "label": "Masters",
-   "link_count": 3,
-   "link_type": "DocType",
-   "onboard": 0,
-   "type": "Card Break"
-  },
-  {
-   "hidden": 0,
-   "is_query_report": 0,
-   "label": "Financial Year Master",
-   "link_count": 0,
-   "link_to": "Financial Year Master",
-   "link_type": "DocType",
-   "onboard": 0,
-   "type": "Link"
-  },
-  {
-   "hidden": 0,
-   "is_query_report": 0,
-   "label": "Advisor Master",
-   "link_count": 0,
-   "link_to": "Advisor Master",
-   "link_type": "DocType",
-   "onboard": 0,
-   "type": "Link"
-  },
-  {
-   "hidden": 0,
-   "is_query_report": 0,
-   "label": "Region",
-   "link_count": 0,
-   "link_to": "Region",
-   "link_type": "DocType",
-   "onboard": 0,
-   "type": "Link"
-  },
-  {
-   "hidden": 0,
-   "is_query_report": 0,
-   "label": "Finiancial Summary",
-   "link_count": 2,
-   "link_type": "DocType",
-   "onboard": 0,
-   "type": "Card Break"
-  },
-  {
-   "hidden": 0,
-   "is_query_report": 0,
-   "label": "Financial Summary",
-   "link_count": 0,
-   "link_to": "Financial Summary",
-   "link_type": "DocType",
-   "onboard": 0,
-   "type": "Link"
-  },
-  {
-   "hidden": 0,
-   "is_query_report": 0,
-   "label": "Finiancial Summary Key Financial Health Ratios Master",
-   "link_count": 0,
-   "link_to": "Finiancial Summary Key Financial Health Ratios Master",
-   "link_type": "DocType",
-   "onboard": 0,
-   "type": "Link"
-  },
-  {
-   "hidden": 0,
-   "is_query_report": 0,
-   "label": "Advisory And Recommendations",
-   "link_count": 9,
-   "link_type": "DocType",
-   "onboard": 0,
-   "type": "Card Break"
-  },
-  {
-   "hidden": 0,
-   "is_query_report": 0,
-   "label": "Advisory And Recommendations",
-   "link_count": 0,
-   "link_to": "Advisory And Recommendations",
-   "link_type": "DocType",
-   "onboard": 0,
-   "type": "Link"
-  },
-  {
-   "hidden": 0,
-   "is_query_report": 0,
-   "label": " Key Observations Master",
-   "link_count": 0,
-   "link_to": "Key Observations Master",
-   "link_type": "DocType",
-   "onboard": 0,
-   "type": "Link"
-  },
-  {
-   "hidden": 0,
-   "is_query_report": 0,
-   "label": " Insurance Recommendations Master",
-   "link_count": 0,
-   "link_to": "Insurance Recommendations Master",
-   "link_type": "DocType",
-   "onboard": 0,
-   "type": "Link"
-  },
-  {
-   "hidden": 0,
-   "is_query_report": 0,
-   "label": "Investment And Wealth Building Recommendations Master",
-   "link_count": 0,
-   "link_to": "Investment And Wealth Building Recommendations Master",
-   "link_type": "DocType",
-   "onboard": 0,
-   "type": "Link"
-  },
-  {
-   "hidden": 0,
-   "is_query_report": 0,
-   "label": "Debt Management Recommendations Master",
-   "link_count": 0,
-   "link_to": "Debt Management Recommendations Master",
-   "link_type": "DocType",
-   "onboard": 0,
-   "type": "Link"
-  },
-  {
-   "hidden": 0,
-   "is_query_report": 0,
-   "label": " Tax Planning Recommendations Master",
-   "link_count": 0,
-   "link_to": "Tax Planning Recommendations Master",
-   "link_type": "DocType",
-   "onboard": 0,
-   "type": "Link"
-  },
-  {
-   "hidden": 0,
-   "is_query_report": 0,
-   "label": " Estate Succession And Legal Planning Master",
-   "link_count": 0,
-   "link_to": "Estate Succession And Legal Planning Master",
-   "link_type": "DocType",
-   "onboard": 0,
-   "type": "Link"
-  },
-  {
-   "hidden": 0,
-   "is_query_report": 0,
-   "label": "Goal Planning Implementation Recommendations Master",
-   "link_count": 0,
-   "link_to": "Goal Planning Implementation Recommendations Master",
-   "link_type": "DocType",
-   "onboard": 0,
-   "type": "Link"
-  },
-  {
-   "hidden": 0,
-   "is_query_report": 0,
-   "label": " Advisor SignOff And Next Review Master",
-   "link_count": 0,
-   "link_to": "Advisor SignOff And Next Review Master",
-   "link_type": "DocType",
-   "onboard": 0,
-   "type": "Link"
-  },
-  {
-   "hidden": 0,
-   "is_query_report": 0,
-   "label": "Dashboard",
-   "link_count": 2,
-   "link_type": "DocType",
-   "onboard": 0,
-   "type": "Card Break"
-  },
-  {
-   "hidden": 0,
-   "is_query_report": 0,
-   "label": "Client Assessment Dashboard",
-   "link_count": 0,
-   "link_to": "client-assessment-dashboard",
-   "link_type": "Page",
-   "onboard": 0,
-   "type": "Link"
-  },
-  {
-   "hidden": 0,
-   "is_query_report": 0,
-   "label": "Client Advisor Dashboard",
-   "link_count": 0,
-   "link_to": "client-advisor-dashboard",
-   "link_type": "Page",
-   "onboard": 0,
-   "type": "Link"
   }
  ],
- "modified": "2026-09-21 09:51:11.898804",
+ "modified": "2026-09-23 16:54:51.132134",
  "modified_by": "Administrator",
  "module": "Financial Assessment",
  "name": "Financial Assessment",
