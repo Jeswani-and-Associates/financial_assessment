@@ -41,9 +41,8 @@
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
- "is_submittable": 1,
  "links": [],
- "modified": "2026-09-15 15:42:27.392676",
+ "modified": "2026-09-24 11:53:59.083624",
  "modified_by": "Administrator",
  "module": "Financial Assessment",
  "name": "Finiancial Summary Key Financial Health Ratios Master",
@@ -60,7 +59,6 @@
    "report": 1,
    "role": "System Manager",
    "share": 1,
-   "submit": 1,
    "write": 1
   }
  ],

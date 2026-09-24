@@ -31,9 +31,8 @@
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
- "is_submittable": 1,
  "links": [],
- "modified": "2026-09-16 11:38:43.285990",
+ "modified": "2026-09-24 11:51:01.836521",
  "modified_by": "Administrator",
  "module": "Financial Assessment",
  "name": "Annual Expense And Outflow Master",
@@ -50,7 +49,6 @@
    "report": 1,
    "role": "System Manager",
    "share": 1,
-   "submit": 1,
    "write": 1
   }
  ],
