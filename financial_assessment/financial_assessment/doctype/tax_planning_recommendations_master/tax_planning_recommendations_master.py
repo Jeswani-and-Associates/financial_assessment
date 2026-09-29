@@ -4,6 +4,17 @@
 # import frappe
 from frappe.model.document import Document
 
+from financial_assessment.utils.master_validation import (
+    validate_unique_master_value,
+)
+
 
 class TaxPlanningRecommendationsMaster(Document):
-	pass
+	def validate(self):
+		validate_unique_master_value(
+			doctype="Tax Planning Recommendations Master",
+			fieldname="observation_gap_recommendation",
+			value=self.observation_gap_recommendation,
+			current_name=self.name,
+			label="Observation / Gap / Recommendation",
+		)

@@ -19,6 +19,7 @@
   "mobile_number",
   "date_of_assessment",
   "referral_source_channel",
+  "client_category",
   "column_break2",
   "email_address",
   "next_review_date",
@@ -201,12 +202,18 @@
    "fieldname": "current_status",
    "fieldtype": "Data",
    "label": "Current Status"
+  },
+  {
+   "fieldname": "client_category",
+   "fieldtype": "Select",
+   "label": "Client Category",
+   "options": "Individual\nHUF\nPartnership\nCompany\nLLP"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2026-09-16 16:02:57.358544",
+ "modified": "2026-09-28 18:33:35.934361",
  "modified_by": "Administrator",
  "module": "Financial Assessment",
  "name": "Client Information",
