@@ -128,7 +128,7 @@
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2026-09-09 18:58:32.826909",
+ "modified": "2026-09-29 13:29:45.363335",
  "modified_by": "Administrator",
  "module": "Financial Assessment",
  "name": "Loans And Liabilities",
@@ -144,6 +144,18 @@
    "read": 1,
    "report": 1,
    "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Financial Assessment",
    "share": 1,
    "write": 1
   }
