@@ -1,113 +1,50 @@
 // Copyright (c) 2026, DigiOpen Services Pvt Ltd and contributors
 // For license information, please see license.txt
 
+
 frappe.ui.form.on("Loans And Liabilities", {
+
     refresh(frm) {
+
+        calculate_loan_values(frm);
+        set_loan_header_fields_color(frm);
+
+        // =====================================================
+        // CREATE INSURANCE COVERAGE BUTTON
+        // =====================================================
+
         if (
             !frm.is_new()
             && frm.doc.identifier
             && frm.doc.status === "Loans And Liabilities Completed"
         ) {
+
             frm.add_custom_button(
                 "Create Insurance Coverage",
                 function () {
                     create_insurance_coverage(frm);
                 }
             );
+
         }
+
     },
+
 
     identifier(frm) {
         check_existing_identifier(frm);
-    }
-});
-
-
-function check_existing_identifier(frm) {
-
-    if (!frm.is_new()) {
-        return;
-    }
-
-    if (!frm.doc.identifier) {
-        return;
-    }
-
-    frappe.call({
-        method:
-            "financial_assessment.utils.identifier.get_existing_identifier_record",
-
-        args: {
-            doctype: frm.doctype,
-            identifier: frm.doc.identifier
-        },
-
-        callback: function (r) {
-
-            if (!r.message) {
-                return;
-            }
-
-            const existing_record = r.message;
-
-            frappe.confirm(
-                `A ${frm.doctype} record already exists for identifier <b>${frm.doc.identifier}</b>.<br><br>Do you want to open the existing record?`,
-
-                function () {
-
-                    frappe.set_route(
-                        "Form",
-                        frm.doctype,
-                        existing_record
-                    );
-
-                }
-            );
-        }
-    });
-}
-
-
-function create_insurance_coverage(frm) {
-    if (!frm.doc.identifier) {
-        frappe.msgprint(
-            "Client Information is required before creating Insurance Coverage."
-        );
-        return;
-    }
-
-    frappe.call({
-        method:
-            "financial_assessment.financial_assessment.doctype.loans_and_liabilities.loans_and_liabilities.create_insurance_coverage",
-        args: {
-            docname: frm.doc.name
-        },
-        callback: function (r) {
-            if (r.message) {
-                frappe.set_route(
-                    "Form",
-                    "Insurance Coverage",
-                    r.message
-                );
-            }
-        }
-    });
-}
-
-
-frappe.ui.form.on("Loans And Liabilities", {
-
-    refresh(frm) {
-        calculate_loan_values(frm);
     },
+
 
     validate(frm) {
         calculate_loan_values(frm);
     },
 
+
     loans_and_liabilities_comprehensive_loan_schedule_child_add(frm) {
         calculate_loan_values(frm);
     },
+
 
     loans_and_liabilities_comprehensive_loan_schedule_child_remove(frm) {
         calculate_loan_values(frm);
@@ -128,13 +65,16 @@ frappe.ui.form.on(
             calculate_loan_values(frm);
         },
 
+
         outstanding_principal(frm) {
             calculate_loan_values(frm);
         },
 
+
         monthly_emi(frm) {
             calculate_loan_values(frm);
         },
+
 
         interest_rate(frm) {
             calculate_loan_values(frm);
@@ -161,42 +101,43 @@ function calculate_loan_values(frm) {
     let weighted_interest_numerator = 0;
 
 
-    (frm.doc.loans_and_liabilities_comprehensive_loan_schedule_child || [])
-        .forEach(row => {
+    (
+        frm.doc.loans_and_liabilities_comprehensive_loan_schedule_child || []
+    ).forEach(row => {
 
-            const child_original_loan_amount =
-                flt(row.original_loan_amount);
+        const child_original_loan_amount =
+            flt(row.original_loan_amount);
 
-            const outstanding_principal =
-                flt(row.outstanding_principal);
+        const outstanding_principal =
+            flt(row.outstanding_principal);
 
-            const monthly_emi =
-                flt(row.monthly_emi);
+        const monthly_emi =
+            flt(row.monthly_emi);
 
-            const interest_rate =
-                flt(row.interest_rate);
-
-
-            // Total Original Loan Amount
-            original_loan_amount +=
-                child_original_loan_amount;
+        const interest_rate =
+            flt(row.interest_rate);
 
 
-            // Total Outstanding Debt
-            total_outstanding_debt +=
-                outstanding_principal;
+        // Total Original Loan Amount
+        original_loan_amount +=
+            child_original_loan_amount;
 
 
-            // Total Monthly EMI Burden
-            total_monthly_emi_burden +=
-                monthly_emi;
+        // Total Outstanding Debt
+        total_outstanding_debt +=
+            outstanding_principal;
 
 
-            // Weighted Average Interest Rate
-            weighted_interest_numerator +=
-                outstanding_principal * interest_rate;
+        // Total Monthly EMI Burden
+        total_monthly_emi_burden +=
+            monthly_emi;
 
-        });
+
+        // Weighted Average Interest Rate
+        weighted_interest_numerator +=
+            outstanding_principal * interest_rate;
+
+    });
 
 
     // =====================================================
@@ -298,25 +239,33 @@ function calculate_loan_values(frm) {
         original_loan_amount
     );
 
+
     frm.set_value(
         "total_outstanding_debt",
         total_outstanding_debt
     );
+
 
     frm.set_value(
         "total_monthly_emi_burden",
         total_monthly_emi_burden
     );
 
+
     frm.set_value(
         "total_annual_emi_outflow",
         total_annual_emi_outflow
     );
 
+
     frm.set_value(
         "weighted_average_interest_rate",
         weighted_average_interest_rate
     );
+
+
+    // Apply header colours after values are calculated
+    set_loan_header_fields_color(frm);
 
 }
 
@@ -402,5 +351,273 @@ function set_reference_calculations(
         "net_worth_reference",
         net_worth_reference
     );
+
+
+    // Apply colours after reference values are calculated
+    set_loan_header_fields_color(frm);
+
+}
+
+
+/* =========================================================
+   HEADER FIELD COLOUR STYLING
+   ========================================================= */
+
+function set_loan_header_fields_color(frm) {
+
+    const other_background_color = "#F3E5F5";
+    const other_text_color = "#6A1B9A";
+
+    set_loan_field_color(
+        frm,
+        "original_loan_amount",
+        other_background_color,
+        other_text_color
+    );
+
+    // =====================================================
+    // GROUP 1 - LOAN / DEBT AMOUNT
+    // =====================================================
+
+
+    const loan_background_color = "#E3F2FD";
+    const loan_text_color = "#1565C0";
+
+
+
+
+    set_loan_field_color(
+        frm,
+        "emi_to_income_ratio",
+        loan_background_color,
+        loan_text_color
+    );
+
+
+    set_loan_field_color(
+        frm,
+        "debt_to_asset_ratio",
+        loan_background_color,
+        loan_text_color
+    );
+
+    set_loan_field_color(
+        frm,
+        "weighted_average_interest_rate",
+        loan_background_color,
+        loan_text_color
+    );
+
+
+
+    // =====================================================
+    // GROUP 2 - EMI / DEBT BURDEN
+    // =====================================================
+
+    const emi_background_color = "#FFF3E0";
+    const emi_text_color = "#E65100";
+
+
+    set_loan_field_color(
+        frm,
+        "annual_income_reference",
+        emi_background_color,
+        emi_text_color
+    );
+
+
+    set_loan_field_color(
+        frm,
+        "net_worth_reference",
+        emi_background_color,
+        emi_text_color
+    );
+
+    // =====================================================
+    // GROUP 3 - FINANCIAL REFERENCE
+    // =====================================================
+
+    const reference_background_color = "#E8F5E9";
+    const reference_text_color = "#2E7D32";
+
+    set_loan_field_color(
+        frm,
+        "total_monthly_emi_burden",
+        reference_background_color,
+        reference_text_color
+    );
+
+
+    set_loan_field_color(
+        frm,
+        "total_annual_emi_outflow",
+        reference_background_color,
+        reference_text_color
+    );
+
+
+    set_loan_field_color(
+        frm,
+        "total_outstanding_debt",
+        reference_background_color,
+        reference_text_color
+    );
+
+
+
+
+}
+
+
+/* =========================================================
+   COMMON FIELD COLOUR FUNCTION
+   ========================================================= */
+
+function set_loan_field_color(
+    frm,
+    fieldname,
+    background_color,
+    text_color
+) {
+
+    const field = frm.fields_dict[fieldname];
+
+    if (!field) {
+        return;
+    }
+
+
+    // =====================================================
+    // LABEL COLOR
+    // =====================================================
+
+    field.$wrapper.find(".control-label").css({
+        "color": text_color,
+        "font-weight": "bold"
+    });
+
+
+    // =====================================================
+    // INPUT BACKGROUND + TEXT COLOR
+    // =====================================================
+
+    field.$wrapper.find("input").css({
+        "background-color": background_color,
+        "color": text_color,
+        "font-weight": "bold"
+    });
+
+
+    // =====================================================
+    // READ ONLY FIELD
+    // =====================================================
+
+    field.$wrapper.find(".control-value").css({
+        "background-color": background_color,
+        "color": text_color,
+        "font-weight": "bold",
+        "padding": "6px 8px",
+        "border-radius": "4px"
+    });
+
+}
+
+
+/* =========================================================
+   CHECK EXISTING IDENTIFIER
+   ========================================================= */
+
+function check_existing_identifier(frm) {
+
+    if (!frm.is_new()) {
+        return;
+    }
+
+
+    if (!frm.doc.identifier) {
+        return;
+    }
+
+
+    frappe.call({
+        method:
+            "financial_assessment.utils.identifier.get_existing_identifier_record",
+
+        args: {
+            doctype: frm.doctype,
+            identifier: frm.doc.identifier
+        },
+
+        callback: function (r) {
+
+            if (!r.message) {
+                return;
+            }
+
+
+            const existing_record = r.message;
+
+
+            frappe.confirm(
+                `A ${frm.doctype} record already exists for identifier <b>${frm.doc.identifier}</b>.<br><br>Do you want to open the existing record?`,
+
+                function () {
+
+                    frappe.set_route(
+                        "Form",
+                        frm.doctype,
+                        existing_record
+                    );
+
+                }
+            );
+
+        }
+
+    });
+
+}
+
+
+/* =========================================================
+   CREATE INSURANCE COVERAGE
+   ========================================================= */
+
+function create_insurance_coverage(frm) {
+
+    if (!frm.doc.identifier) {
+
+        frappe.msgprint(
+            "Client Information is required before creating Insurance Coverage."
+        );
+
+        return;
+    }
+
+
+    frappe.call({
+
+        method:
+            "financial_assessment.financial_assessment.doctype.loans_and_liabilities.loans_and_liabilities.create_insurance_coverage",
+
+        args: {
+            docname: frm.doc.name
+        },
+
+        callback: function (r) {
+
+            if (r.message) {
+
+                frappe.set_route(
+                    "Form",
+                    "Insurance Coverage",
+                    r.message
+                );
+
+            }
+
+        }
+
+    });
 
 }

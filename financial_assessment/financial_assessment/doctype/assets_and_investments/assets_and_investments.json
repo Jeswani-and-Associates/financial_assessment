@@ -10,18 +10,20 @@
   "section_break_s1q6",
   "identifier",
   "financial_assets_current_market_value",
-  "financial_assets_invested_value",
   "column_break1",
-  "real_estate_purchase_value",
-  "real_estate_assets_current_market_value",
-  "real_estate_annual_rental_income",
+  "gross_total_assets",
+  "financial_assets_invested_value",
   "section_break5",
+  "real_estate_assets_current_market_value",
+  "real_estate_purchase_value",
+  "real_estate_annual_rental_income",
+  "column_break_4zpf",
   "business_assets_estimated_market_value",
   "business_assets_book_value_of_capital",
   "business_assets_annual_drawings_dividend",
-  "column_break3",
+  "section_break_udar",
   "other_assets_estimated_current_value",
-  "gross_total_assets",
+  "column_break3",
   "status",
   "section_break1",
   "assets_and_investments_financial_assets",
@@ -47,60 +49,61 @@
   {
    "fieldname": "financial_assets_invested_value",
    "fieldtype": "Int",
-   "label": "Financial Assets \u2014 Invested Value (\u20b9)",
+   "label": "Invested Value (\u20b9)",
    "non_negative": 1,
    "read_only": 1
   },
   {
    "fieldname": "real_estate_purchase_value",
    "fieldtype": "Int",
-   "label": "Real Estate Assets \u2014 Purchase Value (\u20b9)",
+   "label": "Purchase Value (\u20b9)",
    "non_negative": 1,
    "read_only": 1
   },
   {
    "fieldname": "real_estate_assets_current_market_value",
    "fieldtype": "Int",
-   "label": "Real Estate Assets Current Market Value (\u20b9)",
+   "label": "Real Estate Assets \u2014 Current Market Value (\u20b9)",
    "non_negative": 1,
    "read_only": 1
   },
   {
    "fieldname": "real_estate_annual_rental_income",
    "fieldtype": "Int",
-   "label": "Real Estate Assets \u2014 Annual Rental Income (\u20b9)",
+   "label": "Annual Rental Income (\u20b9)",
    "non_negative": 1,
    "read_only": 1
   },
   {
    "fieldname": "business_assets_estimated_market_value",
    "fieldtype": "Int",
-   "label": "Business Assets \u2014 Estimated Market Value",
+   "label": "Estimated Market Value",
    "non_negative": 1,
    "read_only": 1
   },
   {
    "fieldname": "business_assets_book_value_of_capital",
    "fieldtype": "Int",
-   "label": "Business Assets \u2014 Book Value of Capital",
+   "label": "Book Value of Capital",
    "non_negative": 1,
    "read_only": 1
   },
   {
    "fieldname": "business_assets_annual_drawings_dividend",
    "fieldtype": "Int",
-   "label": "Business Assets \u2014 Annual Drawings / Dividend (\u20b9)",
+   "label": "Annual Drawings / Dividend (\u20b9)",
    "non_negative": 1,
    "read_only": 1
   },
   {
    "fieldname": "other_assets_estimated_current_value",
    "fieldtype": "Int",
-   "label": "Other Assets \u2014 Estimated Current Value (\u20b9)",
+   "label": "Other Assets",
    "non_negative": 1,
    "read_only": 1
   },
   {
+   "bold": 1,
    "fieldname": "gross_total_assets",
    "fieldtype": "Int",
    "label": "GROSS TOTAL ASSETS",
@@ -172,12 +175,21 @@
    "label": "Status",
    "options": "Draft\nAssets And Investments Completed",
    "read_only": 1
+  },
+  {
+   "fieldname": "column_break_4zpf",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_udar",
+   "fieldtype": "Section Break"
   }
  ],
  "grid_page_length": 50,
+ "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2026-09-29 13:31:27.156576",
+ "modified": "2026-10-01 18:38:01.215088",
  "modified_by": "Administrator",
  "module": "Financial Assessment",
  "name": "Assets And Investments",

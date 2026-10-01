@@ -19,10 +19,10 @@ class InsuranceCoverage(Document):
     def validate(self):
 
         existing_record = find_existing_identifier(
-                self.doctype,
-                self.identifier,
-                self.name
-            )
+            self.doctype,
+            self.identifier,
+            self.name
+        )
 
         if existing_record:
             frappe.throw(
@@ -35,6 +35,7 @@ class InsuranceCoverage(Document):
         self.update_status()
 
     def calculate_insurance_values(self):
+
         life_insurance_sum_assured = 0
         life_insurance_annual_premium = 0
 
@@ -55,12 +56,15 @@ class InsuranceCoverage(Document):
             health_insurance_sum_insured += row.sum_insured or 0
             health_insurance_annual_premium += row.annual_premium or 0
 
+        # General / Other Insurance totals
+        general_other_sum_insured = 0
         general_other_annual_premium = 0
 
         for row in (
             self.insurance_coverage_general_and_other_insurance
             or []
         ):
+            general_other_sum_insured += row.sum_insured or 0
             general_other_annual_premium += row.annual_premium or 0
 
         # Life Insurance totals
@@ -79,6 +83,15 @@ class InsuranceCoverage(Document):
 
         self.health_insurance_annual_premium = (
             health_insurance_annual_premium
+        )
+
+        # General / Other Insurance totals
+        self.other_insurance_sum_insured = (
+            general_other_sum_insured
+        )
+
+        self.other_insurance_annual_premium = (
+            general_other_annual_premium
         )
 
         # Total Life Cover in Force
@@ -115,8 +128,7 @@ class InsuranceCoverage(Document):
             self.life_insurance_adequacy_ratio = 0
 
         # Life Cover Gap / (Surplus)
-        # Excel:
-        # =IFERROR(E15-('A — Income & Expenses'!D24*15),0)
+        # Life Cover - (Annual Income × 15)
         if annual_income:
             self.life_cover_gap_surplus = (
                 life_insurance_sum_assured
@@ -150,6 +162,7 @@ class InsuranceCoverage(Document):
             self.premium_as_percentage_of_annual_income = 0
 
     def update_status(self):
+
         life_policies_completed = False
         health_policies_completed = False
 
@@ -182,6 +195,7 @@ class InsuranceCoverage(Document):
         else:
             self.status = "Draft"
 
+
 # =====================================================
 # CREATE FUTURE GOALS
 # =====================================================
@@ -189,8 +203,13 @@ class InsuranceCoverage(Document):
 @frappe.whitelist()
 def create_future_goals(docname):
 
-    if not frappe.db.exists("Insurance Coverage", docname):
-        frappe.throw("Insurance Coverage record does not exist.")
+    if not frappe.db.exists(
+        "Insurance Coverage",
+        docname
+    ):
+        frappe.throw(
+            "Insurance Coverage record does not exist."
+        )
 
     insurance_coverage = frappe.get_doc(
         "Insurance Coverage",
@@ -227,4 +246,4 @@ def create_future_goals(docname):
 
     future_goals.insert()
 
-    return future_goals.name            
+    return future_goals.name

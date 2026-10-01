@@ -47,14 +47,18 @@
   {
    "fieldname": "sum_insured",
    "fieldtype": "Int",
+   "in_list_view": 1,
    "label": "Sum Insured (\u20b9)",
-   "non_negative": 1
+   "non_negative": 1,
+   "reqd": 1
   },
   {
    "fieldname": "annual_premium",
    "fieldtype": "Int",
+   "in_list_view": 1,
    "label": "Annual Premium (\u20b9)",
-   "non_negative": 1
+   "non_negative": 1,
+   "reqd": 1
   },
   {
    "fieldname": "renewal_date",
@@ -80,7 +84,7 @@
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2026-09-29 17:38:23.821914",
+ "modified": "2026-09-30 17:06:15.482351",
  "modified_by": "Administrator",
  "module": "Financial Assessment",
  "name": "Insurance Coverage General And Other Insurance",

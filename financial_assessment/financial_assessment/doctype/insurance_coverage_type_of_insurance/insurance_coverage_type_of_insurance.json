@@ -28,9 +28,10 @@
   }
  ],
  "grid_page_length": 50,
+ "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2026-09-29 13:28:29.410967",
+ "modified": "2026-10-01 15:00:19.047328",
  "modified_by": "Administrator",
  "module": "Financial Assessment",
  "name": "Insurance Coverage Type of Insurance",

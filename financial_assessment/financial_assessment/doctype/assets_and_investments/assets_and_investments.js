@@ -9,6 +9,7 @@ frappe.ui.form.on("Assets And Investments", {
 
     refresh(frm) {
         calculate_asset_values(frm);
+        set_asset_header_fields_color(frm);
 
         // =====================================================
         // CREATE LOANS AND LIABILITIES BUTTON
@@ -60,7 +61,6 @@ frappe.ui.form.on("Assets And Investments", {
             );
 
         }
-
 
     },
 
@@ -334,8 +334,181 @@ function calculate_asset_values(frm) {
         "gross_total_assets",
         gross_total_assets
     );
+
+
+    // Apply colours after setting calculated values
+    set_asset_header_fields_color(frm);
 }
 
+
+/* =========================================================
+   HEADER FIELD COLOUR STYLING
+   ========================================================= */
+
+function set_asset_header_fields_color(frm) {
+
+    // =====================================================
+    // FINANCIAL ASSETS
+    // Light Teal Background
+    // Dark Teal Text
+    // =====================================================
+
+    set_asset_field_color(
+        frm,
+        "financial_assets_invested_value",
+        "#E0F2F1",
+        "#00695C"
+    );
+
+    set_asset_field_color(
+        frm,
+        "financial_assets_current_market_value",
+        "#E0F2F1",
+        "#00695C"
+    );
+
+
+    // =====================================================
+    // REAL ESTATE ASSETS
+    // Light Green Background
+    // Dark Green Text
+    // =====================================================
+
+    set_asset_field_color(
+        frm,
+        "real_estate_purchase_value",
+        "#E8F5E9",
+        "#2E7D32"
+    );
+
+    set_asset_field_color(
+        frm,
+        "real_estate_assets_current_market_value",
+        "#E8F5E9",
+        "#2E7D32"
+    );
+
+    set_asset_field_color(
+        frm,
+        "real_estate_annual_rental_income",
+        "#E8F5E9",
+        "#2E7D32"
+    );
+
+
+    // =====================================================
+    // BUSINESS ASSETS
+    // Light Orange Background
+    // Dark Orange Text
+    // =====================================================
+
+    set_asset_field_color(
+        frm,
+        "business_assets_book_value_of_capital",
+        "#FFF3E0",
+        "#E65100"
+    );
+
+    set_asset_field_color(
+        frm,
+        "business_assets_estimated_market_value",
+        "#FFF3E0",
+        "#E65100"
+    );
+
+    set_asset_field_color(
+        frm,
+        "business_assets_annual_drawings_dividend",
+        "#FFF3E0",
+        "#E65100"
+    );
+
+
+    // =====================================================
+    // OTHER ASSETS
+    // Light Purple Background
+    // Dark Purple Text
+    // =====================================================
+
+    set_asset_field_color(
+        frm,
+        "other_assets_estimated_current_value",
+        "#F3E5F5",
+        "#6A1B9A"
+    );
+
+
+    // =====================================================
+    // GROSS TOTAL ASSETS
+    // Light Blue Background
+    // Dark Blue Text
+    // =====================================================
+
+    set_asset_field_color(
+        frm,
+        "gross_total_assets",
+        "#E3F2FD",
+        "#003366"
+    );
+}
+
+
+/* =========================================================
+   COMMON FIELD COLOUR FUNCTION
+   ========================================================= */
+
+function set_asset_field_color(
+    frm,
+    fieldname,
+    background_color,
+    text_color
+) {
+
+    const field = frm.fields_dict[fieldname];
+
+    if (!field) {
+        return;
+    }
+
+
+    // =====================================================
+    // LABEL COLOR
+    // =====================================================
+
+    field.$wrapper.find(".control-label").css({
+        "color": text_color,
+        "font-weight": "bold"
+    });
+
+
+    // =====================================================
+    // INPUT BACKGROUND + TEXT COLOR
+    // =====================================================
+
+    field.$wrapper.find("input").css({
+        "background-color": background_color,
+        "color": text_color,
+        "font-weight": "bold"
+    });
+
+
+    // =====================================================
+    // READ ONLY FIELD
+    // =====================================================
+
+    field.$wrapper.find(".control-value").css({
+        "background-color": background_color,
+        "color": text_color,
+        "font-weight": "bold",
+        "padding": "6px 8px",
+        "border-radius": "4px"
+    });
+}
+
+
+/* =========================================================
+   CHECK EXISTING IDENTIFIER
+   ========================================================= */
 
 function check_existing_identifier(frm) {
 

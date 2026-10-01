@@ -11,8 +11,9 @@
   "observation_gap_recommendation",
   "proposed_action_solution",
   "priority",
+  "column_break_wx9v",
   "target_timeline",
-  "resp_party",
+  "concern_party",
   "status"
  ],
  "fields": [
@@ -38,25 +39,29 @@
   },
   {
    "fieldname": "target_timeline",
-   "fieldtype": "Data",
+   "fieldtype": "Date",
    "label": "Target Timeline"
-  },
-  {
-   "fieldname": "resp_party",
-   "fieldtype": "Data",
-   "label": "Resp. Party"
   },
   {
    "fieldname": "status",
    "fieldtype": "Data",
    "label": "Status"
+  },
+  {
+   "fieldname": "column_break_wx9v",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "concern_party",
+   "fieldtype": "Data",
+   "label": "Concern Party"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2026-09-16 12:59:17.342501",
+ "modified": "2026-09-30 17:10:39.571538",
  "modified_by": "Administrator",
  "module": "Financial Assessment",
  "name": "Investment And Wealth Building Recommendations Child",

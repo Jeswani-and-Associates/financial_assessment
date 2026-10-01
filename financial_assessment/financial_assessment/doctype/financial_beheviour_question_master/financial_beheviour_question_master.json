@@ -30,9 +30,10 @@
   }
  ],
  "grid_page_length": 50,
+ "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2026-09-29 13:32:51.395043",
+ "modified": "2026-10-01 14:47:31.268569",
  "modified_by": "Administrator",
  "module": "Financial Assessment",
  "name": "Financial Beheviour Question Master",

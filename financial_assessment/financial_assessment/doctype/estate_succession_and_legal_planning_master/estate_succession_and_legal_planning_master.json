@@ -33,9 +33,10 @@
   }
  ],
  "grid_page_length": 50,
+ "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2026-09-29 13:24:43.370153",
+ "modified": "2026-10-01 15:04:18.301461",
  "modified_by": "Administrator",
  "module": "Financial Assessment",
  "name": "Estate Succession And Legal Planning Master",

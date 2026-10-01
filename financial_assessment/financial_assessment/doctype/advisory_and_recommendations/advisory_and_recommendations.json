@@ -179,9 +179,10 @@
   }
  ],
  "grid_page_length": 50,
+ "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2026-09-29 13:26:12.571077",
+ "modified": "2026-10-01 15:03:09.539321",
  "modified_by": "Administrator",
  "module": "Financial Assessment",
  "name": "Advisory And Recommendations",

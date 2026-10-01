@@ -11,28 +11,31 @@
   "identifier",
   "column_break0",
   "status",
+  "column_break_grgv",
+  "net_worth",
   "section_break0",
-  "financial_assets_current_market_value",
-  "real_estate_assets_current_market_value",
-  "business_assets_estimated_market_value",
-  "column_break1",
-  "other_assets",
   "total_assets",
+  "financial_assets_current_market_value",
+  "other_assets",
+  "column_break1",
   "total_outstanding_loans",
+  "real_estate_assets_current_market_value",
   "column_break2",
   "total_liabilities",
-  "net_worth",
+  "business_assets_estimated_market_value",
   "section_break1",
   "total_annual_income",
-  "total_annual_expenses",
-  "annual_surplus_deficit",
-  "column_break3",
   "monthly_surplus_deficit",
-  "savings_rate",
-  "emergency_fund_target",
-  "column_break",
   "total_monthly_emi",
+  "column_break3",
+  "total_annual_expenses",
+  "savings_rate",
+  "column_break",
+  "annual_surplus_deficit",
+  "emergency_fund_target",
   "section_break2",
+  "column_break_05hz",
+  "note",
   "finiancial_summary_key_financial_health_ratios_child"
  ],
  "fields": [
@@ -95,7 +98,7 @@
   {
    "fieldname": "total_outstanding_loans",
    "fieldtype": "Int",
-   "label": "Total Outstanding Loans",
+   "label": "TOTAL OUTSTANDING LOANS",
    "read_only": 1
   },
   {
@@ -182,12 +185,27 @@
    "fieldtype": "Table",
    "label": "Finiancial Summary Key Financial Health Ratios Child",
    "options": "Finiancial Summary Key Financial Health Ratios Child"
+  },
+  {
+   "fieldname": "column_break_05hz",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "note",
+   "fieldtype": "Section Break",
+   "label": "This dashboard auto-populates from Sheets Income And Expenses, Assets And Investments, Loans And Liabilities , Insurance Coverage. Enter data in those sheets first. (Observations) is for advisor to fill post-analysis.",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_grgv",
+   "fieldtype": "Column Break"
   }
  ],
  "grid_page_length": 50,
+ "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2026-09-29 13:26:44.008226",
+ "modified": "2026-10-01 18:29:44.477708",
  "modified_by": "Administrator",
  "module": "Financial Assessment",
  "name": "Financial Summary",

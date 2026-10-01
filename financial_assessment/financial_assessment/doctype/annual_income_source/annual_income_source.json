@@ -45,14 +45,15 @@
    "fieldname": "income_source",
    "fieldtype": "Link",
    "label": "Income Source",
-   "options": "Annual Income Source Master"
+   "options": "Annual Income Source Master",
+   "reqd": 1
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2026-09-07 17:15:04.710407",
+ "modified": "2026-09-30 10:32:56.848160",
  "modified_by": "Administrator",
  "module": "Financial Assessment",
  "name": "Annual Income Source",

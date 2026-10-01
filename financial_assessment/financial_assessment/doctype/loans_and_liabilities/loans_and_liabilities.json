@@ -9,19 +9,21 @@
  "field_order": [
   "section_break_gpuj",
   "identifier",
-  "original_loan_amount",
   "total_outstanding_debt",
-  "column_break1",
-  "total_monthly_emi_burden",
-  "total_annual_emi_outflow",
   "emi_to_income_ratio",
-  "debt_to_asset_ratio",
-  "column_break2",
-  "weighted_average_interest_rate",
+  "original_loan_amount",
+  "column_break1",
   "annual_income_reference",
-  "net_worth_reference",
+  "total_monthly_emi_burden",
+  "debt_to_asset_ratio",
   "status",
+  "column_break2",
+  "net_worth_reference",
+  "total_annual_emi_outflow",
+  "weighted_average_interest_rate",
   "section_break",
+  "column_break_8s3b",
+  "note",
   "loans_and_liabilities_comprehensive_loan_schedule_child"
  ],
  "fields": [
@@ -123,12 +125,22 @@
    "label": "Status",
    "options": "Draft\nLoans And Liabilities Completed",
    "read_only": 1
+  },
+  {
+   "fieldname": "column_break_8s3b",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "note",
+   "fieldtype": "Section Break",
+   "label": "Benchmark: EMI/Income \u2264 40% = Healthy | 40\u201350% = Caution | > 50% = Stress. Unsecured high-interest debt (CC, PL) requires priority closure."
   }
  ],
  "grid_page_length": 50,
+ "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2026-09-29 13:29:45.363335",
+ "modified": "2026-10-01 16:15:14.090603",
  "modified_by": "Administrator",
  "module": "Financial Assessment",
  "name": "Loans And Liabilities",

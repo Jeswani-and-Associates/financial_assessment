@@ -9,16 +9,18 @@
  "field_order": [
   "amended_from",
   "identifier",
-  "total_annual_income",
-  "total_annual_expenses",
-  "column_break1",
   "annual_surplus_deficit",
-  "monthly_surplus_deficit",
-  "status",
-  "column_break2",
   "savings_rate",
+  "column_break1",
+  "total_annual_income",
+  "monthly_surplus_deficit",
   "emergency_fund_target",
+  "column_break2",
+  "total_annual_expenses",
+  "status",
   "section_break3",
+  "column_break_4",
+  "note",
   "annual_income_source_child",
   "section_break4",
   "annual_expense_and_outflow"
@@ -119,12 +121,22 @@
    "label": "Status",
    "options": "Draft\nIncome And Expenses Completed",
    "read_only": 1
+  },
+  {
+   "fieldname": "note",
+   "fieldtype": "Section Break",
+   "label": "Benchmark: Savings Rate \u2265 30% = Healthy | 15\u201329% = Needs improvement | < 15% = Critical intervention required"
+  },
+  {
+   "fieldname": "column_break_4",
+   "fieldtype": "Column Break"
   }
  ],
  "grid_page_length": 50,
+ "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2026-09-29 13:31:40.345873",
+ "modified": "2026-10-01 15:23:15.769624",
  "modified_by": "Administrator",
  "module": "Financial Assessment",
  "name": "Income And Expenses",

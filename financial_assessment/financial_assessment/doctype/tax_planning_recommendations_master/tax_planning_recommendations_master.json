@@ -33,9 +33,10 @@
   }
  ],
  "grid_page_length": 50,
+ "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2026-09-29 13:24:55.505181",
+ "modified": "2026-10-01 15:04:06.327296",
  "modified_by": "Administrator",
  "module": "Financial Assessment",
  "name": "Tax Planning Recommendations Master",

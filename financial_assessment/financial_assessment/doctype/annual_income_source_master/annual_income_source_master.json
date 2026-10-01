@@ -29,9 +29,10 @@
   }
  ],
  "grid_page_length": 50,
+ "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2026-09-29 13:32:13.354018",
+ "modified": "2026-10-01 14:53:43.021646",
  "modified_by": "Administrator",
  "module": "Financial Assessment",
  "name": "Annual Income Source Master",

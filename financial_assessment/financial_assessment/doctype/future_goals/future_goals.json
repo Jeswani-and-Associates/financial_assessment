@@ -9,10 +9,19 @@
  "field_order": [
   "section_break_pjzn",
   "identifier",
+  "total_current_cost_today",
+  "total_existing_corpus_savings",
   "column_break",
   "status",
-  "section_break1",
+  "total_future_value_required",
+  "total_shortfall__surplus",
+  "total_monthly_sip_required",
+  "section_break_ftvf",
+  "note1",
+  "section_break_cdsh",
   "future_goal_based_financial_planning_matrix_child",
+  "column_break_iwqy",
+  "note2",
   "section_break2",
   "future_goals_additional_plans_and_intentions_child"
  ],
@@ -40,10 +49,6 @@
    "fieldtype": "Column Break"
   },
   {
-   "fieldname": "section_break1",
-   "fieldtype": "Section Break"
-  },
-  {
    "fieldname": "future_goals_additional_plans_and_intentions_child",
    "fieldtype": "Table",
    "label": "Future Goals Additional Plans And Intentions Child",
@@ -58,12 +63,74 @@
    "fieldtype": "Table",
    "label": "Future Goal Based Financial Planning Matrix Child",
    "options": "Future Goal Based Financial Planning Matrix Child"
+  },
+  {
+   "fieldname": "column_break_iwqy",
+   "fieldtype": "Section Break"
+  },
+  {
+   "bold": 1,
+   "default": "Priority: 1=Must Do Immediately | 2=High Priority | 3=Medium | 4=Nice to Have. Assumed Return: Equity 12% | Hybrid 9% | Debt 7% | Conservative 6%",
+   "fieldname": "note2",
+   "fieldtype": "Long Text",
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_break_ftvf",
+   "fieldtype": "Section Break"
+  },
+  {
+   "bold": 1,
+   "default": "FV = Current Cost \u00d7 (1 + Inflation Rate)^Years Remaining. SIP = PMT(Return/12, Months, -Existing Corpus, Target FV). Adjust rates per client discussion.",
+   "fieldname": "note1",
+   "fieldtype": "Long Text",
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_break_cdsh",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "total_current_cost_today",
+   "fieldtype": "Int",
+   "label": "Total Current Cost Today",
+   "non_negative": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "total_future_value_required",
+   "fieldtype": "Int",
+   "label": "Total Future Value Required",
+   "non_negative": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "total_existing_corpus_savings",
+   "fieldtype": "Int",
+   "label": "Total Existing Corpus / Savings",
+   "non_negative": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "total_shortfall__surplus",
+   "fieldtype": "Int",
+   "label": "Total Shortfall / (Surplus)",
+   "non_negative": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "total_monthly_sip_required",
+   "fieldtype": "Int",
+   "label": "Total Monthly SIP Required",
+   "non_negative": 1,
+   "read_only": 1
   }
  ],
  "grid_page_length": 50,
+ "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2026-09-29 13:27:53.678580",
+ "modified": "2026-10-01 18:15:52.862205",
  "modified_by": "Administrator",
  "module": "Financial Assessment",
  "name": "Future Goals",

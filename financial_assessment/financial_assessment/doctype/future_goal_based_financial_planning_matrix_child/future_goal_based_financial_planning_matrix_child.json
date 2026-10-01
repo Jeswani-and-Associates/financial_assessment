@@ -114,15 +114,17 @@
   },
   {
    "fieldname": "priority",
-   "fieldtype": "Data",
-   "label": "Priority"
+   "fieldtype": "Select",
+   "label": "Priority",
+   "options": "Must Do Immediately\nHigh Priority\nMedium\nNice to Have",
+   "reqd": 1
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2026-09-29 17:40:55.961684",
+ "modified": "2026-09-30 15:04:51.333313",
  "modified_by": "Administrator",
  "module": "Financial Assessment",
  "name": "Future Goal Based Financial Planning Matrix Child",

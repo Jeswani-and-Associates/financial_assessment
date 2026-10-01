@@ -28,9 +28,10 @@
   }
  ],
  "grid_page_length": 50,
+ "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2026-09-29 13:30:33.251416",
+ "modified": "2026-10-01 14:57:43.606325",
  "modified_by": "Administrator",
  "module": "Financial Assessment",
  "name": "Assets And Investments Financial Assets Master",

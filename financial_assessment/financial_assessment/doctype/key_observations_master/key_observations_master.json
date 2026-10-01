@@ -33,9 +33,10 @@
   }
  ],
  "grid_page_length": 50,
+ "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2026-09-29 13:25:53.541384",
+ "modified": "2026-10-01 15:03:22.541097",
  "modified_by": "Administrator",
  "module": "Financial Assessment",
  "name": "Key Observations Master",

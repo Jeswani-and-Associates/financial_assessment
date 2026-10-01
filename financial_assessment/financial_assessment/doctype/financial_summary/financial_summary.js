@@ -20,6 +20,10 @@ frappe.ui.form.on("Financial Summary", {
             );
         }
 
+        // Apply header field colors
+        set_financial_summary_header_fields_color(frm);
+
+
         // Create Advisory And Recommendations button
         if (!frm.is_new() && frm.doc.identifier) {
 
@@ -62,7 +66,6 @@ frappe.ui.form.on("Financial Summary", {
             );
         }
     },
-
 
 
     // ============================================================
@@ -201,6 +204,10 @@ frappe.ui.form.on("Financial Summary", {
                 "total_monthly_emi",
                 values.total_monthly_emi
             );
+
+
+            // Re-apply colors after values are populated
+            set_financial_summary_header_fields_color(frm);
 
         });
     },
@@ -349,11 +356,11 @@ frappe.ui.form.on("Financial Summary", {
 
             {
 
-                filters: {
+                // filters: {
 
-                    docstatus: 1
+                //     docstatus: 1
 
-                },
+                // },
 
                 fields: [
 
@@ -436,6 +443,240 @@ frappe.ui.form.on("Financial Summary", {
 
 });
 
+
+// ============================================================
+// FINANCIAL SUMMARY HEADER FIELD COLOR STYLING
+// ============================================================
+
+function set_financial_summary_header_fields_color(frm) {
+
+
+    // ============================================================
+    // GROUP 1 - ASSETS
+    // Light Blue / Dark Blue
+    // ============================================================
+
+    const assets_background_color = "#E3F2FD";
+    const assets_text_color = "#1565C0";
+
+    set_financial_summary_field_color(
+        frm,
+        "total_outstanding_loans",
+        assets_background_color,
+        assets_text_color
+    );
+
+
+    set_financial_summary_field_color(
+        frm,
+        "total_liabilities",
+        assets_background_color,
+        assets_text_color
+    );
+
+
+    set_financial_summary_field_color(
+        frm,
+        "financial_assets_current_market_value",
+        assets_background_color,
+        assets_text_color
+    );
+
+
+    set_financial_summary_field_color(
+        frm,
+        "real_estate_assets_current_market_value",
+        assets_background_color,
+        assets_text_color
+    );
+
+
+    set_financial_summary_field_color(
+        frm,
+        "business_assets_estimated_market_value",
+        assets_background_color,
+        assets_text_color
+    );
+
+
+    set_financial_summary_field_color(
+        frm,
+        "other_assets",
+        assets_background_color,
+        assets_text_color
+    );
+
+
+    set_financial_summary_field_color(
+        frm,
+        "total_assets",
+        assets_background_color,
+        assets_text_color
+    );
+
+
+    // ============================================================
+    // GROUP 2 - LIABILITIES & NET WORTH
+    // Light Orange / Dark Orange
+    // ============================================================
+
+    const liabilities_background_color = "#FFF3E0";
+    const liabilities_text_color = "#E65100";
+
+    set_financial_summary_field_color(
+        frm,
+        "net_worth",
+        liabilities_background_color,
+        liabilities_text_color
+    );
+
+
+    // ============================================================
+    // GROUP 3 - INCOME & CASH FLOW
+    // Light Green / Dark Green
+    // ============================================================
+
+    const income_background_color = "#E8F5E9";
+    const income_text_color = "#2E7D32";
+
+
+    set_financial_summary_field_color(
+        frm,
+        "total_annual_income",
+        income_background_color,
+        income_text_color
+    );
+
+
+    set_financial_summary_field_color(
+        frm,
+        "total_annual_expenses",
+        income_background_color,
+        income_text_color
+    );
+
+
+    set_financial_summary_field_color(
+        frm,
+        "annual_surplus_deficit",
+        income_background_color,
+        income_text_color
+    );
+
+
+    set_financial_summary_field_color(
+        frm,
+        "monthly_surplus_deficit",
+        income_background_color,
+        income_text_color
+    );
+
+    set_financial_summary_field_color(
+        frm,
+        "savings_rate",
+        income_background_color,
+        income_text_color
+    );
+
+
+    set_financial_summary_field_color(
+        frm,
+        "emergency_fund_target",
+        income_background_color,
+        income_text_color
+    );
+
+     set_financial_summary_field_color(
+        frm,
+        "total_monthly_emi",
+        income_background_color,
+        income_text_color
+    );
+
+
+
+    // ============================================================
+    // GROUP 4 - SAVINGS & EMERGENCY PLANNING
+    // Light Teal / Dark Teal
+    // ============================================================
+
+    const savings_background_color = "#E0F2F1";
+    const savings_text_color = "#00695C";
+
+
+    
+
+    // ============================================================
+    // GROUP 5 - EMI / DEBT BURDEN
+    // Light Purple / Dark Purple
+    // ============================================================
+
+    const emi_background_color = "#F3E5F5";
+    const emi_text_color = "#6A1B9A";
+
+
+   
+
+}
+
+
+// ============================================================
+// COMMON FIELD COLOR FUNCTION
+// ============================================================
+
+function set_financial_summary_field_color(
+    frm,
+    fieldname,
+    background_color,
+    text_color
+) {
+
+    const field = frm.fields_dict[fieldname];
+
+    if (!field) {
+        return;
+    }
+
+
+    // ============================================================
+    // LABEL
+    // ============================================================
+
+    field.$wrapper.find(".control-label").css({
+        "color": text_color,
+        "font-weight": "bold"
+    });
+
+
+    // ============================================================
+    // INPUT FIELD
+    // ============================================================
+
+    field.$wrapper.find("input").css({
+        "background-color": background_color,
+        "color": text_color,
+        "font-weight": "bold"
+    });
+
+
+    // ============================================================
+    // READ ONLY / CONTROL VALUE
+    // ============================================================
+
+    field.$wrapper.find(".control-value").css({
+        "background-color": background_color,
+        "color": text_color,
+        "font-weight": "bold",
+        "padding": "6px 8px",
+        "border-radius": "4px"
+    });
+
+}
+
+
+// ============================================================
+// CHECK EXISTING IDENTIFIER
+// ============================================================
 
 function check_existing_identifier(frm) {
 

@@ -9,23 +9,31 @@
  "field_order": [
   "section_break_kyxb",
   "identifier",
-  "life_insurance_sum_assured",
-  "life_insurance_annual_premium",
-  "column_break1",
-  "health_insurance_annual_premium",
-  "health_insurance_sum_insured",
-  "total_life_cover_in_force",
-  "column_break2",
-  "annual_income",
   "recommended_life_cover",
+  "life_insurance_sum_assured",
+  "column_break_0erp",
+  "total_life_cover_in_force",
   "life_insurance_adequacy_ratio",
+  "life_insurance_annual_premium",
+  "column_break_ne8r",
+  "annual_income",
   "life_cover_gap_surplus",
-  "column_break3",
+  "column_break2",
   "total_health_cover_all_policies",
+  "health_insurance_sum_insured",
+  "column_break1",
   "total_annual_insurance_premiums",
+  "health_insurance_annual_premium",
+  "column_break_2n1e",
   "premium_as_percentage_of_annual_income",
   "status",
   "column_break4",
+  "other_insurance_sum_insured",
+  "column_break3",
+  "other_insurance_annual_premium",
+  "section_break_5up3",
+  "column_break_tupr",
+  "note",
   "insurance_coverage_life_insurance_policies",
   "section_break1",
   "insurance_coverage_health_insurance_policies",
@@ -175,12 +183,52 @@
    "fieldtype": "Link",
    "label": "Client Information",
    "options": "Client Information"
+  },
+  {
+   "fieldname": "other_insurance_sum_insured",
+   "fieldtype": "Int",
+   "label": "Other Insurance - Sum Insured (\u20b9)",
+   "non_negative": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "other_insurance_annual_premium",
+   "fieldtype": "Int",
+   "label": "Other Insurance - Annual Premium (\u20b9)",
+   "non_negative": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_tupr",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "note",
+   "fieldtype": "Section Break",
+   "label": "HLV Method: Ideal Life Cover = Annual Income \u00d7 15 (minimum \u00d7 10). Recommended Health Cover = Min. \u20b910L base + Super Top-Up for family."
+  },
+  {
+   "fieldname": "column_break_0erp",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_5up3",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "column_break_ne8r",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_2n1e",
+   "fieldtype": "Column Break"
   }
  ],
  "grid_page_length": 50,
+ "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2026-09-29 13:29:30.174204",
+ "modified": "2026-10-01 18:09:24.755876",
  "modified_by": "Administrator",
  "module": "Financial Assessment",
  "name": "Insurance Coverage",
