@@ -1,13 +1,18 @@
 {
  "app": "Financial Assessment",
- "charts": [],
- "content": "[{\"id\":\"LdXPSvRK_I\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Welcome to the Financial Assessment workspace</span>\",\"col\":12}},{\"id\":\"km10_-4ucQ\",\"type\":\"card\",\"data\":{\"card_name\":\"Masters\",\"col\":4}},{\"id\":\"QTKi00AvY7\",\"type\":\"card\",\"data\":{\"card_name\":\" Client Information\",\"col\":4}},{\"id\":\"6DRGQ4g0Y6\",\"type\":\"card\",\"data\":{\"card_name\":\"Income & Expenses\",\"col\":4}},{\"id\":\"hvdJEZk1rg\",\"type\":\"card\",\"data\":{\"card_name\":\"Assets And Investments\",\"col\":4}},{\"id\":\"VomXKII7ER\",\"type\":\"card\",\"data\":{\"card_name\":\"Loans and Liabilities\",\"col\":4}},{\"id\":\"Lb0dHiLgqs\",\"type\":\"card\",\"data\":{\"card_name\":\"Insurance Coverage\",\"col\":4}},{\"id\":\"PsX8R2RbqN\",\"type\":\"card\",\"data\":{\"card_name\":\"Future Goals \",\"col\":4}},{\"id\":\"Lc5y8qUXqW\",\"type\":\"card\",\"data\":{\"card_name\":\"Financial Summary \",\"col\":4}},{\"id\":\"PMm6h2uH20\",\"type\":\"card\",\"data\":{\"card_name\":\"Advisory And Recommendations\",\"col\":4}},{\"id\":\"ysAY5aulFH\",\"type\":\"card\",\"data\":{\"card_name\":\"Dashboard\",\"col\":4}}]",
+ "charts": [
+  {
+   "chart_name": "Clients by Advisor",
+   "label": "Clients by Advisor"
+  }
+ ],
+ "content": "[{\"id\":\"LdXPSvRK_I\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Welcome to the Financial Assessment workspace</span>\",\"col\":12}},{\"id\":\"GgbgO-BRii\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Total Clients\",\"col\":4}},{\"id\":\"bPzTcySl4o\",\"type\":\"chart\",\"data\":{\"chart_name\":\"Clients by Advisor\",\"col\":12}},{\"id\":\"km10_-4ucQ\",\"type\":\"card\",\"data\":{\"card_name\":\"Masters\",\"col\":4}},{\"id\":\"QTKi00AvY7\",\"type\":\"card\",\"data\":{\"card_name\":\" Client Information\",\"col\":4}},{\"id\":\"6DRGQ4g0Y6\",\"type\":\"card\",\"data\":{\"card_name\":\"Income & Expenses\",\"col\":4}},{\"id\":\"hvdJEZk1rg\",\"type\":\"card\",\"data\":{\"card_name\":\"Assets And Investments\",\"col\":4}},{\"id\":\"VomXKII7ER\",\"type\":\"card\",\"data\":{\"card_name\":\"Loans and Liabilities\",\"col\":4}},{\"id\":\"Lb0dHiLgqs\",\"type\":\"card\",\"data\":{\"card_name\":\"Insurance Coverage\",\"col\":4}},{\"id\":\"PsX8R2RbqN\",\"type\":\"card\",\"data\":{\"card_name\":\"Future Goals \",\"col\":4}},{\"id\":\"Lc5y8qUXqW\",\"type\":\"card\",\"data\":{\"card_name\":\"Financial Summary \",\"col\":4}},{\"id\":\"PMm6h2uH20\",\"type\":\"card\",\"data\":{\"card_name\":\"Advisory And Recommendations\",\"col\":4}},{\"id\":\"ysAY5aulFH\",\"type\":\"card\",\"data\":{\"card_name\":\"Dashboard\",\"col\":4}}]",
  "creation": "2026-09-23 15:46:30.210951",
  "custom_blocks": [],
  "docstatus": 0,
  "doctype": "Workspace",
  "hide_custom": 0,
- "idx": 0,
+ "idx": 6,
  "indicator_color": "green",
  "is_hidden": 0,
  "label": "Financial Assessment",
@@ -349,35 +354,6 @@
   {
    "hidden": 0,
    "is_query_report": 0,
-   "label": "Dashboard",
-   "link_count": 2,
-   "link_type": "DocType",
-   "onboard": 0,
-   "type": "Card Break"
-  },
-  {
-   "hidden": 0,
-   "is_query_report": 0,
-   "label": "Client Assessment Dashboard ",
-   "link_count": 0,
-   "link_to": "client-assessment-dashboard",
-   "link_type": "Page",
-   "onboard": 0,
-   "type": "Link"
-  },
-  {
-   "hidden": 0,
-   "is_query_report": 0,
-   "label": "Client Advisor Dashboard ",
-   "link_count": 0,
-   "link_to": "client-advisor-dashboard",
-   "link_type": "Page",
-   "onboard": 0,
-   "type": "Link"
-  },
-  {
-   "hidden": 0,
-   "is_query_report": 0,
    "label": "Insurance Coverage",
    "link_count": 4,
    "link_type": "DocType",
@@ -452,13 +428,57 @@
    "link_type": "DocType",
    "onboard": 0,
    "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Dashboard",
+   "link_count": 3,
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Client Assessment Dashboard ",
+   "link_count": 0,
+   "link_to": "client-assessment-dashboard",
+   "link_type": "Page",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Client Advisor Dashboard ",
+   "link_count": 0,
+   "link_to": "client-advisor-dashboard",
+   "link_type": "Page",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Live Financial Assessment",
+   "link_count": 0,
+   "link_to": "live-financial-assessment",
+   "link_type": "Page",
+   "onboard": 0,
+   "type": "Link"
   }
  ],
- "modified": "2026-09-29 17:55:49.078066",
+ "modified": "2026-10-08 11:07:27.852832",
  "modified_by": "Administrator",
  "module": "Financial Assessment",
  "name": "Financial Assessment",
- "number_cards": [],
+ "number_cards": [
+  {
+   "label": "Total Clients",
+   "number_card_name": "Total Clients"
+  }
+ ],
  "owner": "Administrator",
  "public": 1,
  "quick_lists": [],

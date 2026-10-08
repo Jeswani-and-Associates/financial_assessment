@@ -149,6 +149,18 @@
    "type": "Link"
   },
   {
+   "child": 1,
+   "collapsible": 1,
+   "icon": "table",
+   "indent": 0,
+   "keep_closed": 0,
+   "label": "Live Financial Assessment",
+   "link_to": "live-financial-assessment",
+   "link_type": "Page",
+   "show_arrow": 0,
+   "type": "Link"
+  },
+  {
    "child": 0,
    "collapsible": 1,
    "icon": "list",
@@ -193,7 +205,7 @@
    "type": "Link"
   }
  ],
- "modified": "2026-10-05 17:34:46.131689",
+ "modified": "2026-10-08 12:10:46.887124",
  "modified_by": "Administrator",
  "module": "Financial Assessment",
  "name": "Financial Assessment",
