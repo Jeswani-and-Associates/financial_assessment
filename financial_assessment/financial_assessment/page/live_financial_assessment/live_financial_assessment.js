@@ -375,12 +375,157 @@ frappe.pages["live-financial-assessment"].on_page_load = function (wrapper) {
 
     page.main.on("input", on);
 
-    // =========================================================
-    // PRINT / SAVE AS PDF
+        // =========================================================
+    // PRINT / SAVE AS PDF — matches reference PDF exactly
     // =========================================================
     $("#print").on("click", function () {
-        window.print();
+        printReport();
     });
+
+    function printReport() {
+        // 1. Clone the live <main> element (fully rendered)
+        const mainEl = page.main.find("main").get(0);
+        if (!mainEl) return;
+
+        const clone = mainEl.cloneNode(true);
+
+        // 2. Remove everything marked as non-printable
+        //    (this strips the left sidebar AND the Reset/Print buttons —
+        //    matching the reference PDF, which shows only results)
+        clone.querySelectorAll(".noprint").forEach(el => el.remove());
+
+        // 3. Mark the "Retirement outlook" card so we can force a page break
+        //    before it in print CSS
+        clone.querySelectorAll(".card").forEach(card => {
+            const h2 = card.querySelector("h2");
+            if (h2 && h2.textContent.trim() === "Retirement outlook") {
+                card.classList.add("print-page-break");
+            }
+        });
+
+        // 4. Copy all stylesheets from the parent page
+        let css = "";
+        document.querySelectorAll('style, link[rel="stylesheet"]').forEach(node => {
+            css += node.outerHTML;
+        });
+
+        const printCss = `
+            <style>
+                @page { size: A4 portrait; margin: 10mm; }
+
+                html, body {
+                    background: #ffffff !important;
+                    margin: 0 !important;
+                    padding: 0 !important;
+                    -webkit-print-color-adjust: exact !important;
+                    print-color-adjust: exact !important;
+                }
+
+                .fa-page {
+                    background: #ffffff !important;
+                    padding: 0 !important;
+                    margin: 0 !important;
+                }
+
+                /* Single-column layout for the PDF — matches reference */
+                .fa-page main {
+                    display: block !important;
+                    max-width: 100% !important;
+                    padding: 0 !important;
+                    margin: 0 !important;
+                }
+
+                .fa-page .card {
+                    break-inside: avoid;
+                    page-break-inside: avoid;
+                    margin-bottom: 14px !important;
+                }
+
+                /* Force Retirement outlook onto a new page */
+                .fa-page .card.print-page-break {
+                    break-before: page;
+                    page-break-before: always;
+                }
+
+                /* Keep the KPI + ring hero block tidy */
+                .fa-page .hero {
+                    display: flex !important;
+                    flex-wrap: wrap !important;
+                    gap: 20px !important;
+                    align-items: center !important;
+                }
+
+                .fa-page .ring {
+                    width: 150px !important;
+                    height: 150px !important;
+                }
+
+                .fa-page svg {
+                    width: 100% !important;
+                    height: auto !important;
+                }
+
+                .fa-page * {
+                    -webkit-print-color-adjust: exact !important;
+                    print-color-adjust: exact !important;
+                }
+            </style>
+        `;
+
+        const html = `
+            <!DOCTYPE html>
+            <html>
+            <head>
+                <meta charset="utf-8">
+                <title>Live Financial Assessment</title>
+                ${css}
+                ${printCss}
+            </head>
+            <body class="fa-page">
+                ${clone.outerHTML}
+            </body>
+            </html>
+        `;
+
+        // 5. Render into a hidden iframe and print
+        const iframe = document.createElement("iframe");
+        iframe.setAttribute("aria-hidden", "true");
+        iframe.style.position = "fixed";
+        iframe.style.right = "0";
+        iframe.style.bottom = "0";
+        iframe.style.width = "0";
+        iframe.style.height = "0";
+        iframe.style.border = "0";
+        iframe.style.opacity = "0";
+        document.body.appendChild(iframe);
+
+        const doc = iframe.contentWindow.document;
+        doc.open();
+        doc.write(html);
+        doc.close();
+
+        const triggerPrint = function () {
+            try {
+                iframe.contentWindow.focus();
+                iframe.contentWindow.print();
+            } catch (e) {
+                console.warn("Print failed:", e);
+            }
+            setTimeout(function () {
+                if (iframe.parentNode) {
+                    iframe.parentNode.removeChild(iframe);
+                }
+            }, 1500);
+        };
+
+        if (iframe.contentWindow.document.readyState === "complete") {
+            setTimeout(triggerPrint, 400);
+        } else {
+            iframe.onload = function () {
+                setTimeout(triggerPrint, 400);
+            };
+        }
+    }
 
     // =========================================================
     // RESET

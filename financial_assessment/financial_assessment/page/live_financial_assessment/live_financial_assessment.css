@@ -349,11 +349,11 @@
 @media print {
     .fa-page .noprint { display: none !important; }
 
-    .fa-page main {
+    /* .fa-page main {
         display: block;
         padding: 0;
         max-width: 100%;
-    }
+    } */
 
     .fa-page {
         background: #fff;
@@ -365,4 +365,12 @@
         box-shadow: none;
         border-color: #ccc;
     }
+
+    .fa-page main {
+    display: block !important;
+    max-width: 100% !important;
+    padding: 0 !important;
+    margin: 0 !important;
+}
+.fa-page aside.card { margin-bottom: 12px !important; }
 }
