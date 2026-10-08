@@ -1,0 +1,13 @@
+[
+ {
+  "docstatus": 0,
+  "doctype": "Client Script",
+  "dt": "Advisory And Recommendations",
+  "enabled": 1,
+  "modified": "2026-10-07 11:58:13.722210",
+  "module": "Financial Assessment",
+  "name": "Financial Assessment Report",
+  "script": "// frappe.ui.form.on(\"Advisory And Recommendations\", {\n//     refresh(frm) {\n//         // Do not show the button for a new/unsaved document\n//         if (frm.is_new()) {\n//             return;\n//         }\n\n//         // Client Information must be linked\n//         if (!frm.doc.identifier) {\n//             return;\n//         }\n\n//         frm.add_custom_button(__(\"PRINT REPORT\"), function () {\n//             const print_format = \"Financial Assessment Report\";\n\n//             const url =\n//                 \"/printview\" +\n//                 \"?doctype=\" + encodeURIComponent(\"Client Information\") +\n//                 \"&name=\" + encodeURIComponent(frm.doc.identifier) +\n//                 \"&format=\" + encodeURIComponent(print_format) +\n//                 \"&trigger_print=1\";\n\n//             window.open(url, \"_blank\");\n//         }).addClass(\"btn-primary\");\n//     }\n// });\n\n\nfrappe.ui.form.on(\"Advisory And Recommendations\", {\n    refresh(frm) {\n        // Do not show the button for a new/unsaved document\n        if (frm.is_new()) {\n            return;\n        }\n\n        // Client Information must be linked\n        if (!frm.doc.identifier) {\n            return;\n        }\n\n        frm.add_custom_button(__(\"PRINT REPORT\"), function () {\n            const print_format = \"Financial Assessment Report\";\n\n            const url =\n                \"/printview\" +\n                \"?doctype=\" + encodeURIComponent(\"Client Information\") +\n                \"&name=\" + encodeURIComponent(frm.doc.identifier) +\n                \"&format=\" + encodeURIComponent(print_format);\n                // &trigger_print=1  <-- removed to show preview first\n\n            window.open(url, \"_blank\");\n        }).addClass(\"btn-primary\");\n    }\n});",
+  "view": "Form"
+ }
+]
