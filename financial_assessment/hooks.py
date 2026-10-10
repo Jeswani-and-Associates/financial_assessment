@@ -1,3 +1,5 @@
+after_migrate = "financial_assessment.install.configure_financial_assessment_desktop_icon"
+
 app_name = "financial_assessment"
 app_title = "Financial Assessment"
 app_publisher = "DigiOpen Services Pvt Ltd"
@@ -11,15 +13,15 @@ app_license = "mit"
 # required_apps = []
 
 # Each item in the list will be shown as an app in the apps page
-# add_to_apps_screen = [
-# 	{
-# 		"name": "financial_assessment",
-# 		"logo": "/assets/financial_assessment/logo.png",
-# 		"title": "Financial Assessment",
-# 		"route": "/financial_assessment",
-# 		"has_permission": "financial_assessment.api.permission.has_app_permission"
-# 	}
-# ]
+
+add_to_apps_screen = [
+    {
+        "name": "financial_assessment",
+        "title": "Financial Assessment",
+        "route": "/desk/financial-assessment",
+        "logo": "",
+    }
+]
 
 # Includes in <head>
 # ------------------
