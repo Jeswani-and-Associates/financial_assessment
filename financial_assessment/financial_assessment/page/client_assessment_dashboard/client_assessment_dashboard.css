@@ -45,6 +45,8 @@
 }
 
 
+
+
 /* ================================
    Table Header
 ================================ */
@@ -67,6 +69,13 @@
 .assessment-table th.client-header {
     min-width: 180px;
     text-align: left;
+    background: #f3f4f6;
+    color: #374151;
+}
+
+.assessment-table th.advisor-header {
+    min-width: 180px;
+    text-align: center;
     background: #f3f4f6;
     color: #374151;
 }
@@ -150,6 +159,18 @@
     text-align: left;
     font-weight: 500;
     background: #ffffff;
+}
+
+.assessment-table .assigned-advisor-cell {
+    font-size: 13px;
+    font-weight: 400;
+    color: var(--text-color);
+    text-align: center !important;
+    vertical-align: middle;
+    padding: 10px 12px;
+    background-color: transparent;
+    white-space: normal;
+    overflow-wrap: anywhere;
 }
 
 
@@ -253,6 +274,11 @@
 }
 
 
+
+/* Assigned Advisor Column */
+
+
+
 /* ================================
    Status Badge
 ================================ */
@@ -286,6 +312,8 @@
 .assessment-table tbody tr:hover td.client-name-cell {
     background: #f9fafb;
 }
+
+
 
 
 

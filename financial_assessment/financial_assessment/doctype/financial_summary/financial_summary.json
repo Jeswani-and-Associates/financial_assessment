@@ -46,12 +46,14 @@
   {
    "fieldname": "identifier",
    "fieldtype": "Link",
+   "in_list_view": 1,
    "label": "Client Information",
    "options": "Client Information"
   },
   {
    "fieldname": "status",
    "fieldtype": "Select",
+   "in_list_view": 1,
    "label": "Status",
    "options": "Draft\nFinanacial Summary Completed",
    "read_only": 1
@@ -92,6 +94,7 @@
   {
    "fieldname": "total_assets",
    "fieldtype": "Int",
+   "in_list_view": 1,
    "label": "TOTAL ASSETS",
    "read_only": 1
   },
@@ -104,18 +107,21 @@
   {
    "fieldname": "total_liabilities",
    "fieldtype": "Int",
+   "in_list_view": 1,
    "label": "TOTAL LIABILITIES",
    "read_only": 1
   },
   {
    "fieldname": "net_worth",
    "fieldtype": "Int",
+   "in_list_view": 1,
    "label": "NET WORTH",
    "read_only": 1
   },
   {
    "fieldname": "total_annual_income",
    "fieldtype": "Int",
+   "in_list_view": 1,
    "label": "Total Annual Income (\u20b9)",
    "read_only": 1
   },
@@ -134,12 +140,14 @@
   {
    "fieldname": "monthly_surplus_deficit",
    "fieldtype": "Int",
+   "in_list_view": 1,
    "label": "Monthly Surplus / (Deficit) (\u20b9)",
    "read_only": 1
   },
   {
    "fieldname": "savings_rate",
    "fieldtype": "Percent",
+   "in_list_view": 1,
    "label": "Savings Rate (%)",
    "read_only": 1
   },
@@ -205,7 +213,7 @@
  "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2026-10-01 18:29:44.477708",
+ "modified": "2026-10-10 19:12:24.278980",
  "modified_by": "Administrator",
  "module": "Financial Assessment",
  "name": "Financial Summary",

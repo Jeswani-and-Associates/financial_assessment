@@ -44,6 +44,7 @@
   {
    "fieldname": "identifier",
    "fieldtype": "Link",
+   "in_list_view": 1,
    "label": "Client Information",
    "options": "Client Information"
   },
@@ -54,6 +55,7 @@
   {
    "fieldname": "status",
    "fieldtype": "Select",
+   "in_list_view": 1,
    "label": "Status",
    "options": "Draft\nAdvisory and Recommendations Completed",
    "read_only": 1
@@ -146,11 +148,13 @@
   {
    "fieldname": "assessment_date",
    "fieldtype": "Date",
+   "in_list_view": 1,
    "label": "Assessment Date"
   },
   {
    "fieldname": "next_review_date",
    "fieldtype": "Date",
+   "in_list_view": 1,
    "label": "Next Review Date"
   },
   {
@@ -165,6 +169,7 @@
   {
    "fieldname": "assigned_advisor_at_krb_and_co",
    "fieldtype": "Data",
+   "in_list_view": 1,
    "label": "Assigned Advisor at KRB & Co."
   },
   {
@@ -182,7 +187,7 @@
  "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2026-10-07 11:26:30.223426",
+ "modified": "2026-10-10 19:12:24.506202",
  "modified_by": "Administrator",
  "module": "Financial Assessment",
  "name": "Advisory And Recommendations",

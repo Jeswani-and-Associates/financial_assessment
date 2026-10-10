@@ -74,6 +74,10 @@ frappe.pages["client-assessment-dashboard"].on_page_load = function (
                                 Client
                             </th>
 
+                            <th class="advisor-header">
+                                Assigned Advisor
+                            </th>
+
                             <th class="window-income">
                                 Income And Expenses
                             </th>
@@ -108,7 +112,7 @@ frappe.pages["client-assessment-dashboard"].on_page_load = function (
                     <tbody id="assessment-table-body">
 
                         <tr>
-                            <td colspan="8" class="text-center loading-cell">
+                            <td colspan="9" class="text-center loading-cell">
                                 Loading...
                             </td>
                         </tr>
@@ -294,7 +298,7 @@ function render_assessment_table(data) {
 
         tbody.append(`
             <tr>
-                <td colspan="8" class="text-center no-data-cell">
+                <td colspan="9" class="text-center no-data-cell">
                     No Client Information records found.
                 </td>
             </tr>
@@ -320,6 +324,11 @@ function render_assessment_table(data) {
                     </a>
 
                 </td>
+
+                
+           <td class="client-name-cell assigned-advisor-cell">
+                ${frappe.utils.escape_html(row.assigned_advisor || "-")}
+            </td>
 
                 ${render_status_cell(
             row.income_and_expenses,

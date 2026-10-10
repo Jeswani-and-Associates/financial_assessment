@@ -55,6 +55,7 @@
   {
    "fieldname": "annual_surplus_deficit",
    "fieldtype": "Int",
+   "in_list_view": 1,
    "label": "Annual Surplus / (Deficit) (\u20b9)",
    "non_negative": 1,
    "read_only": 1
@@ -69,6 +70,7 @@
   {
    "fieldname": "savings_rate",
    "fieldtype": "Percent",
+   "in_list_view": 1,
    "label": "Savings Rate (%)",
    "non_negative": 1,
    "read_only": 1
@@ -111,6 +113,7 @@
   {
    "fieldname": "identifier",
    "fieldtype": "Link",
+   "in_list_view": 1,
    "label": "Client Information",
    "options": "Client Information"
   },
@@ -118,6 +121,7 @@
    "default": "Draft",
    "fieldname": "status",
    "fieldtype": "Select",
+   "in_list_view": 1,
    "label": "Status",
    "options": "Draft\nIncome And Expenses Completed",
    "read_only": 1
@@ -136,7 +140,7 @@
  "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2026-10-01 15:23:15.769624",
+ "modified": "2026-10-10 19:12:23.003744",
  "modified_by": "Administrator",
  "module": "Financial Assessment",
  "name": "Income And Expenses",

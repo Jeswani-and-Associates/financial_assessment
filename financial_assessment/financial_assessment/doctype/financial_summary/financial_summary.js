@@ -312,134 +312,69 @@ frappe.ui.form.on("Financial Summary", {
     },
 
 
+
     // ============================================================
-    // Load Child Table Masters
+    // Load Financial Health Ratio Master Records
     // ============================================================
 
     onload(frm) {
 
-        /*
-         * Only create the default rows for a new
-         * Financial Summary.
-         */
+        const table_field =
+            "finiancial_summary_key_financial_health_ratios_child";
 
-        if (!frm.is_new()) {
+        const master_doctype =
+            "Finiancial Summary Key Financial Health Ratios Master";
+
+        // Do not reload rows if the child table already has data.
+        if (frm.doc[table_field] && frm.doc[table_field].length > 0) {
             return;
         }
 
+        frappe.db.get_list(master_doctype, {
+            fields: ["name", "metric", "benchmark"],
+            order_by: "name asc",
+            limit: 100
+        }).then(masters => {
 
-        /*
-         * Do not create duplicate rows if the child table
-         * already contains data.
-         */
-
-        if (
-
-            frm.doc
-                .finiancial_summary_key_financial_health_ratios_child
-
-            &&
-
-            frm.doc
-                .finiancial_summary_key_financial_health_ratios_child
-                .length > 0
-
-        ) {
-
-            return;
-        }
-
-
-        frappe.db.get_list(
-
-            "Finiancial Summary Key Financial Health Ratios Master",
-
-            {
-
-                // filters: {
-
-                //     docstatus: 1
-
-                // },
-
-                fields: [
-
-                    "name",
-                    "metric",
-                    "benchmark"
-
-                ],
-
-                order_by:
-                    "name asc"
-
+            if (!masters || masters.length === 0) {
+                frappe.msgprint(
+                    "No Financial Health Ratio Master records found."
+                );
+                return;
             }
-
-        ).then(masters => {
-
 
             masters.forEach(master => {
 
-                const row = frm.add_child(
+                const row = frm.add_child(table_field);
 
-                    "finiancial_summary_key_financial_health_ratios_child"
-
-                );
-
-
-                /*
-                 * IMPORTANT:
-                 *
-                 * Keep the Link field populated using
-                 * master.metric.
-                 *
-                 * The Master DocType has:
-                 *
-                 * title_field = metric
-                 *
-                 * so the user sees the metric name instead
-                 * of the Master document ID.
-                 */
-
-                row.metric =
-                    master.metric;
-
-
-                /*
-                 * Copy benchmark from the Master.
-                 */
-
-                row.benchmark =
-                    master.benchmark;
+                row.metric = master.metric;
+                row.benchmark = master.benchmark;
 
             });
 
+            // Refresh the child table so all rows appear immediately.
+            frm.refresh_field(table_field);
 
-            frm.refresh_field(
+            // Calculate values and statuses if an identifier exists.
+            if (frm.doc.identifier) {
+                frm.trigger("calculate_key_financial_health_ratios");
+            }
 
-                "finiancial_summary_key_financial_health_ratios_child"
+        }).catch(error => {
 
+            console.error(
+                "Error loading Financial Health Ratio Master records:",
+                error
             );
 
-
-            /*
-             * After creating the child rows, calculate the
-             * Current Value and Status immediately.
-             *
-             * This makes the values visible without saving.
-             */
-
-            if (frm.doc.identifier) {
-
-                frm.trigger(
-                    "calculate_key_financial_health_ratios"
-                );
-
-            }
+            frappe.msgprint(
+                "Unable to load Financial Health Ratio Master records. Please check the browser console."
+            );
 
         });
 
     }
+
 
 });
 
@@ -586,7 +521,7 @@ function set_financial_summary_header_fields_color(frm) {
         income_text_color
     );
 
-     set_financial_summary_field_color(
+    set_financial_summary_field_color(
         frm,
         "total_monthly_emi",
         income_background_color,
@@ -604,7 +539,7 @@ function set_financial_summary_header_fields_color(frm) {
     const savings_text_color = "#00695C";
 
 
-    
+
 
     // ============================================================
     // GROUP 5 - EMI / DEBT BURDEN
@@ -615,7 +550,7 @@ function set_financial_summary_header_fields_color(frm) {
     const emi_text_color = "#6A1B9A";
 
 
-   
+
 
 }
 

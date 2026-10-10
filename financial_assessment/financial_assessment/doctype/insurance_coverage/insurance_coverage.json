@@ -80,6 +80,7 @@
   {
    "fieldname": "total_life_cover_in_force",
    "fieldtype": "Int",
+   "in_list_view": 1,
    "label": "Total Life Cover in Force (\u20b9)",
    "non_negative": 1,
    "read_only": 1
@@ -122,6 +123,7 @@
   {
    "fieldname": "total_health_cover_all_policies",
    "fieldtype": "Int",
+   "in_list_view": 1,
    "label": "Total Health Cover \u2014 All Policies (\u20b9)",
    "non_negative": 1,
    "read_only": 1
@@ -129,6 +131,7 @@
   {
    "fieldname": "total_annual_insurance_premiums",
    "fieldtype": "Int",
+   "in_list_view": 1,
    "label": "Total Annual Insurance Premiums (\u20b9)",
    "non_negative": 1,
    "read_only": 1
@@ -174,6 +177,7 @@
    "default": "Draft",
    "fieldname": "status",
    "fieldtype": "Select",
+   "in_list_view": 1,
    "label": "Status",
    "options": "Draft\nInsurance Coverage Completed",
    "read_only": 1
@@ -181,6 +185,7 @@
   {
    "fieldname": "identifier",
    "fieldtype": "Link",
+   "in_list_view": 1,
    "label": "Client Information",
    "options": "Client Information"
   },
@@ -228,7 +233,7 @@
  "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2026-10-01 18:09:24.755876",
+ "modified": "2026-10-10 19:12:23.764075",
  "modified_by": "Administrator",
  "module": "Financial Assessment",
  "name": "Insurance Coverage",

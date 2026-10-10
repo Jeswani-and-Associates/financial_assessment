@@ -42,6 +42,7 @@
   {
    "fieldname": "financial_assets_current_market_value",
    "fieldtype": "Int",
+   "in_list_view": 1,
    "label": "Financial Assets \u2014 Current Market Value",
    "non_negative": 1,
    "read_only": 1
@@ -106,6 +107,7 @@
    "bold": 1,
    "fieldname": "gross_total_assets",
    "fieldtype": "Int",
+   "in_list_view": 1,
    "label": "GROSS TOTAL ASSETS",
    "non_negative": 1,
    "read_only": 1
@@ -161,6 +163,7 @@
   {
    "fieldname": "identifier",
    "fieldtype": "Link",
+   "in_list_view": 1,
    "label": "Client Information",
    "options": "Client Information"
   },
@@ -172,6 +175,7 @@
    "default": "Draft",
    "fieldname": "status",
    "fieldtype": "Select",
+   "in_list_view": 1,
    "label": "Status",
    "options": "Draft\nAssets And Investments Completed",
    "read_only": 1
@@ -189,7 +193,7 @@
  "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2026-10-01 18:38:01.215088",
+ "modified": "2026-10-10 19:12:23.253058",
  "modified_by": "Administrator",
  "module": "Financial Assessment",
  "name": "Assets And Investments",

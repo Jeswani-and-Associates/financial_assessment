@@ -33,6 +33,7 @@
   {
    "fieldname": "identifier",
    "fieldtype": "Link",
+   "in_list_view": 1,
    "label": "Client Information",
    "options": "Client Information"
   },
@@ -40,6 +41,7 @@
    "default": "Draft",
    "fieldname": "status",
    "fieldtype": "Select",
+   "in_list_view": 1,
    "label": "Status",
    "options": "Draft\nFuture Goals Completed",
    "read_only": 1
@@ -93,6 +95,7 @@
   {
    "fieldname": "total_current_cost_today",
    "fieldtype": "Int",
+   "in_list_view": 1,
    "label": "Total Current Cost Today",
    "non_negative": 1,
    "read_only": 1
@@ -100,6 +103,7 @@
   {
    "fieldname": "total_future_value_required",
    "fieldtype": "Int",
+   "in_list_view": 1,
    "label": "Total Future Value Required",
    "non_negative": 1,
    "read_only": 1
@@ -107,6 +111,7 @@
   {
    "fieldname": "total_existing_corpus_savings",
    "fieldtype": "Int",
+   "in_list_view": 1,
    "label": "Total Existing Corpus / Savings",
    "non_negative": 1,
    "read_only": 1
@@ -114,6 +119,7 @@
   {
    "fieldname": "total_shortfall__surplus",
    "fieldtype": "Int",
+   "in_list_view": 1,
    "label": "Total Shortfall / (Surplus)",
    "non_negative": 1,
    "read_only": 1
@@ -121,6 +127,7 @@
   {
    "fieldname": "total_monthly_sip_required",
    "fieldtype": "Int",
+   "in_list_view": 1,
    "label": "Total Monthly SIP Required",
    "non_negative": 1,
    "read_only": 1
@@ -130,7 +137,7 @@
  "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2026-10-01 18:15:52.862205",
+ "modified": "2026-10-10 19:12:24.045943",
  "modified_by": "Administrator",
  "module": "Financial Assessment",
  "name": "Future Goals",

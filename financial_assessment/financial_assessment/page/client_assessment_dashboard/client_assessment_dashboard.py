@@ -70,6 +70,7 @@ def get_client_assessment_status(
         fields=[
             "name",
             "client_full_name_entity_name",
+             "assigned_advisor",
             "date_of_assessment"
         ],
         order_by="creation asc"
@@ -86,6 +87,7 @@ def get_client_assessment_status(
         row = {
             "name": client_record.name,
             "client": client_record.client_full_name_entity_name or "-",
+            "assigned_advisor": client_record.assigned_advisor or "-",
             "date_of_assessment": client_record.date_of_assessment,
         }
 

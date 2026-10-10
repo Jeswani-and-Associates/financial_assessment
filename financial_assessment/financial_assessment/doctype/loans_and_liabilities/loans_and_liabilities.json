@@ -47,6 +47,7 @@
   {
    "fieldname": "total_outstanding_debt",
    "fieldtype": "Int",
+   "in_list_view": 1,
    "label": "Total Outstanding Debt (\u20b9)",
    "non_negative": 1,
    "read_only": 1
@@ -68,6 +69,7 @@
   {
    "fieldname": "emi_to_income_ratio",
    "fieldtype": "Percent",
+   "in_list_view": 1,
    "label": "EMI-to-Income Ratio (%)",
    "non_negative": 1,
    "read_only": 1
@@ -115,6 +117,7 @@
   {
    "fieldname": "identifier",
    "fieldtype": "Link",
+   "in_list_view": 1,
    "label": "Client Information",
    "options": "Client Information"
   },
@@ -122,6 +125,7 @@
    "default": "Draft",
    "fieldname": "status",
    "fieldtype": "Select",
+   "in_list_view": 1,
    "label": "Status",
    "options": "Draft\nLoans And Liabilities Completed",
    "read_only": 1
@@ -140,7 +144,7 @@
  "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2026-10-01 16:15:14.090603",
+ "modified": "2026-10-10 19:12:23.513447",
  "modified_by": "Administrator",
  "module": "Financial Assessment",
  "name": "Loans And Liabilities",
