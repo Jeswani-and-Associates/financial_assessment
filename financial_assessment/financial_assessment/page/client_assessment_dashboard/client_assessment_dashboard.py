@@ -18,7 +18,6 @@ def get_client_assessment_status(
     assign_from_date=None,
     assign_to_date=None
 ):
-
     # Convert empty values to None
     client = client or None
     assign_from_date = assign_from_date or None
@@ -26,51 +25,35 @@ def get_client_assessment_status(
 
     filters = {}
 
-    # ---------------------------------------------------------
     # Client Filter
-    # ---------------------------------------------------------
-
     if client:
         filters["name"] = client
 
-    # ---------------------------------------------------------
     # Date Filters
-    # Field used from Client Information:
-    # date_of_assessment
-    # ---------------------------------------------------------
-
     if assign_from_date and assign_to_date:
-
         filters["date_of_assessment"] = [
             "between",
             [assign_from_date, assign_to_date]
         ]
-
     elif assign_from_date:
-
         filters["date_of_assessment"] = [
             ">=",
             assign_from_date
         ]
-
     elif assign_to_date:
-
         filters["date_of_assessment"] = [
             "<=",
             assign_to_date
         ]
 
-    # ---------------------------------------------------------
     # Get filtered clients
-    # ---------------------------------------------------------
-
     clients = frappe.get_all(
         "Client Information",
         filters=filters,
         fields=[
             "name",
             "client_full_name_entity_name",
-             "assigned_advisor",
+            "assigned_advisor",
             "date_of_assessment"
         ],
         order_by="creation asc"
@@ -78,21 +61,34 @@ def get_client_assessment_status(
 
     dashboard_data = []
 
-    # ---------------------------------------------------------
     # Build dashboard data
-    # ---------------------------------------------------------
-
     for client_record in clients:
+
+        # Fetch the actual advisor name dynamically
+        advisor_name = None
+
+        if client_record.assigned_advisor:
+            advisor_name = frappe.db.get_value(
+                "Advisor Master",
+                client_record.assigned_advisor,
+                "advisor_name"
+            )
 
         row = {
             "name": client_record.name,
-            "client": client_record.client_full_name_entity_name or "-",
-            "assigned_advisor": client_record.assigned_advisor or "-",
+            "client": (
+                client_record.client_full_name_entity_name or "-"
+            ),
+            "assigned_advisor": (
+                advisor_name
+                or client_record.assigned_advisor
+                or "-"
+            ),
             "date_of_assessment": client_record.date_of_assessment,
         }
 
+        # Get assessment status
         for doctype, fieldname in ASSESSMENT_WINDOWS:
-
             status = frappe.db.get_value(
                 doctype,
                 {"identifier": client_record.name},
@@ -101,10 +97,8 @@ def get_client_assessment_status(
 
             if not status:
                 row[fieldname] = "-"
-
             elif status == "Draft":
                 row[fieldname] = "Draft"
-
             else:
                 row[fieldname] = "Completed"
 
