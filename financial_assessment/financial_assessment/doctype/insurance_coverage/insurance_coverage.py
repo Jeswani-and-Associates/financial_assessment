@@ -131,8 +131,8 @@ class InsuranceCoverage(Document):
         # Life Cover - (Annual Income × 15)
         if annual_income:
             self.life_cover_gap_surplus = (
-                life_insurance_sum_assured
-                - (annual_income * 15)
+                 (annual_income * 15) 
+                -  life_insurance_sum_assured
             )
         else:
             self.life_cover_gap_surplus = 0

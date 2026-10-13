@@ -87,21 +87,37 @@ def get_client_assessment_status(
             "date_of_assessment": client_record.date_of_assessment,
         }
 
-        # Get assessment status
+        # Get assessment status + document name for each window
         for doctype, fieldname in ASSESSMENT_WINDOWS:
-            status = frappe.db.get_value(
+            record = frappe.db.get_value(
                 doctype,
                 {"identifier": client_record.name},
-                "status"
+                ["name", "status"],
+                as_dict=True
             )
 
-            if not status:
-                row[fieldname] = "-"
-            elif status == "Draft":
-                row[fieldname] = "Draft"
+            if not record:
+                row[fieldname] = {
+                    "status": "-",
+                    "docname": None,
+                    "doctype": doctype,
+                }
+            elif record.status == "Draft":
+                row[fieldname] = {
+                    "status": "Draft",
+                    "docname": record.name,
+                    "doctype": doctype,
+                }
             else:
-                row[fieldname] = "Completed"
+                row[fieldname] = {
+                    "status": "Completed",
+                    "docname": record.name,
+                    "doctype": doctype,
+                }
 
         dashboard_data.append(row)
 
-    return dashboard_data
+    return {
+        "rows": dashboard_data,
+        "window_order": [fieldname for _, fieldname in ASSESSMENT_WINDOWS],
+    }

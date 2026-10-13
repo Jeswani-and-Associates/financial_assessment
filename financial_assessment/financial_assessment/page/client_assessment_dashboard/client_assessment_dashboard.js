@@ -78,6 +78,10 @@ frappe.pages["client-assessment-dashboard"].on_page_load = function (
                                 Assigned Advisor
                             </th>
 
+                            <th class="action-header">
+                                Report
+                            </th>
+
                             <th class="window-income">
                                 Income And Expenses
                             </th>
@@ -112,7 +116,7 @@ frappe.pages["client-assessment-dashboard"].on_page_load = function (
                     <tbody id="assessment-table-body">
 
                         <tr>
-                            <td colspan="9" class="text-center loading-cell">
+                            <td colspan="10" class="text-center loading-cell">
                                 Loading...
                             </td>
                         </tr>
@@ -273,9 +277,11 @@ function load_client_assessment_status(filters = {}) {
                 r.message
             );
 
-            const data = r.message || [];
+            const payload = r.message || {};
+            const data = payload.rows || [];
+            const windowOrder = payload.window_order || [];
 
-            render_assessment_table(data);
+            render_assessment_table(data, windowOrder);
 
         }
 
@@ -287,7 +293,7 @@ function load_client_assessment_status(filters = {}) {
    Render Dashboard Table
 ========================================================= */
 
-function render_assessment_table(data) {
+function render_assessment_table(data, windowOrder) {
 
     const tbody = $("#assessment-table-body");
 
@@ -298,7 +304,7 @@ function render_assessment_table(data) {
 
         tbody.append(`
             <tr>
-                <td colspan="9" class="text-center no-data-cell">
+                <td colspan="10" class="text-center no-data-cell">
                     No Client Information records found.
                 </td>
             </tr>
@@ -309,6 +315,13 @@ function render_assessment_table(data) {
 
 
     data.forEach(function (row) {
+
+        // Build a status map for this row so we can check
+        // "is the previous window completed?" per cell.
+        const statusMap = {};
+        windowOrder.forEach(function (fieldname) {
+            statusMap[fieldname] = row[fieldname];
+        });
 
         tbody.append(`
 
@@ -325,50 +338,130 @@ function render_assessment_table(data) {
 
                 </td>
 
-                
-           <td class="client-name-cell assigned-advisor-cell">
-                ${frappe.utils.escape_html(row.assigned_advisor || "-")}
-            </td>
+
+                <td class="client-name-cell assigned-advisor-cell">
+                    ${frappe.utils.escape_html(row.assigned_advisor || "-")}
+                </td>
+
+
+                ${render_report_cell(row)}
 
                 ${render_status_cell(
-            row.income_and_expenses,
-            "income"
+            row,
+            "income_and_expenses",
+            statusMap,
+            windowOrder
         )}
 
                 ${render_status_cell(
-            row.assets_and_investments,
-            "assets"
+            row,
+            "assets_and_investments",
+            statusMap,
+            windowOrder
         )}
 
                 ${render_status_cell(
-            row.loans_and_liabilities,
-            "loans"
+            row,
+            "loans_and_liabilities",
+            statusMap,
+            windowOrder
         )}
 
                 ${render_status_cell(
-            row.insurance_coverage,
-            "insurance"
+            row,
+            "insurance_coverage",
+            statusMap,
+            windowOrder
         )}
 
                 ${render_status_cell(
-            row.future_goals,
-            "goals"
+            row,
+            "future_goals",
+            statusMap,
+            windowOrder
         )}
 
                 ${render_status_cell(
-            row.financial_summary,
-            "summary"
+            row,
+            "financial_summary",
+            statusMap,
+            windowOrder
         )}
 
                 ${render_status_cell(
-            row.advisory_and_recommendations,
-            "advisory"
+            row,
+            "advisory_and_recommendations",
+            statusMap,
+            windowOrder
         )}
 
             </tr>
 
         `);
     });
+
+
+    // Bind click events for "Not Started" badges
+    tbody.off("click", ".not-started-link").on(
+        "click",
+        ".not-started-link",
+        function (e) {
+
+            e.preventDefault();
+
+            const $el = $(this);
+            const canCreate = $el.data("can-create") === 1;
+            const doctype = $el.data("doctype");
+            const client = $el.data("client");
+            const previousLabel = $el.data("previous-label");
+
+            if (!canCreate) {
+
+                frappe.msgprint({
+                    title: __("Incomplete Previous Window"),
+                    indicator: "red",
+                    message: __(
+                        "Please complete the previous window ({0}) first before starting this one.",
+                        [previousLabel || __("previous")]
+                    ),
+                });
+
+                return;
+            }
+
+            // Navigate to a new form with the identifier prefilled
+            frappe.route_options = { identifier: client };
+            frappe.set_route("Form", doctype, "new");
+
+        }
+    );
+
+
+    // Bind click events for "Print Report" buttons
+    tbody.off("click", ".print-report-btn").on(
+        "click",
+        ".print-report-btn",
+        function (e) {
+
+            e.preventDefault();
+
+            const client_id = $(this).data("client");
+            if (!client_id) {
+                return;
+            }
+
+            const print_format = "Financial Assessment Report";
+
+            const url =
+                "/printview" +
+                "?doctype=" + encodeURIComponent("Client Information") +
+                "&name=" + encodeURIComponent(client_id) +
+                "&format=" + encodeURIComponent(print_format) +
+                "&no_letterhead=0";
+
+            window.open(url, "_blank");
+        }
+    );
 }
 
 
@@ -376,37 +469,116 @@ function render_assessment_table(data) {
    Render Status Cell
 ========================================================= */
 
-function render_status_cell(status, window_name) {
+function render_status_cell(row, fieldname, statusMap, windowOrder) {
 
-    if (status === "Completed") {
+    const info = row[fieldname] || {};
+    const status = info.status || "-";
+    const docname = info.docname;
+    const doctype = info.doctype;
+
+    const windowClass = window_name_for(fieldname);
+
+    // ---------- Completed ----------
+    if (status === "Completed" && docname) {
 
         return `
-            <td class="assessment-status completed ${window_name}">
-                <span class="status-badge">
+            <td class="assessment-status completed ${windowClass}">
+                <a
+                    href="/app/${frappe.router.slug(doctype)}/${encodeURIComponent(docname)}"
+                    class="status-badge"
+                    target="_blank"
+                >
                     Completed
-                </span>
+                </a>
             </td>
         `;
     }
 
-
-    if (status === "Draft") {
+    // ---------- Draft ----------
+    if (status === "Draft" && docname) {
 
         return `
             <td class="assessment-status draft">
-                <span class="status-badge">
+                <a
+                    href="/app/${frappe.router.slug(doctype)}/${encodeURIComponent(docname)}"
+                    class="status-badge"
+                    target="_blank"
+                >
                     Draft
-                </span>
+                </a>
             </td>
         `;
     }
 
+    // ---------- Not Started ----------
+    const idx = windowOrder.indexOf(fieldname);
+    const previousField = idx > 0 ? windowOrder[idx - 1] : null;
+    const previousStatus = previousField
+        ? ((statusMap[previousField] || {}).status)
+        : "Completed"; // first window has no predecessor → allow
+
+    const canCreate = previousStatus === "Completed";
 
     return `
         <td class="assessment-status not-created">
-            <span class="status-badge">
+            <span
+                class="status-badge not-started-link"
+                data-doctype="${frappe.utils.escape_html(doctype)}"
+                data-client="${frappe.utils.escape_html(row.name)}"
+                data-can-create="${canCreate ? 1 : 0}"
+                data-previous-label="${frappe.utils.escape_html(
+        previousField
+            ? frappe.model.unscrub(previousField)
+            : ""
+    )}"
+            >
                 Not Started
             </span>
         </td>
     `;
+}
+
+
+/* =========================================================
+   Render Report Cell (Print Report button)
+========================================================= */
+
+function render_report_cell(row) {
+
+    if (!row.name) {
+        return `
+            <td class="action-cell report-cell">
+                -
+            </td>
+        `;
+    }
+
+    return `
+    <td class="action-cell report-cell">
+     <button type="button" class="btn btn-xs print-report-btn" 
+     data-client="${frappe.utils.escape_html(row.name)}"
+      title="Print Report" aria-label="Print Report" >
+       <i class="fa fa-print">
+       </i> </button> </td>
+`;
+}
+
+
+/* =========================================================
+   Map fieldname → window CSS class suffix
+========================================================= */
+
+function window_name_for(fieldname) {
+
+    const map = {
+        income_and_expenses: "income",
+        assets_and_investments: "assets",
+        loans_and_liabilities: "loans",
+        insurance_coverage: "insurance",
+        future_goals: "goals",
+        financial_summary: "summary",
+        advisory_and_recommendations: "advisory",
+    };
+
+    return map[fieldname] || "";
 }

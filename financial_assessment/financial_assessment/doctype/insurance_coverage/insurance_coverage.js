@@ -203,8 +203,8 @@ async function calculate_insurance_values(frm) {
     if (annual_income) {
 
         life_cover_gap_surplus =
-            life_insurance_sum_assured -
-            (annual_income * 15);
+            (annual_income * 15)
+            - life_insurance_sum_assured;
 
     }
 
@@ -568,7 +568,7 @@ function set_insurance_header_fields_color(frm) {
         health_text_color
     );
 
-     set_insurance_field_color(
+    set_insurance_field_color(
         frm,
         "total_annual_insurance_premiums",
         health_background_color,
@@ -617,7 +617,7 @@ function set_insurance_header_fields_color(frm) {
     const overall_background_color = "#FFF3E0";
     const overall_text_color = "#E65100";
 
-     set_insurance_field_color(
+    set_insurance_field_color(
         frm,
         "annual_income",
         overall_background_color,
@@ -625,7 +625,7 @@ function set_insurance_header_fields_color(frm) {
     );
 
 
-   
+
 
 
     // =====================================================
@@ -637,7 +637,7 @@ function set_insurance_header_fields_color(frm) {
     const reference_text_color = "#00695C";
 
 
-   
+
 
 }
 
