@@ -1,8 +1,23 @@
 {
-    "doctype": "Page",
-    "name": "client-advisor-dashboard",
-    "page_name": "client-advisor-dashboard",
-    "title": "Client Advisor Dashboard",
-    "module": "Financial Assessment",
-    "standard": "Yes"
+ "content": null,
+ "creation": "2026-10-15 20:11:56.295487",
+ "docstatus": 0,
+ "doctype": "Page",
+ "idx": 0,
+ "modified": "2026-10-22 18:59:42.776034",
+ "modified_by": "Administrator",
+ "module": "Financial Assessment",
+ "name": "client-advisor-dashboard",
+ "owner": "Administrator",
+ "page_name": "client-advisor-dashboard",
+ "roles": [
+  {
+   "role": "Financial Assessment"
+  }
+ ],
+ "script": null,
+ "standard": "Yes",
+ "style": null,
+ "system_page": 0,
+ "title": "Client Advisor Dashboard"
 }

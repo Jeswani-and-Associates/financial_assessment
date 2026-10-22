@@ -1,0 +1,23 @@
+{
+ "content": null,
+ "creation": "2026-10-22 10:30:09.486334",
+ "docstatus": 0,
+ "doctype": "Page",
+ "idx": 0,
+ "modified": "2026-10-22 13:50:04.700211",
+ "modified_by": "Administrator",
+ "module": "Financial Assessment",
+ "name": "user-creation",
+ "owner": "Administrator",
+ "page_name": "user-creation",
+ "roles": [
+  {
+   "role": "Financial Assessment"
+  }
+ ],
+ "script": null,
+ "standard": "Yes",
+ "style": null,
+ "system_page": 0,
+ "title": "User Creation"
+}

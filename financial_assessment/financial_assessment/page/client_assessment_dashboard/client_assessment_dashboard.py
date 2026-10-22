@@ -12,24 +12,34 @@ ASSESSMENT_WINDOWS = [
 ]
 
 
+
 @frappe.whitelist()
 def get_client_assessment_status(
     client=None,
     assign_from_date=None,
     assign_to_date=None
 ):
-    # Convert empty values to None
     client = client or None
     assign_from_date = assign_from_date or None
     assign_to_date = assign_to_date or None
 
     filters = {}
 
-    # Client Filter
+    # Restrict Financial Assessment Users to clients they created.
+    user = frappe.session.user
+    roles = frappe.get_roles(user)
+
+    if (
+        "Financial Assessment Users" in roles
+        and user != "Administrator"
+    ):
+        filters["owner"] = user
+
+    # Preserve the existing client filter.
     if client:
         filters["name"] = client
 
-    # Date Filters
+    # Preserve the existing date filters.
     if assign_from_date and assign_to_date:
         filters["date_of_assessment"] = [
             "between",
@@ -46,8 +56,8 @@ def get_client_assessment_status(
             assign_to_date
         ]
 
-    # Get filtered clients
-    clients = frappe.get_all(
+    # Fetch records using Frappe's permission-aware API.
+    clients = frappe.get_list(
         "Client Information",
         filters=filters,
         fields=[
@@ -61,10 +71,9 @@ def get_client_assessment_status(
 
     dashboard_data = []
 
-    # Build dashboard data
     for client_record in clients:
 
-        # Fetch the actual advisor name dynamically
+        # Fetch the actual advisor name dynamically.
         advisor_name = None
 
         if client_record.assigned_advisor:
@@ -84,11 +93,14 @@ def get_client_assessment_status(
                 or client_record.assigned_advisor
                 or "-"
             ),
-            "date_of_assessment": client_record.date_of_assessment,
+            "date_of_assessment": (
+                client_record.date_of_assessment
+            ),
         }
 
-        # Get assessment status + document name for each window
+        # Preserve the existing assessment-status logic.
         for doctype, fieldname in ASSESSMENT_WINDOWS:
+
             record = frappe.db.get_value(
                 doctype,
                 {"identifier": client_record.name},
@@ -119,5 +131,8 @@ def get_client_assessment_status(
 
     return {
         "rows": dashboard_data,
-        "window_order": [fieldname for _, fieldname in ASSESSMENT_WINDOWS],
+        "window_order": [
+            fieldname
+            for _, fieldname in ASSESSMENT_WINDOWS
+        ],
     }
