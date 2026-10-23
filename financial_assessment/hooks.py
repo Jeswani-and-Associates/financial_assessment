@@ -276,5 +276,25 @@ fixtures = [
         "filters": [
             ["name", "=", "Financial Assessment Report"]
         ]
+    },
+    {
+        "dt": "Role",
+        "filters": [
+            ["name", "in", [
+                "Financial Assessment",
+                "Financial Assessment Users",
+                "Testing"
+            ]]
+        ]
+    },
+    {
+        "dt": "Custom DocPerm",
+        "filters": [
+            ["role", "in", [
+                "Financial Assessment",
+                "Financial Assessment Users",
+                "Testing"
+            ]]
+        ]
     }
 ]

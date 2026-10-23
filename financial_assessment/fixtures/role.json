@@ -1,0 +1,41 @@
+[
+ {
+  "desk_access": 1,
+  "disabled": 0,
+  "docstatus": 0,
+  "doctype": "Role",
+  "home_page": null,
+  "is_custom": 0,
+  "modified": "2026-09-16 11:48:15.540717",
+  "name": "Testing",
+  "restrict_to_domain": null,
+  "role_name": "Testing",
+  "two_factor_auth": 0
+ },
+ {
+  "desk_access": 1,
+  "disabled": 0,
+  "docstatus": 0,
+  "doctype": "Role",
+  "home_page": null,
+  "is_custom": 0,
+  "modified": "2026-09-29 19:13:27.917894",
+  "name": "Financial Assessment",
+  "restrict_to_domain": null,
+  "role_name": "Financial Assessment",
+  "two_factor_auth": 0
+ },
+ {
+  "desk_access": 1,
+  "disabled": 0,
+  "docstatus": 0,
+  "doctype": "Role",
+  "home_page": null,
+  "is_custom": 0,
+  "modified": "2026-10-22 10:58:20.934211",
+  "name": "Financial Assessment Users",
+  "restrict_to_domain": null,
+  "role_name": "Financial Assessment Users",
+  "two_factor_auth": 0
+ }
+]
