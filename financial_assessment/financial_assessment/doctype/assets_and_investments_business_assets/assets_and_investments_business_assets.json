@@ -27,17 +27,20 @@
   {
    "fieldname": "entity_business_name",
    "fieldtype": "Data",
-   "label": "Entity / Business Name"
+   "label": "Entity / Business Name",
+   "in_list_view": 1
   },
   {
    "fieldname": "nature_of_interest",
    "fieldtype": "Data",
-   "label": "Nature of Interest"
+   "label": "Nature of Interest",
+   "in_list_view": 1
   },
   {
    "fieldname": "ownership_percentage",
    "fieldtype": "Data",
-   "label": "Ownership %"
+   "label": "Ownership %",
+   "in_list_view": 1
   },
   {
    "fieldname": "book_value_of_capital",
@@ -66,12 +69,14 @@
   {
    "fieldname": "succession_plan",
    "fieldtype": "Data",
-   "label": "Succession Plan?"
+   "label": "Succession Plan?",
+   "in_list_view": 1
   },
   {
    "fieldname": "remark",
    "fieldtype": "Small Text",
-   "label": "Remarks"
+   "label": "Remarks",
+   "in_list_view": 1
   },
   {
    "fieldname": "column_break1",

@@ -27,26 +27,30 @@
    "fieldtype": "Int",
    "label": "Annual Income(\u20b9)",
    "non_negative": 1,
-   "read_only": 1
+   "read_only": 1,
+   "in_list_view": 1
   },
   {
    "fieldname": "total_income_percentage",
    "fieldtype": "Percent",
    "label": "% of Total Income",
    "non_negative": 1,
-   "read_only": 1
+   "read_only": 1,
+   "in_list_view": 1
   },
   {
    "fieldname": "income_remark",
    "fieldtype": "Data",
-   "label": "Remark"
+   "label": "Remark",
+   "in_list_view": 1
   },
   {
    "fieldname": "income_source",
    "fieldtype": "Link",
    "label": "Income Source",
    "options": "Annual Income Source Master",
-   "reqd": 1
+   "reqd": 1,
+   "in_list_view": 1
   }
  ],
  "grid_page_length": 50,

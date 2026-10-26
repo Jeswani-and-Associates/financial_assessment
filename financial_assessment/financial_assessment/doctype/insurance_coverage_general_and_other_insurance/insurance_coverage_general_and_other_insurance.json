@@ -28,17 +28,20 @@
    "fieldname": "type_of_insurance",
    "fieldtype": "Link",
    "label": "Type of Insurance",
-   "options": "Insurance Coverage Type of Insurance"
+   "options": "Insurance Coverage Type of Insurance",
+   "in_list_view": 1
   },
   {
    "fieldname": "insurer",
    "fieldtype": "Data",
-   "label": "Insurer"
+   "label": "Insurer",
+   "in_list_view": 1
   },
   {
    "fieldname": "asset_interest_covered",
    "fieldtype": "Data",
-   "label": "Asset / Interest Covered"
+   "label": "Asset / Interest Covered",
+   "in_list_view": 1
   },
   {
    "fieldname": "column_break1",
@@ -63,7 +66,8 @@
   {
    "fieldname": "renewal_date",
    "fieldtype": "Date",
-   "label": "Renewal Date"
+   "label": "Renewal Date",
+   "in_list_view": 1
   },
   {
    "fieldname": "column_break2",
@@ -72,12 +76,14 @@
   {
    "fieldname": "status",
    "fieldtype": "Data",
-   "label": "Status"
+   "label": "Status",
+   "in_list_view": 1
   },
   {
    "fieldname": "remark",
    "fieldtype": "Data",
-   "label": "Remark"
+   "label": "Remark",
+   "in_list_view": 1
   }
  ],
  "grid_page_length": 50,

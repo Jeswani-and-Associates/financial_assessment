@@ -142,6 +142,27 @@ add_to_apps_screen = [
 # 	"Event": "frappe.desk.doctype.event.event.has_permission",
 # }
 
+permission_query_conditions = {
+    "Income And Expenses": "financial_assessment.permissions.get_permission_query_conditions",
+    "Assets And Investments": "financial_assessment.permissions.get_permission_query_conditions",
+    "Loans And Liabilities": "financial_assessment.permissions.get_permission_query_conditions",
+    "Insurance Coverage": "financial_assessment.permissions.get_permission_query_conditions",
+    "Future Goals": "financial_assessment.permissions.get_permission_query_conditions",
+    "Financial Summary": "financial_assessment.permissions.get_permission_query_conditions",
+    "Advisory And Recommendations": "financial_assessment.permissions.get_permission_query_conditions",
+}
+
+has_permission = {
+    "Income And Expenses": "financial_assessment.permissions.has_permission",
+    "Assets And Investments": "financial_assessment.permissions.has_permission",
+    "Loans And Liabilities": "financial_assessment.permissions.has_permission",
+    "Insurance Coverage": "financial_assessment.permissions.has_permission",
+    "Future Goals": "financial_assessment.permissions.has_permission",
+    "Financial Summary": "financial_assessment.permissions.has_permission",
+    "Advisory And Recommendations": "financial_assessment.permissions.has_permission",
+}
+
+
 # Document Events
 # ---------------
 # Hook on document methods and events
@@ -153,6 +174,30 @@ add_to_apps_screen = [
 # 		"on_trash": "method"
 # 	}
 # }
+
+doc_events = {
+    "Income And Expenses": {
+        "before_insert": "financial_assessment.permissions.set_assessment_owner_from_client",
+    },
+    "Assets And Investments": {
+        "before_insert": "financial_assessment.permissions.set_assessment_owner_from_client",
+    },
+    "Loans And Liabilities": {
+        "before_insert": "financial_assessment.permissions.set_assessment_owner_from_client",
+    },
+    "Insurance Coverage": {
+        "before_insert": "financial_assessment.permissions.set_assessment_owner_from_client",
+    },
+    "Future Goals": {
+        "before_insert": "financial_assessment.permissions.set_assessment_owner_from_client",
+    },
+    "Financial Summary": {
+        "before_insert": "financial_assessment.permissions.set_assessment_owner_from_client",
+    },
+    "Advisory And Recommendations": {
+        "before_insert": "financial_assessment.permissions.set_assessment_owner_from_client",
+    },
+}
 
 # Scheduled Tasks
 # ---------------

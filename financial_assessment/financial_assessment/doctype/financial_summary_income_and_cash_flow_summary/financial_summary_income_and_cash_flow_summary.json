@@ -26,17 +26,20 @@
   {
    "fieldname": "total_annual_income",
    "fieldtype": "Int",
-   "label": "Total Annual Expenses (\u20b9)"
+   "label": "Total Annual Expenses (\u20b9)",
+   "in_list_view": 1
   },
   {
    "fieldname": "total_annual_expenses",
    "fieldtype": "Int",
-   "label": "Total Annual Expenses (\u20b9)"
+   "label": "Total Annual Expenses (\u20b9)",
+   "in_list_view": 1
   },
   {
    "fieldname": "annual_surplus_deficit",
    "fieldtype": "Int",
-   "label": "Annual Surplus / (Deficit) (\u20b9)"
+   "label": "Annual Surplus / (Deficit) (\u20b9)",
+   "in_list_view": 1
   },
   {
    "fieldname": "column_break1",
@@ -45,17 +48,20 @@
   {
    "fieldname": "monthly_surplus_deficit",
    "fieldtype": "Int",
-   "label": "Monthly Surplus / (Deficit) (\u20b9)"
+   "label": "Monthly Surplus / (Deficit) (\u20b9)",
+   "in_list_view": 1
   },
   {
    "fieldname": "savings_rate",
    "fieldtype": "Percent",
-   "label": "Savings Rate (%)\t"
+   "label": "Savings Rate (%)\t",
+   "in_list_view": 1
   },
   {
    "fieldname": "emergency_fund_target",
    "fieldtype": "Int",
-   "label": "Emergency Fund Target (\u20b9)"
+   "label": "Emergency Fund Target (\u20b9)",
+   "in_list_view": 1
   },
   {
    "fieldname": "column_break2",
@@ -64,7 +70,8 @@
   {
    "fieldname": "total_monthly_emi",
    "fieldtype": "Int",
-   "label": "Total Monthly EMI (\u20b9)"
+   "label": "Total Monthly EMI (\u20b9)",
+   "in_list_view": 1
   }
  ],
  "grid_page_length": 50,

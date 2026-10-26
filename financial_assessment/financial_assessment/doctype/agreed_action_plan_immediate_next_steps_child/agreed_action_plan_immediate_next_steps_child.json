@@ -23,32 +23,38 @@
   {
    "fieldname": "action_item",
    "fieldtype": "Data",
-   "label": "Action Item"
+   "label": "Action Item",
+   "in_list_view": 1
   },
   {
    "fieldname": "category",
    "fieldtype": "Data",
-   "label": "Category"
+   "label": "Category",
+   "in_list_view": 1
   },
   {
    "fieldname": "priority",
    "fieldtype": "Data",
-   "label": "Priority"
+   "label": "Priority",
+   "in_list_view": 1
   },
   {
    "fieldname": "target_date",
    "fieldtype": "Date",
-   "label": "Target Date\t"
+   "label": "Target Date\t",
+   "in_list_view": 1
   },
   {
    "fieldname": "responsible",
    "fieldtype": "Data",
-   "label": "Responsible"
+   "label": "Responsible",
+   "in_list_view": 1
   },
   {
    "fieldname": "done",
    "fieldtype": "Data",
-   "label": "Done?"
+   "label": "Done?",
+   "in_list_view": 1
   }
  ],
  "grid_page_length": 50,

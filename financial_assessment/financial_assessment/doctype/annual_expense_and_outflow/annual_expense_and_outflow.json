@@ -27,26 +27,30 @@
    "fieldtype": "Int",
    "label": "Annual Expense (\u20b9)",
    "non_negative": 1,
-   "read_only": 1
+   "read_only": 1,
+   "in_list_view": 1
   },
   {
    "fieldname": "income_expense_percentage",
    "fieldtype": "Percent",
    "label": "% of Income Expense",
    "non_negative": 1,
-   "read_only": 1
+   "read_only": 1,
+   "in_list_view": 1
   },
   {
    "fieldname": "expense_remark",
    "fieldtype": "Data",
-   "label": "Remark"
+   "label": "Remark",
+   "in_list_view": 1
   },
   {
    "fieldname": "expense_category",
    "fieldtype": "Link",
    "label": "Expense Category",
    "options": "Annual Expense And Outflow Master",
-   "reqd": 1
+   "reqd": 1,
+   "in_list_view": 1
   }
  ],
  "grid_page_length": 50,

@@ -25,48 +25,57 @@
    "fieldname": "member",
    "fieldtype": "Link",
    "label": "Member",
-   "options": "Family And Dependent Master"
+   "options": "Family And Dependent Master",
+   "in_list_view": 1
   },
   {
    "fieldname": "full_name",
    "fieldtype": "Data",
-   "label": "Full Name"
+   "label": "Full Name",
+   "in_list_view": 1
   },
   {
    "fieldname": "relation",
    "fieldtype": "Data",
-   "label": "Relation"
+   "label": "Relation",
+   "in_list_view": 1
   },
   {
    "fieldname": "age",
    "fieldtype": "Int",
-   "label": "Age"
+   "label": "Age",
+   "in_list_view": 1
   },
   {
    "fieldname": "occupation",
    "fieldtype": "Data",
-   "label": "Occupation"
+   "label": "Occupation",
+   "in_list_view": 1
   },
   {
    "fieldname": "annual_income",
    "fieldtype": "Int",
    "label": "Annual Income",
-   "non_negative": 1
+   "non_negative": 1,
+   "in_list_view": 1
   },
   {
    "fieldname": "dependent",
    "fieldtype": "Data",
-   "label": "Dependent"
+   "label": "Dependent",
+   "in_list_view": 1
   },
   {
    "fieldname": "health_conditions",
    "fieldtype": "Data",
-   "label": "Health Conditions"
+   "label": "Health Conditions",
+   "in_list_view": 1
   },
   {
    "fieldname": "remarks",
    "fieldtype": "Long Text",
-   "label": "Remarks"
+   "label": "Remarks",
+   "in_list_view": 1
   },
   {
    "fieldname": "column_break1",

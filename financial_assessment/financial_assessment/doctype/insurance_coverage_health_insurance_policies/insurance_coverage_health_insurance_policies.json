@@ -32,17 +32,20 @@
    "fieldname": "insurer",
    "fieldtype": "Link",
    "label": "Insurer",
-   "options": "Insurance Coverage Insurer Master"
+   "options": "Insurance Coverage Insurer Master",
+   "in_list_view": 1
   },
   {
    "fieldname": "policy_type",
    "fieldtype": "Data",
-   "label": "Policy Type"
+   "label": "Policy Type",
+   "in_list_view": 1
   },
   {
    "fieldname": "members_covered",
    "fieldtype": "Data",
-   "label": "Members Covered"
+   "label": "Members Covered",
+   "in_list_view": 1
   },
   {
    "fieldname": "column_break1",
@@ -68,7 +71,8 @@
    "fieldname": "co_pay_percentage",
    "fieldtype": "Percent",
    "label": "Co-pay %",
-   "non_negative": 1
+   "non_negative": 1,
+   "in_list_view": 1
   },
   {
    "fieldname": "column_break2",
@@ -78,18 +82,21 @@
    "fieldname": "room_rent_sub_limit",
    "fieldtype": "Int",
    "label": "Room Rent Sub-limit",
-   "non_negative": 1
+   "non_negative": 1,
+   "in_list_view": 1
   },
   {
    "fieldname": "critical_illness_cover",
    "fieldtype": "Int",
    "label": "Critical Illness Cover (\u20b9)",
-   "non_negative": 1
+   "non_negative": 1,
+   "in_list_view": 1
   },
   {
    "fieldname": "renewal_date",
    "fieldtype": "Date",
-   "label": "Renewal Date"
+   "label": "Renewal Date",
+   "in_list_view": 1
   },
   {
    "fieldname": "column_break3",
@@ -98,12 +105,14 @@
   {
    "fieldname": "status",
    "fieldtype": "Data",
-   "label": "Status"
+   "label": "Status",
+   "in_list_view": 1
   },
   {
    "fieldname": "remark",
    "fieldtype": "Small Text",
-   "label": "Remark"
+   "label": "Remark",
+   "in_list_view": 1
   }
  ],
  "grid_page_length": 50,

@@ -22,22 +22,26 @@
    "fieldname": "plan_topic",
    "fieldtype": "Link",
    "label": "Plan / Topic",
-   "options": "Future Goals Plan Or Topic"
+   "options": "Future Goals Plan Or Topic",
+   "in_list_view": 1
   },
   {
    "fieldname": "clients_current_thinking_timeline",
    "fieldtype": "Data",
-   "label": "Client's Current Thinking & Timeline"
+   "label": "Client's Current Thinking & Timeline",
+   "in_list_view": 1
   },
   {
    "fieldname": "gaps_issues_identified",
    "fieldtype": "Data",
-   "label": "Gaps / Issues Identified"
+   "label": "Gaps / Issues Identified",
+   "in_list_view": 1
   },
   {
    "fieldname": "advisors_recommended_action",
    "fieldtype": "Data",
-   "label": "Advisor's Recommended Action"
+   "label": "Advisor's Recommended Action",
+   "in_list_view": 1
   }
  ],
  "grid_page_length": 50,

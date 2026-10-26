@@ -29,12 +29,14 @@
    "fieldname": "asset_category",
    "fieldtype": "Link",
    "label": "Asset Category",
-   "options": "Assets And Investments Financial Assets Master"
+   "options": "Assets And Investments Financial Assets Master",
+   "in_list_view": 1
   },
   {
    "fieldname": "institution_scheme_bank",
    "fieldtype": "Data",
-   "label": "Institution / Scheme / Bank"
+   "label": "Institution / Scheme / Bank",
+   "in_list_view": 1
   },
   {
    "fieldname": "invested_value",
@@ -56,27 +58,32 @@
    "fieldname": "return_rate",
    "fieldtype": "Percent",
    "label": "Return / Rate (%)",
-   "non_negative": 1
+   "non_negative": 1,
+   "in_list_view": 1
   },
   {
    "fieldname": "maturity_review_date",
    "fieldtype": "Date",
-   "label": "Maturity / Review Date"
+   "label": "Maturity / Review Date",
+   "in_list_view": 1
   },
   {
    "fieldname": "liquidity",
    "fieldtype": "Data",
-   "label": "Liquidity"
+   "label": "Liquidity",
+   "in_list_view": 1
   },
   {
    "fieldname": "nomination",
    "fieldtype": "Data",
-   "label": "Nomination?"
+   "label": "Nomination?",
+   "in_list_view": 1
   },
   {
    "fieldname": "remark",
    "fieldtype": "Small Text",
-   "label": "Remarks"
+   "label": "Remarks",
+   "in_list_view": 1
   },
   {
    "fieldname": "column_break1",

@@ -32,14 +32,16 @@
    "fieldname": "financial_goal",
    "fieldtype": "Link",
    "label": "Financial Goal",
-   "options": "Future Goals Financial Goal Master"
+   "options": "Future Goals Financial Goal Master",
+   "in_list_view": 1
   },
   {
    "fieldname": "target_year",
    "fieldtype": "Int",
    "label": "Target Year",
    "non_negative": 1,
-   "reqd": 1
+   "reqd": 1,
+   "in_list_view": 1
   },
   {
    "fieldname": "years_remaining",
@@ -58,14 +60,16 @@
    "fieldtype": "Int",
    "label": "Current Cost Today (\u20b9)",
    "non_negative": 1,
-   "reqd": 1
+   "reqd": 1,
+   "in_list_view": 1
   },
   {
    "fieldname": "inflation",
    "fieldtype": "Percent",
    "label": "Inflation (%)",
    "non_negative": 1,
-   "reqd": 1
+   "reqd": 1,
+   "in_list_view": 1
   },
   {
    "fieldname": "future_value_required",
@@ -84,7 +88,8 @@
    "fieldtype": "Int",
    "label": "Existing Corpus / Savings (\u20b9)",
    "non_negative": 1,
-   "reqd": 1
+   "reqd": 1,
+   "in_list_view": 1
   },
   {
    "fieldname": "shortfall_surplus",
@@ -110,14 +115,16 @@
    "fieldtype": "Percent",
    "label": "Assumed Return (%)",
    "non_negative": 1,
-   "reqd": 1
+   "reqd": 1,
+   "in_list_view": 1
   },
   {
    "fieldname": "priority",
    "fieldtype": "Select",
    "label": "Priority",
    "options": "Must Do Immediately\nHigh Priority\nMedium\nNice to Have",
-   "reqd": 1
+   "reqd": 1,
+   "in_list_view": 1
   }
  ],
  "grid_page_length": 50,

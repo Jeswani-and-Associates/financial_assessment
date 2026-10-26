@@ -24,28 +24,33 @@
    "fieldtype": "Link",
    "label": "Metric",
    "options": "Finiancial Summary Key Financial Health Ratios Master",
-   "read_only": 1
+   "read_only": 1,
+   "in_list_view": 1
   },
   {
    "fieldname": "current_value",
    "fieldtype": "Data",
-   "label": "Current Value"
+   "label": "Current Value",
+   "in_list_view": 1
   },
   {
    "fieldname": "benchmark",
    "fieldtype": "Data",
    "label": "Benchmark",
-   "read_only": 1
+   "read_only": 1,
+   "in_list_view": 1
   },
   {
    "fieldname": "status",
    "fieldtype": "Data",
-   "label": "Status"
+   "label": "Status",
+   "in_list_view": 1
   },
   {
    "fieldname": "advisors_observation",
    "fieldtype": "Data",
-   "label": "Advisor's Observation"
+   "label": "Advisor's Observation",
+   "in_list_view": 1
   }
  ],
  "grid_page_length": 50,

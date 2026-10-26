@@ -23,12 +23,14 @@
    "fieldname": "other_asset",
    "fieldtype": "Link",
    "label": "Other Asset",
-   "options": "Assets And Investments Other Assets Master"
+   "options": "Assets And Investments Other Assets Master",
+   "in_list_view": 1
   },
   {
    "fieldname": "description_details",
    "fieldtype": "Data",
-   "label": "Description / Details"
+   "label": "Description / Details",
+   "in_list_view": 1
   },
   {
    "fieldname": "estimated_current_value",
@@ -41,7 +43,8 @@
   {
    "fieldname": "remark",
    "fieldtype": "Small Text",
-   "label": "Remark"
+   "label": "Remark",
+   "in_list_view": 1
   },
   {
    "fieldname": "column_break1",

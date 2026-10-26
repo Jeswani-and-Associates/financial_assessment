@@ -23,32 +23,38 @@
   {
    "fieldname": "assessment_date",
    "fieldtype": "Date",
-   "label": "Assessment Date"
+   "label": "Assessment Date",
+   "in_list_view": 1
   },
   {
    "fieldname": "next_review_date",
    "fieldtype": "Date",
-   "label": "Next Review Date"
+   "label": "Next Review Date",
+   "in_list_view": 1
   },
   {
    "fieldname": "review_frequency",
    "fieldtype": "Data",
-   "label": "Review Frequency"
+   "label": "Review Frequency",
+   "in_list_view": 1
   },
   {
    "fieldname": "assigned_advisor_at_krb_and_co",
    "fieldtype": "Data",
-   "label": "Assigned Advisor at KRB & Co."
+   "label": "Assigned Advisor at KRB & Co.",
+   "in_list_view": 1
   },
   {
    "fieldname": "services_proposed_to_client",
    "fieldtype": "Data",
-   "label": "Services Proposed to Client"
+   "label": "Services Proposed to Client",
+   "in_list_view": 1
   },
   {
    "fieldname": "client_acknowledgment_and_signoff",
    "fieldtype": "Data",
-   "label": "Client Acknowledgment and Signoff"
+   "label": "Client Acknowledgment and Signoff",
+   "in_list_view": 1
   }
  ],
  "grid_page_length": 50,

@@ -29,12 +29,14 @@
    "fieldname": "property_type",
    "fieldtype": "Link",
    "label": "Property Type",
-   "options": "Assets And Investments Real Estate Assets Master"
+   "options": "Assets And Investments Real Estate Assets Master",
+   "in_list_view": 1
   },
   {
    "fieldname": "location_address",
    "fieldtype": "Data",
-   "label": "Location / Address"
+   "label": "Location / Address",
+   "in_list_view": 1
   },
   {
    "fieldname": "ownership_percentage",
@@ -72,17 +74,20 @@
    "fieldname": "loan_outstanding",
    "fieldtype": "Int",
    "label": "Loan Outstanding (\u20b9)",
-   "non_negative": 1
+   "non_negative": 1,
+   "in_list_view": 1
   },
   {
    "fieldname": "property_status",
    "fieldtype": "Data",
-   "label": "Property Status"
+   "label": "Property Status",
+   "in_list_view": 1
   },
   {
    "fieldname": "remark",
    "fieldtype": "Data",
-   "label": "Remarks"
+   "label": "Remarks",
+   "in_list_view": 1
   },
   {
    "fieldname": "column_break1",

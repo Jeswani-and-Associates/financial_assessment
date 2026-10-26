@@ -25,27 +25,32 @@
    "fieldname": "observation_gap_recommendation",
    "fieldtype": "Link",
    "label": "Observation / Gap / Recommendation",
-   "options": "Estate Succession And Legal Planning Master"
+   "options": "Estate Succession And Legal Planning Master",
+   "in_list_view": 1
   },
   {
    "fieldname": "proposed_action_solution",
    "fieldtype": "Data",
-   "label": "Proposed Action / Solution"
+   "label": "Proposed Action / Solution",
+   "in_list_view": 1
   },
   {
    "fieldname": "priority",
    "fieldtype": "Data",
-   "label": "Priority (1\u20134)"
+   "label": "Priority (1\u20134)",
+   "in_list_view": 1
   },
   {
    "fieldname": "target_timeline",
    "fieldtype": "Date",
-   "label": "Target Timeline"
+   "label": "Target Timeline",
+   "in_list_view": 1
   },
   {
    "fieldname": "status",
    "fieldtype": "Data",
-   "label": "Status"
+   "label": "Status",
+   "in_list_view": 1
   },
   {
    "fieldname": "column_break_ftud",
@@ -54,7 +59,8 @@
   {
    "fieldname": "concern_party",
    "fieldtype": "Data",
-   "label": "Concern Party"
+   "label": "Concern Party",
+   "in_list_view": 1
   }
  ],
  "grid_page_length": 50,

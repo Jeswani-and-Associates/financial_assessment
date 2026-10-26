@@ -21,17 +21,20 @@
    "fieldname": "question",
    "fieldtype": "Link",
    "label": "Question",
-   "options": "Financial Beheviour Question Master"
+   "options": "Financial Beheviour Question Master",
+   "in_list_view": 1
   },
   {
    "fieldname": "client_response_answer",
    "fieldtype": "Long Text",
-   "label": "Client Response / Answer"
+   "label": "Client Response / Answer",
+   "in_list_view": 1
   },
   {
    "fieldname": "advisor_notes",
    "fieldtype": "Long Text",
-   "label": "Advisor Notes"
+   "label": "Advisor Notes",
+   "in_list_view": 1
   }
  ],
  "grid_page_length": 50,

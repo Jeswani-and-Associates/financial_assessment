@@ -33,17 +33,20 @@
    "fieldname": "loan_type",
    "fieldtype": "Link",
    "label": "Loan Type",
-   "options": "Loans And Liabilities Loan Type Master"
+   "options": "Loans And Liabilities Loan Type Master",
+   "in_list_view": 1
   },
   {
    "fieldname": "lender_bank",
    "fieldtype": "Data",
-   "label": "Lender / Bank"
+   "label": "Lender / Bank",
+   "in_list_view": 1
   },
   {
    "fieldname": "purpose_asset_financed",
    "fieldtype": "Data",
-   "label": "Purpose / Asset Financed"
+   "label": "Purpose / Asset Financed",
+   "in_list_view": 1
   },
   {
    "fieldname": "column_break1",
@@ -89,12 +92,14 @@
    "fieldname": "remaining_tenure_months",
    "fieldtype": "Int",
    "label": "Remaining Tenure (Months)",
-   "non_negative": 1
+   "non_negative": 1,
+   "in_list_view": 1
   },
   {
    "fieldname": "loan_start_date",
    "fieldtype": "Date",
-   "label": "Loan Start Date"
+   "label": "Loan Start Date",
+   "in_list_view": 1
   },
   {
    "fieldname": "column_break3",
@@ -103,17 +108,20 @@
   {
    "fieldname": "security_collateral",
    "fieldtype": "Data",
-   "label": "Security / Collateral"
+   "label": "Security / Collateral",
+   "in_list_view": 1
   },
   {
    "fieldname": "prepayment_penalty",
    "fieldtype": "Data",
-   "label": "Pre-payment Penalty?"
+   "label": "Pre-payment Penalty?",
+   "in_list_view": 1
   },
   {
    "fieldname": "remark",
    "fieldtype": "Small Text",
-   "label": "remarks"
+   "label": "remarks",
+   "in_list_view": 1
   }
  ],
  "grid_page_length": 50,
