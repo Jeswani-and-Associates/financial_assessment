@@ -1,0 +1,57 @@
+{
+ "actions": [],
+ "allow_bulk_edit": 1,
+ "allow_rename": 1,
+ "creation": "2026-10-28 19:09:54.619270",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "section_break_vs6j",
+  "role",
+  "report_name",
+  "can_view"
+ ],
+ "fields": [
+  {
+   "fieldname": "section_break_vs6j",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "role",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Role",
+   "options": "Role"
+  },
+  {
+   "fieldname": "report_name",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Report",
+   "options": "Report"
+  },
+  {
+   "default": "0",
+   "fieldname": "can_view",
+   "fieldtype": "Check",
+   "in_list_view": 1,
+   "label": "Can View"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2026-10-28 19:36:28.884378",
+ "modified_by": "Administrator",
+ "module": "Financial Assessment",
+ "name": "Financial Assessment Role Report Rule",
+ "owner": "Administrator",
+ "permissions": [],
+ "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": []
+}

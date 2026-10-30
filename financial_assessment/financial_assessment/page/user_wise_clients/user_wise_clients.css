@@ -1,0 +1,881 @@
+.user-picker-field {
+    position: relative;
+    max-width: 420px;
+    width: 100%;
+}
+
+.user-picker-container {
+    position: relative;
+    width: 100%;
+}
+
+.user-picker-options {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    max-height: 260px;
+    overflow-y: auto;
+    background: var(--card-bg, #ffffff);
+    border: 1px solid var(--border-color, #d1d8dd);
+    border-radius: 4px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.user-picker-option {
+    padding: 8px 12px;
+    cursor: pointer;
+}
+
+.user-picker-option:hover {
+    background: var(--subtle-fg, #f5f7fa);
+}
+
+.user-picker-no-results {
+    padding: 10px 12px;
+    color: var(--text-muted, #888888);
+}
+
+.user-picker-field label {
+    display: block;
+    margin-bottom: 6px;
+}
+
+
+
+/* =========================================
+   User-Wise Clients Dashboard
+   Reuse Client Assessment Dashboard styling
+========================================= */
+
+.user-wise-clients-dashboard {
+    padding: 20px;
+}
+
+.user-wise-clients-dashboard .dashboard-header {
+    margin-bottom: 20px;
+}
+
+.user-wise-clients-dashboard .dashboard-header h3 {
+    margin: 0;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.user-wise-clients-dashboard .dashboard-header h4 {
+    font-size: 17px;
+    font-weight: 600;
+    margin: 20px 0 15px;
+}
+
+/* =========================================
+   Total Users Card
+========================================= */
+
+.user-wise-clients-dashboard .dashboard-summary-row {
+    margin-bottom: 20px;
+}
+
+.user-wise-clients-dashboard .dashboard-number-card {
+    padding: 18px 20px;
+    background: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.user-wise-clients-dashboard .number-card-label {
+    margin-bottom: 8px;
+    color: #6b7280;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.user-wise-clients-dashboard .number-card-value {
+    color: #111827;
+    font-size: 28px;
+    font-weight: 700;
+}
+
+/* =========================================
+   User Filters
+========================================= */
+
+.user-wise-clients-dashboard .dashboard-filters {
+    display: flex;
+    align-items: flex-end;
+    gap: 15px;
+    margin-bottom: 20px;
+    padding: 15px;
+    background: #f8f9fa;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    flex-wrap: wrap;
+}
+
+.user-wise-clients-dashboard .filter-field {
+    width: 220px;
+}
+
+.user-wise-clients-dashboard .user-picker-field {
+    position: relative;
+    max-width: 420px;
+    width: 100%;
+}
+
+.user-wise-clients-dashboard .filter-field label {
+    display: block;
+    margin-bottom: 6px;
+    font-size: 12px;
+    font-weight: 600;
+    color: #374151;
+}
+
+.user-wise-clients-dashboard .user-picker-container {
+    position: relative;
+    width: 100%;
+}
+
+.user-wise-clients-dashboard #user-picker-input {
+    height: 34px;
+    border: 1px solid #d1d5db;
+    border-radius: 5px;
+    font-size: 13px;
+}
+
+.user-wise-clients-dashboard .user-picker-options {
+    position: absolute;
+    top: calc(100% + 2px);
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    max-height: 260px;
+    overflow-y: auto;
+    background: #ffffff;
+    border: 1px solid #d1d5db;
+    border-radius: 5px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.10);
+}
+
+.user-wise-clients-dashboard .user-picker-option {
+    padding: 9px 12px;
+    color: #374151;
+    font-size: 13px;
+    cursor: pointer;
+}
+
+.user-wise-clients-dashboard .user-picker-option:hover {
+    background: #f3f4f6;
+}
+
+.user-wise-clients-dashboard .user-picker-no-results {
+    padding: 10px 12px;
+    color: #6b7280;
+    font-size: 13px;
+}
+
+.user-wise-clients-dashboard .filter-actions {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.user-wise-clients-dashboard .filter-actions .btn {
+    height: 32px;
+}
+
+/* =========================================
+   Chart
+========================================= */
+
+.user-wise-clients-dashboard .dashboard-chart-section {
+    margin: 20px 0 25px;
+    padding: 18px;
+    background: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+}
+
+.user-wise-clients-dashboard .dashboard-chart-section h4 {
+    margin: 0 0 15px;
+    font-size: 16px;
+    font-weight: 600;
+    color: #374151;
+}
+
+.user-wise-clients-dashboard #user-clients-chart {
+    width: 100%;
+    min-height: 100px;
+}
+
+/* =========================================
+   Table Container
+========================================= */
+
+.user-wise-clients-dashboard .dashboard-table-container {
+    width: 100%;
+    overflow-x: auto;
+    border-radius: 8px;
+}
+
+/* =========================================
+   Main Assessment Table
+========================================= */
+
+.user-wise-clients-dashboard .assessment-table {
+    width: 100%;
+    min-width: 1250px;
+    margin-bottom: 0;
+    background: #ffffff;
+    border-collapse: separate;
+    border-spacing: 0;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+/* =========================================
+   Table Headers
+========================================= */
+
+.user-wise-clients-dashboard .assessment-table th {
+    min-width: 145px;
+    padding: 14px 10px;
+    white-space: normal;
+    text-align: center;
+    vertical-align: middle;
+    font-size: 13px;
+    font-weight: 600;
+    line-height: 1.4;
+    border-bottom: 2px solid #d1d5db;
+}
+
+.user-wise-clients-dashboard .assessment-table th.client-header,
+.user-wise-clients-dashboard .assessment-table th.advisor-header,
+.user-wise-clients-dashboard .assessment-table th.action-header {
+    background: #f3f4f6;
+    color: #374151;
+}
+
+.user-wise-clients-dashboard .assessment-table th.client-header {
+    min-width: 180px;
+    text-align: left;
+}
+
+.user-wise-clients-dashboard .assessment-table th.advisor-header {
+    min-width: 180px;
+}
+
+.user-wise-clients-dashboard .assessment-table th.action-header {
+    min-width: 70px;
+}
+
+/* Assessment window header colours */
+
+.user-wise-clients-dashboard .assessment-table th.window-income {
+    background: #dbeafe;
+    color: #1e40af;
+}
+
+.user-wise-clients-dashboard .assessment-table th.window-assets {
+    background: #dcfce7;
+    color: #166534;
+}
+
+.user-wise-clients-dashboard .assessment-table th.window-loans {
+    background: #ede9fe;
+    color: #6d28d9;
+}
+
+.user-wise-clients-dashboard .assessment-table th.window-insurance {
+    background: #ffedd5;
+    color: #c2410c;
+}
+
+.user-wise-clients-dashboard .assessment-table th.window-goals {
+    background: #ccfbf1;
+    color: #0f766e;
+}
+
+.user-wise-clients-dashboard .assessment-table th.window-summary {
+    background: #e0e7ff;
+    color: #3730a3;
+}
+
+.user-wise-clients-dashboard .assessment-table th.window-advisory {
+    background: #f3e8df;
+    color: #78350f;
+}
+
+/* =========================================
+   Table Body
+========================================= */
+
+.user-wise-clients-dashboard .assessment-table td {
+    padding: 12px 10px;
+    vertical-align: middle;
+    text-align: center;
+    border-color: #e5e7eb;
+    font-size: 13px;
+}
+
+.user-wise-clients-dashboard .assessment-table td.client-name-cell {
+    min-width: 180px;
+    text-align: left;
+    font-weight: 500;
+    background: #ffffff;
+}
+
+.user-wise-clients-dashboard .assessment-table .assigned-advisor-cell {
+    font-size: 13px;
+    font-weight: 400;
+    color: var(--text-color);
+    text-align: center !important;
+    vertical-align: middle;
+    padding: 10px 12px;
+    background-color: transparent;
+    white-space: normal;
+    overflow-wrap: anywhere;
+}
+
+.user-wise-clients-dashboard .client-link {
+    color: #2563eb;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.user-wise-clients-dashboard .client-link:hover {
+    text-decoration: underline;
+}
+
+/* =========================================
+   Assessment Status Cells
+========================================= */
+
+.user-wise-clients-dashboard .assessment-status {
+    transition: background-color 0.15s ease;
+}
+
+.user-wise-clients-dashboard .assessment-status.draft {
+    background: #f3f4f6;
+    color: #4b5563;
+}
+
+.user-wise-clients-dashboard .assessment-status.completed.income {
+    background: #dbeafe;
+    color: #1e40af;
+}
+
+.user-wise-clients-dashboard .assessment-status.completed.assets {
+    background: #dcfce7;
+    color: #166534;
+}
+
+.user-wise-clients-dashboard .assessment-status.completed.loans {
+    background: #ede9fe;
+    color: #6d28d9;
+}
+
+.user-wise-clients-dashboard .assessment-status.completed.insurance {
+    background: #ffedd5;
+    color: #c2410c;
+}
+
+.user-wise-clients-dashboard .assessment-status.completed.goals {
+    background: #ccfbf1;
+    color: #0f766e;
+}
+
+.user-wise-clients-dashboard .assessment-status.completed.summary {
+    background: #e0e7ff;
+    color: #3730a3;
+}
+
+.user-wise-clients-dashboard .assessment-status.completed.advisory {
+    background: #f3e8df;
+    color: #78350f;
+}
+
+.user-wise-clients-dashboard .assessment-status.not-created {
+    background: #fee2e2;
+    color: #b91c1c;
+}
+
+/* =========================================
+   Status Badges
+========================================= */
+
+.user-wise-clients-dashboard .status-badge {
+    display: inline-block;
+    min-width: 80px;
+    padding: 5px 10px;
+    border-radius: 12px;
+    font-size: 12px;
+    font-weight: 600;
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
+}
+
+.user-wise-clients-dashboard .status-badge:hover,
+.user-wise-clients-dashboard .status-badge:focus,
+.user-wise-clients-dashboard .status-badge:active {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* =========================================
+   Report Button
+========================================= */
+
+.user-wise-clients-dashboard .assessment-table td.action-cell.report-cell {
+    text-align: center;
+    vertical-align: middle;
+    background: #ffffff;
+}
+
+.user-wise-clients-dashboard .assessment-table .print-report-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 34px;
+    padding: 5px 9px !important;
+    color: #ffffff !important;
+    background: #2563eb !important;
+    border: 1px solid #2563eb !important;
+    border-radius: 6px !important;
+    line-height: 1 !important;
+    transition: all 0.2s ease-in-out;
+}
+
+.user-wise-clients-dashboard .assessment-table .print-report-btn:hover {
+    background: #1d4ed8 !important;
+    border-color: #1d4ed8 !important;
+    box-shadow: 0 2px 6px rgba(37, 99, 235, 0.25);
+    transform: translateY(-1px);
+}
+
+/* =========================================
+   Empty / Loading State
+========================================= */
+
+.user-wise-clients-dashboard .loading-cell,
+.user-wise-clients-dashboard .no-data-cell {
+    padding: 30px !important;
+    color: #6b7280;
+    background: #ffffff;
+}
+
+/* =========================================
+   Row Hover
+========================================= */
+
+.user-wise-clients-dashboard .assessment-table tbody tr:hover td.client-name-cell {
+    background: #f9fafb;
+}
+
+
+
+/* Dashboard background and spacing */
+.user-wise-clients-dashboard {
+    padding: 24px;
+    background: #f8f9fa;
+    min-height: calc(100vh - 100px);
+}
+
+/* Dashboard header */
+.user-wise-clients-dashboard .dashboard-header {
+    margin-bottom: 24px;
+}
+
+.user-wise-clients-dashboard .dashboard-header h3 {
+    margin: 0;
+    font-size: 24px;
+    font-weight: 600;
+    color: #1f2937;
+}
+
+.user-wise-clients-dashboard .dashboard-header p {
+    margin: 6px 0 0;
+    font-size: 14px;
+    color: #6b7280;
+}
+
+/* Summary and filter card */
+.user-wise-clients-dashboard .dashboard-filter-section {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    background: #fff;
+    border: 1px solid #e5e7eb;
+    border-radius: 10px;
+    padding: 20px 24px;
+    margin-bottom: 24px;
+}
+
+/* Total Users */
+.user-wise-clients-dashboard .total-client-summary {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.user-wise-clients-dashboard .total-client-label {
+    font-size: 14px;
+    font-weight: 500;
+    color: #6b7280;
+}
+
+.user-wise-clients-dashboard .total-client-value {
+    font-size: 24px;
+    line-height: 1;
+    font-weight: 700;
+    color: #1f2937;
+}
+
+/* Divider */
+.user-wise-clients-dashboard .filter-divider {
+    width: 1px;
+    height: 32px;
+    background: #e5e7eb;
+    flex-shrink: 0;
+}
+
+/* User filter */
+.user-wise-clients-dashboard .advisor-filter {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex: 1;
+    max-width: 500px;
+    min-width: 0;
+}
+
+.user-wise-clients-dashboard .advisor-filter label {
+    margin: 0;
+    font-size: 13px;
+    font-weight: 500;
+    color: #374151;
+    white-space: nowrap;
+}
+
+.user-wise-clients-dashboard .user-picker-container {
+    position: relative;
+    flex: 1;
+    min-width: 220px;
+}
+
+.user-wise-clients-dashboard #user-picker-input {
+    height: 38px;
+    border-radius: 6px;
+    border: 1px solid #d1d5db;
+    font-size: 13px;
+}
+
+/* Search suggestions */
+.user-wise-clients-dashboard .user-picker-options {
+    position: absolute;
+    top: calc(100% + 4px);
+    left: 0;
+    right: 0;
+    z-index: 1050;
+    max-height: 240px;
+    overflow-y: auto;
+    background: #fff;
+    border: 1px solid #d1d5db;
+    border-radius: 6px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.user-wise-clients-dashboard .user-picker-option {
+    padding: 10px 12px;
+    font-size: 13px;
+    color: #374151;
+    cursor: pointer;
+}
+
+.user-wise-clients-dashboard .user-picker-option:hover {
+    background: #f3f4f6;
+}
+
+.user-wise-clients-dashboard .user-picker-no-results {
+    padding: 12px;
+    color: #9ca3af;
+    font-size: 13px;
+}
+
+/* Filter buttons */
+.user-wise-clients-dashboard .filter-actions {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-shrink: 0;
+}
+
+.user-wise-clients-dashboard .filter-actions .btn {
+    min-width: 80px;
+    height: 38px;
+    border-radius: 6px;
+    font-size: 13px;
+    font-weight: 500;
+}
+
+/* Chart card */
+.user-wise-clients-dashboard .dashboard-chart-section {
+    background: #fff;
+    border: 1px solid #e5e7eb;
+    border-radius: 10px;
+    padding: 20px 24px;
+    margin-bottom: 24px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+}
+
+.user-wise-clients-dashboard .dashboard-chart-section h4 {
+    margin: 0 0 18px;
+    font-size: 17px;
+    font-weight: 600;
+    color: #1f2937;
+}
+
+.user-wise-clients-dashboard #user-clients-chart {
+    width: 100%;
+    min-height: 280px;
+}
+
+/* Table card */
+.user-wise-clients-dashboard .dashboard-table-container {
+    background: #fff;
+    border: 1px solid #e5e7eb;
+    border-radius: 10px;
+    padding: 20px 24px;
+    margin-bottom: 24px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+}
+
+.user-wise-clients-dashboard .dashboard-table-container .assessment-table {
+    margin-bottom: 0;
+}
+
+/* Responsive layout */
+@media (max-width: 900px) {
+    .user-wise-clients-dashboard .dashboard-filter-section {
+        flex-wrap: wrap;
+    }
+
+    .user-wise-clients-dashboard .advisor-filter {
+        flex: 1;
+        max-width: none;
+        min-width: 300px;
+    }
+}
+
+@media (max-width: 600px) {
+    .user-wise-clients-dashboard {
+        padding: 16px;
+    }
+
+    .user-wise-clients-dashboard .dashboard-header h3 {
+        font-size: 20px;
+    }
+
+    .user-wise-clients-dashboard .dashboard-filter-section {
+        flex-direction: column;
+        align-items: stretch;
+        padding: 16px;
+    }
+
+    .user-wise-clients-dashboard .total-client-summary {
+        width: 100%;
+    }
+
+    .user-wise-clients-dashboard .filter-divider {
+        width: 100%;
+        height: 1px;
+    }
+
+    .user-wise-clients-dashboard .advisor-filter {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 6px;
+        width: 100%;
+        min-width: 0;
+    }
+
+    .user-wise-clients-dashboard .user-picker-container {
+        width: 100%;
+        min-width: 0;
+    }
+
+    .user-wise-clients-dashboard .filter-actions {
+        width: 100%;
+    }
+
+    .user-wise-clients-dashboard .filter-actions .btn {
+        flex: 1;
+    }
+
+    .user-wise-clients-dashboard .dashboard-chart-section,
+    .user-wise-clients-dashboard .dashboard-table-container {
+        padding: 16px;
+    }
+
+    .user-wise-clients-dashboard .total-client-value {
+        font-size: 22px;
+    }
+}
+
+
+
+/* User-Wise Clients table layout */
+
+.user-wise-clients-dashboard .dashboard-table-container {
+    overflow-x: auto;
+}
+
+.user-wise-clients-dashboard .assessment-table {
+    width: 100%;
+    min-width: 1250px;
+    border-collapse: separate;
+    border-spacing: 0;
+}
+
+.user-wise-clients-dashboard .assessment-table thead th {
+    padding: 12px;
+    vertical-align: middle;
+    text-align: center;
+    white-space: normal;
+    font-weight: 600;
+    border-bottom: 1px solid var(--border-color, #e5e7eb);
+}
+
+.user-wise-clients-dashboard .assessment-table tbody td {
+    padding: 12px;
+    vertical-align: middle;
+    border-bottom: 1px solid var(--border-color, #e5e7eb);
+}
+
+/* User column */
+.user-wise-clients-dashboard .assessment-table .user-column {
+    min-width: 190px;
+    width: 190px;
+}
+
+.user-wise-clients-dashboard .assessment-table .user-group-cell {
+    vertical-align: middle;
+    text-align: left;
+    background: var(--subtle-accent, #f8fafc);
+    border-right: 1px solid var(--border-color, #e5e7eb);
+    border-top: 2px solid var(--border-color, #e5e7eb);
+}
+
+.user-wise-clients-dashboard .user-group-name {
+    font-weight: 600;
+    line-height: 1.5;
+    overflow-wrap: anywhere;
+}
+
+.user-wise-clients-dashboard .user-client-count {
+    margin-top: 5px;
+    color: var(--text-muted, #6b7280);
+    font-size: 12px;
+}
+
+/* Client column */
+.user-wise-clients-dashboard .assessment-table .client-column {
+    min-width: 200px;
+}
+
+.user-wise-clients-dashboard .client-link {
+    font-weight: 500;
+    text-decoration: none;
+}
+
+.user-wise-clients-dashboard .client-link:hover {
+    text-decoration: underline;
+}
+
+/* Report column */
+.user-wise-clients-dashboard .assessment-table .action-header,
+.user-wise-clients-dashboard .assessment-table .report-cell {
+    min-width: 80px;
+    width: 80px;
+    text-align: center;
+}
+
+/* Assessment columns */
+.user-wise-clients-dashboard .assessment-table thead th[class^="window-"] {
+    min-width: 140px;
+    text-align: center;
+}
+
+.user-wise-clients-dashboard .assessment-table tbody td[class*="assessment-status"] {
+    text-align: center;
+}
+
+/* Keep existing completed/draft/not-started status colors intact */
+.user-wise-clients-dashboard .assessment-table .status-badge {
+    display: inline-block;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+/* Table row hover */
+.user-wise-clients-dashboard .assessment-table tbody tr:hover td:not(.user-group-cell) {
+    filter: brightness(0.98);
+}
+
+/* Empty state */
+.user-wise-clients-dashboard .assessment-table .no-data-cell {
+    padding: 24px;
+    text-align: center;
+    color: var(--text-muted, #6b7280);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .user-wise-clients-dashboard .assessment-table {
+        min-width: 1250px;
+    }
+
+    .user-wise-clients-dashboard .assessment-table thead th,
+    .user-wise-clients-dashboard .assessment-table tbody td {
+        padding: 9px;
+    }
+
+    .user-wise-clients-dashboard .assessment-table .user-column {
+        min-width: 160px;
+        width: 160px;
+    }
+
+    .user-wise-clients-dashboard .assessment-table .client-column {
+        min-width: 170px;
+    }
+}
+
+
+
+/* =========================================
+   Responsive
+========================================= */
+
+@media (max-width: 1200px) {
+    .user-wise-clients-dashboard {
+        padding: 12px;
+    }
+
+    .user-wise-clients-dashboard .assessment-table th,
+    .user-wise-clients-dashboard .assessment-table td {
+        font-size: 12px;
+    }
+
+    .user-wise-clients-dashboard .dashboard-filters {
+        align-items: stretch;
+    }
+
+    .user-wise-clients-dashboard .filter-field {
+        width: 100%;
+        max-width: 300px;
+    }
+}

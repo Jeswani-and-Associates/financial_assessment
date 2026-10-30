@@ -402,39 +402,79 @@ function render_assessment_table(data, windowOrder) {
 
 
     // Bind click events for "Not Started" badges
-    tbody.off("click", ".not-started-link").on(
-        "click",
-        ".not-started-link",
-        function (e) {
 
+    tbody.off("click", ".print-report-btn").on(
+        "click",
+        ".print-report-btn",
+        function (e) {
             e.preventDefault();
 
-            const $el = $(this);
-            const canCreate = $el.data("can-create") === 1;
-            const doctype = $el.data("doctype");
-            const client = $el.data("client");
-            const previousLabel = $el.data("previous-label");
+            const client_id = $(this).data("client");
 
-            if (!canCreate) {
-
-                frappe.msgprint({
-                    title: __("Incomplete Previous Window"),
-                    indicator: "red",
-                    message: __(
-                        "Please complete the previous window ({0}) first before starting this one.",
-                        [previousLabel || __("previous")]
-                    ),
-                });
-
+            if (!client_id) {
                 return;
             }
 
-            // Navigate to a new form with the identifier prefilled
-            frappe.route_options = { identifier: client };
-            frappe.set_route("Form", doctype, "new");
+            // Open a blank tab synchronously to avoid popup blockers.
+            const printWindow = window.open("about:blank", "_blank");
 
+            if (!printWindow) {
+                frappe.msgprint({
+                    title: __("Popup Blocked"),
+                    message: __("Please allow popups to print the report."),
+                    indicator: "orange"
+                });
+                return;
+            }
+
+            // Recheck permission on the server before opening the report.
+            frappe.call({
+                method:
+                    "financial_assessment.utils.role_management.can_print_assessment_report",
+                args: {
+                    client_name: client_id
+                },
+                callback: function (r) {
+                    if (r.message !== true) {
+                        printWindow.close();
+
+                        frappe.msgprint({
+                            title: __("Access Denied"),
+                            message: __(
+                                "You do not have permission to print this report."
+                            ),
+                            indicator: "red"
+                        });
+                        return;
+                    }
+
+                    const url =
+                        "/printview" +
+                        "?doctype=" +
+                        encodeURIComponent("Client Information") +
+                        "&name=" +
+                        encodeURIComponent(client_id) +
+                        "&format=" +
+                        encodeURIComponent("Financial Assessment Report") +
+                        "&no_letterhead=0";
+
+                    printWindow.location.href = url;
+                },
+                error: function () {
+                    printWindow.close();
+
+                    frappe.msgprint({
+                        title: __("Access Denied"),
+                        message: __(
+                            "Unable to verify print permission. Printing has been blocked."
+                        ),
+                        indicator: "red"
+                    });
+                }
+            });
         }
     );
+
 
 
     // Bind click events for "Print Report" buttons
@@ -543,8 +583,10 @@ function render_status_cell(row, fieldname, statusMap, windowOrder) {
    Render Report Cell (Print Report button)
 ========================================================= */
 
+
 function render_report_cell(row) {
-    if (!row.name) {
+    // Do not show the print button when permission is denied.
+    if (!row.name || row.can_print_report !== true) {
         return `
             <td class="action-cell report-cell">-</td>
         `;
@@ -580,6 +622,7 @@ function render_report_cell(row) {
         </td>
     `;
 }
+
 
 /* =========================================================
    Map fieldname → window CSS class suffix

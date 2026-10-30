@@ -460,9 +460,29 @@
   {
    "hidden": 0,
    "is_query_report": 0,
+   "label": "User Wise Clients",
+   "link_count": 0,
+   "link_to": "user-wise-clients",
+   "link_type": "Page",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
    "label": "Client Advisor Dashboard ",
    "link_count": 0,
    "link_to": "client-advisor-dashboard",
+   "link_type": "Page",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Role Management",
+   "link_count": 0,
+   "link_to": "role-management",
    "link_type": "Page",
    "onboard": 0,
    "type": "Link"
@@ -478,7 +498,7 @@
    "type": "Link"
   }
  ],
- "modified": "2026-10-22 10:38:35.838285",
+ "modified": "2026-10-29 11:53:24.566543",
  "modified_by": "Administrator",
  "module": "Financial Assessment",
  "name": "Financial Assessment",

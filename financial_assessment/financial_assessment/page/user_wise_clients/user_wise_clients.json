@@ -1,0 +1,17 @@
+{
+ "doctype": "Page",
+ "name": "user-wise-clients",
+ "page_name": "user-wise-clients",
+ "title": "User-Wise Clients",
+ "module": "Financial Assessment",
+ "standard": "Yes",
+ "system_page": 0,
+ "roles": [
+  {
+   "role": "Financial Assessment"
+  },
+  {
+   "role": "System Manager"
+  }
+ ]
+}

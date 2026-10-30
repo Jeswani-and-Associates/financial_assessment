@@ -1,0 +1,63 @@
+{
+ "actions": [],
+ "allow_bulk_edit": 1,
+ "creation": "2026-10-28 17:55:04.036021",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "section_break_cefd",
+  "role_rules",
+  "permission_rules",
+  "report_rules"
+ ],
+ "fields": [
+  {
+   "fieldname": "section_break_cefd",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "role_rules",
+   "fieldtype": "Table",
+   "label": "Role Rules",
+   "options": "Financial Assessment User Role Rule"
+  },
+  {
+   "fieldname": "report_rules",
+   "fieldtype": "Table",
+   "label": "Report Rules",
+   "options": "Financial Assessment Role Report Rule"
+  },
+  {
+   "fieldname": "permission_rules",
+   "fieldtype": "Table",
+   "label": "Permission Rules",
+   "options": "Financial Assessment Role Permission Rule"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "issingle": 1,
+ "links": [],
+ "modified": "2026-10-28 19:35:14.118176",
+ "modified_by": "Administrator",
+ "module": "Financial Assessment",
+ "name": "Financial Assessment User Management Settings",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "print": 1,
+   "read": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": []
+}

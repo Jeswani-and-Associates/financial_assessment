@@ -83,6 +83,14 @@ def get_client_assessment_status(
                 "advisor_name"
             )
 
+        # Check permission using the same backend function as the
+        # Advisory And Recommendations print button.
+        can_print_report = frappe.get_attr(
+            "financial_assessment.utils.role_management.can_print_assessment_report"
+        )(
+            client_name=client_record.name
+        )
+
         row = {
             "name": client_record.name,
             "client": (
@@ -96,6 +104,7 @@ def get_client_assessment_status(
             "date_of_assessment": (
                 client_record.date_of_assessment
             ),
+            "can_print_report": can_print_report is True,
         }
 
         # Preserve the existing assessment-status logic.
