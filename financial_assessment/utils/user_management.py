@@ -137,6 +137,39 @@ def _set_financial_assessment_module_access(user):
     )
 
 
+def _rename_user_with_notification_settings(old_email, new_email):
+    """Rename User and Notification Settings with controlled permissions."""
+
+    from frappe.model.rename_doc import rename_doc
+
+    if frappe.db.exists("Notification Settings", old_email):
+        if frappe.db.exists("Notification Settings", new_email):
+            frappe.throw(
+                _("Notification Settings already exists for {0}.").format(
+                    new_email
+                )
+            )
+
+        rename_doc(
+            doctype="Notification Settings",
+            old=old_email,
+            new=new_email,
+            force=True,
+            ignore_permissions=True,
+            show_alert=False,
+        )
+
+    rename_doc(
+        doctype="User",
+        old=old_email,
+        new=new_email,
+        force=True,
+        ignore_permissions=True,
+        show_alert=False,
+    )
+
+
+
 @frappe.whitelist()
 def get_available_roles():
     """Return assignable Financial Assessment roles."""
@@ -360,11 +393,9 @@ def update_financial_assessment_user(
     user.save()
 
     if email != user_id:
-        frappe.rename_doc(
-            "User",
-            user_id,
-            email,
-            force=True,
+        _rename_user_with_notification_settings(
+            old_email=user_id,
+            new_email=email,
         )
 
     frappe.db.commit()
