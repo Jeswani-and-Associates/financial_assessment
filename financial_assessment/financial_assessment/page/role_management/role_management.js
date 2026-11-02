@@ -9,8 +9,11 @@ frappe.pages["role-management"].on_page_load = function (wrapper) {
 
     $main.html(`
         <div class="role-management-page" style="padding: 15px;">
+
             <div class="card" style="padding: 20px; margin-bottom: 20px;">
-                <h4 id="role-form-title">Create Financial Assessment Role</h4>
+                <h4 id="role-form-title">
+                    Create Financial Assessment Role
+                </h4>
 
                 <div class="form-group">
                     <label for="role-name">Role Name</label>
@@ -30,26 +33,46 @@ frappe.pages["role-management"].on_page_load = function (wrapper) {
             </div>
 
             <div class="card" style="padding: 20px; margin-bottom: 20px;">
-                <h4>DocType Permissions</h4>
+
+                <div style="
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    gap: 10px;
+                    flex-wrap: wrap;
+                    margin-bottom: 15px;
+                ">
+                    <h4 style="margin: 0;">
+                        DocType Permissions
+                    </h4>
+
+                    <button
+                        type="button"
+                        class="btn btn-default"
+                        id="toggle-all-permissions">
+                        Select All
+                    </button>
+                </div>
 
                 <div class="table-responsive">
                     <table class="table table-bordered table-hover">
                         <thead>
                             <tr>
-                                <th style="min-width: 220px;">DocType</th>
-                                 <th>Select</th>
+                                <th style="min-width: 220px;">
+                                    DocType
+                                </th>
+                                <th>Select</th>
                                 <th>Read</th>
                                 <th>Create</th>
                                 <th>Write</th>
                                 <th>Delete</th>
                                 <th>Print</th>
-                               
-                               
                             </tr>
                         </thead>
+
                         <tbody id="role-doctype-permissions">
                             <tr>
-                                <td colspan="15" class="text-muted">
+                                <td colspan="7" class="text-muted">
                                     Loading Financial Assessment DocTypes...
                                 </td>
                             </tr>
@@ -57,17 +80,28 @@ frappe.pages["role-management"].on_page_load = function (wrapper) {
                     </table>
                 </div>
 
-                <div style="margin-top: 20px; display: flex; gap: 10px; flex-wrap: wrap;">
-                    <button class="btn btn-primary" id="create-role-btn">
+                <div style="
+                    margin-top: 20px;
+                    display: flex;
+                    gap: 10px;
+                    flex-wrap: wrap;
+                ">
+                    <button
+                        class="btn btn-primary"
+                        id="create-role-btn">
                         Create Role and Save Permissions
                     </button>
 
-                    <button class="btn btn-default" id="cancel-role-edit-btn"
+                    <button
+                        class="btn btn-default"
+                        id="cancel-role-edit-btn"
                         style="display: none;">
                         Cancel Edit
                     </button>
 
-                    <button class="btn btn-default" id="refresh-role-doctypes">
+                    <button
+                        class="btn btn-default"
+                        id="refresh-role-doctypes">
                         Refresh DocTypes
                     </button>
                 </div>
@@ -77,12 +111,16 @@ frappe.pages["role-management"].on_page_load = function (wrapper) {
                 <h4>Configured Financial Assessment Roles</h4>
 
                 <div id="configured-role-list">
-                    <p class="text-muted">Loading roles...</p>
+                    <p class="text-muted">
+                        Loading roles...
+                    </p>
                 </div>
             </div>
+
         </div>
     `);
 
+    // Available permission fields.
     const permission_fields = [
         "select",
         "read",
@@ -90,15 +128,6 @@ frappe.pages["role-management"].on_page_load = function (wrapper) {
         "write",
         "delete",
         "print",
-        // "submit",
-        // "cancel",
-        // "amend",
-        
-        // "export",
-        // "import",
-        // "report",
-        // "share",
-        // "email",
     ];
 
     let editing_role = null;
@@ -108,6 +137,74 @@ frappe.pages["role-management"].on_page_load = function (wrapper) {
         return frappe.utils.escape_html(String(value || ""));
     }
 
+    // ---------------------------------------------------------
+    // Update Select All / Deselect All button label.
+    // ---------------------------------------------------------
+
+    function update_select_all_button() {
+        const $checkboxes = $("#role-doctype-permissions")
+            .find("input.doctype-permission");
+
+        const total_checkboxes = $checkboxes.length;
+        const checked_checkboxes = $checkboxes.filter(":checked").length;
+
+        const all_checked =
+            total_checkboxes > 0 &&
+            total_checkboxes === checked_checkboxes;
+
+        $("#toggle-all-permissions").text(
+            all_checked ? "Deselect All" : "Select All"
+        );
+    }
+
+    // ---------------------------------------------------------
+    // Select All / Deselect All functionality.
+    // ---------------------------------------------------------
+
+    $("#toggle-all-permissions").on("click", function () {
+        const $button = $(this);
+
+        const $checkboxes = $("#role-doctype-permissions")
+            .find("input.doctype-permission");
+
+        if (loading_doctypes || !$checkboxes.length) {
+            frappe.msgprint(
+                "Please wait until the DocType list has loaded."
+            );
+            return;
+        }
+
+        const all_checked =
+            $checkboxes.length === $checkboxes.filter(":checked").length;
+
+        // Select all if at least one checkbox is unchecked.
+        // Otherwise, deselect all.
+        $checkboxes.prop("checked", !all_checked);
+
+        update_select_all_button();
+
+        frappe.show_alert({
+            message: all_checked
+                ? "All permissions have been deselected."
+                : "All permissions have been selected.",
+            indicator: all_checked ? "orange" : "green",
+        });
+    });
+
+    // Keep the button label synchronized when individual
+    // permission checkboxes are changed.
+    $main.on(
+        "change",
+        "#role-doctype-permissions input.doctype-permission",
+        function () {
+            update_select_all_button();
+        }
+    );
+
+    // ---------------------------------------------------------
+    // Reset form.
+    // ---------------------------------------------------------
+
     function reset_form() {
         editing_role = null;
 
@@ -115,30 +212,45 @@ frappe.pages["role-management"].on_page_load = function (wrapper) {
             .val("")
             .prop("readonly", false);
 
-        $("#role-form-title").text("Create Financial Assessment Role");
+        $("#role-form-title").text(
+            "Create Financial Assessment Role"
+        );
 
-        $("#create-role-btn").text("Create Role and Save Permissions");
+        $("#create-role-btn").text(
+            "Create Role and Save Permissions"
+        );
 
         $("#cancel-role-edit-btn").hide();
 
         $("#role-doctype-permissions")
             .find("input[type='checkbox']")
             .prop("checked", false);
+
+        update_select_all_button();
     }
+
+    // ---------------------------------------------------------
+    // Load Financial Assessment DocTypes.
+    // ---------------------------------------------------------
 
     function load_doctypes(callback) {
         loading_doctypes = true;
 
+        $("#toggle-all-permissions").prop("disabled", true);
+
         $("#role-doctype-permissions").html(`
             <tr>
-                <td colspan="15" class="text-muted">
+                <td colspan="7" class="text-muted">
                     Loading Financial Assessment DocTypes...
                 </td>
             </tr>
         `);
 
+        update_select_all_button();
+
         frappe.call({
-            method: "financial_assessment.utils.role_management.get_financial_assessment_doctypes",
+            method:
+                "financial_assessment.utils.role_management.get_financial_assessment_doctypes",
 
             callback: function (r) {
                 const doctypes = r.message || [];
@@ -146,13 +258,19 @@ frappe.pages["role-management"].on_page_load = function (wrapper) {
                 if (!doctypes.length) {
                     $("#role-doctype-permissions").html(`
                         <tr>
-                            <td colspan="15" class="text-muted">
+                            <td colspan="7" class="text-muted">
                                 No standalone DocTypes found in the
                                 Financial Assessment module.
                             </td>
                         </tr>
                     `);
+
                     loading_doctypes = false;
+
+                    $("#toggle-all-permissions").prop("disabled", true);
+
+                    update_select_all_button();
+
                     return;
                 }
 
@@ -186,7 +304,12 @@ frappe.pages["role-management"].on_page_load = function (wrapper) {
                 });
 
                 $("#role-doctype-permissions").html(rows);
+
                 loading_doctypes = false;
+
+                $("#toggle-all-permissions").prop("disabled", false);
+
+                update_select_all_button();
 
                 if (typeof callback === "function") {
                     callback();
@@ -198,22 +321,34 @@ frappe.pages["role-management"].on_page_load = function (wrapper) {
 
                 $("#role-doctype-permissions").html(`
                     <tr>
-                        <td colspan="15" class="text-danger">
-                            Could not load DocTypes. Check the server error log.
+                        <td colspan="7" class="text-danger">
+                            Could not load DocTypes.
+                            Check the server error log.
                         </td>
                     </tr>
                 `);
+
+                $("#toggle-all-permissions").prop("disabled", true);
+
+                update_select_all_button();
             },
         });
     }
 
+    // ---------------------------------------------------------
+    // Load configured Financial Assessment roles.
+    // ---------------------------------------------------------
+
     function load_configured_roles() {
         $("#configured-role-list").html(`
-            <p class="text-muted">Loading roles...</p>
+            <p class="text-muted">
+                Loading roles...
+            </p>
         `);
 
         frappe.call({
-            method: "financial_assessment.utils.role_management.get_financial_assessment_roles",
+            method:
+                "financial_assessment.utils.role_management.get_financial_assessment_roles",
 
             callback: function (r) {
                 const roles = r.message || [];
@@ -233,21 +368,27 @@ frappe.pages["role-management"].on_page_load = function (wrapper) {
                             <thead>
                                 <tr>
                                     <th>Role Name</th>
-                                    <th style="width: 150px;">Actions</th>
+                                    <th style="width: 150px;">
+                                        Actions
+                                    </th>
                                 </tr>
                             </thead>
+
                             <tbody>
                 `;
 
                 roles.forEach(function (role) {
+                    const safe_role = escape_html(role);
+
                     html += `
                         <tr>
-                            <td>${escape_html(role)}</td>
+                            <td>${safe_role}</td>
+
                             <td>
                                 <button
                                     type="button"
                                     class="btn btn-sm btn-primary edit-role-access"
-                                    data-role="${escape_html(role)}">
+                                    data-role="${safe_role}">
                                     Edit Access
                                 </button>
                             </td>
@@ -266,6 +407,10 @@ frappe.pages["role-management"].on_page_load = function (wrapper) {
         });
     }
 
+    // ---------------------------------------------------------
+    // Collect permissions from the table.
+    // ---------------------------------------------------------
+
     function collect_permissions(include_empty = false) {
         const permissions = [];
 
@@ -281,7 +426,9 @@ frappe.pages["role-management"].on_page_load = function (wrapper) {
                     .find(
                         `.doctype-permission[data-field="${field}"]`
                     )
-                    .is(":checked") ? 1 : 0;
+                    .is(":checked")
+                    ? 1
+                    : 0;
             });
 
             const has_permission = permission_fields.some(function (field) {
@@ -296,6 +443,10 @@ frappe.pages["role-management"].on_page_load = function (wrapper) {
         return permissions;
     }
 
+    // ---------------------------------------------------------
+    // Load an existing role's permissions for editing.
+    // ---------------------------------------------------------
+
     function load_role_for_edit(role_name) {
         if (loading_doctypes) {
             frappe.msgprint(
@@ -305,7 +456,8 @@ frappe.pages["role-management"].on_page_load = function (wrapper) {
         }
 
         frappe.call({
-            method: "financial_assessment.utils.role_management.get_role_permissions",
+            method:
+                "financial_assessment.utils.role_management.get_role_permissions",
 
             args: {
                 role_name: role_name,
@@ -319,7 +471,6 @@ frappe.pages["role-management"].on_page_load = function (wrapper) {
                     return;
                 }
 
-                // Ensure every DocType row exists before applying permissions.
                 const apply_permissions = function () {
                     editing_role = role_name;
 
@@ -331,21 +482,27 @@ frappe.pages["role-management"].on_page_load = function (wrapper) {
                         "Edit Financial Assessment Role"
                     );
 
-                    $("#create-role-btn").text("Update Permissions");
+                    $("#create-role-btn").text(
+                        "Update Permissions"
+                    );
 
                     $("#cancel-role-edit-btn").show();
 
-                    // Reset all checkboxes before loading saved values.
+                    // Clear existing checkbox selections.
                     $("#role-doctype-permissions")
                         .find("input[type='checkbox']")
                         .prop("checked", false);
 
+                    // Apply the saved permissions.
                     r.message.forEach(function (item) {
-                        const $row = $("#role-doctype-permissions tr").filter(
-                            function () {
-                                return $(this).attr("data-doctype") === item.doctype;
-                            }
-                        );
+                        const $row = $(
+                            "#role-doctype-permissions tr"
+                        ).filter(function () {
+                            return (
+                                $(this).attr("data-doctype") ===
+                                item.doctype
+                            );
+                        });
 
                         permission_fields.forEach(function (field) {
                             $row.find(
@@ -356,6 +513,9 @@ frappe.pages["role-management"].on_page_load = function (wrapper) {
                             );
                         });
                     });
+
+                    // Update the Select All button after loading.
+                    update_select_all_button();
 
                     frappe.show_alert({
                         message: `Editing access for ${role_name}`,
@@ -368,7 +528,10 @@ frappe.pages["role-management"].on_page_load = function (wrapper) {
                     });
                 };
 
-                if ($("#role-doctype-permissions tr[data-doctype]").length) {
+                if (
+                    $("#role-doctype-permissions tr[data-doctype]")
+                        .length
+                ) {
                     apply_permissions();
                 } else {
                     load_doctypes(function () {
@@ -379,7 +542,10 @@ frappe.pages["role-management"].on_page_load = function (wrapper) {
         });
     }
 
-    // Edit Access action for each configured role.
+    // ---------------------------------------------------------
+    // Edit Access button.
+    // ---------------------------------------------------------
+
     $main.on("click", ".edit-role-access", function () {
         const role_name = $(this).attr("data-role");
 
@@ -388,16 +554,23 @@ frappe.pages["role-management"].on_page_load = function (wrapper) {
         }
     });
 
-    // Cancel editing and return to create mode.
+    // ---------------------------------------------------------
+    // Cancel editing.
+    // ---------------------------------------------------------
+
     $("#cancel-role-edit-btn").on("click", function () {
         reset_form();
     });
 
-    // Create a new role or update the selected existing role.
+    // ---------------------------------------------------------
+    // Create a new role or update an existing role.
+    // ---------------------------------------------------------
+
     $("#create-role-btn").on("click", function () {
         const role_name = ($("#role-name").val() || "").trim();
 
-        // Include rows with all permissions unchecked during editing.
+        // Include unchecked DocTypes when editing so that
+        // previously granted permissions can be removed.
         const permissions = collect_permissions(Boolean(editing_role));
 
         if (!role_name) {
@@ -406,7 +579,9 @@ frappe.pages["role-management"].on_page_load = function (wrapper) {
         }
 
         if (loading_doctypes) {
-            frappe.msgprint("Please wait until the DocType list has loaded.");
+            frappe.msgprint(
+                "Please wait until the DocType list has loaded."
+            );
             return;
         }
 
@@ -453,6 +628,7 @@ frappe.pages["role-management"].on_page_load = function (wrapper) {
                         });
 
                         reset_form();
+
                         load_configured_roles();
                     }
                 },
@@ -472,14 +648,25 @@ frappe.pages["role-management"].on_page_load = function (wrapper) {
         });
     });
 
+    // ---------------------------------------------------------
+    // Refresh DocTypes.
+    // ---------------------------------------------------------
+
     $("#refresh-role-doctypes").on("click", function () {
+        const current_role = editing_role;
+
         load_doctypes(function () {
-            if (editing_role) {
-                load_role_for_edit(editing_role);
+            if (current_role) {
+                load_role_for_edit(current_role);
             }
         });
     });
 
+    // ---------------------------------------------------------
+    // Initial page loading.
+    // ---------------------------------------------------------
+
     load_doctypes();
+
     load_configured_roles();
 };

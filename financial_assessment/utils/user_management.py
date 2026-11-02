@@ -202,7 +202,7 @@ def create_user(
     password=None,
     confirm_password=None,
 ):
-    """Create a new Financial Assessment user."""
+    """Create a Financial Assessment user with the selected roles."""
 
     _check_user_management_access()
 
@@ -210,11 +210,14 @@ def create_user(
     first_name = (first_name or "").strip()
     last_name = (last_name or "").strip()
 
+    # Validate required fields.
     if not email or not first_name:
         frappe.throw(_("Email address and first name are required."))
 
     if frappe.db.exists("User", email):
-        frappe.throw(_("A user with email {0} already exists.").format(email))
+        frappe.throw(
+            _("A user with email {0} already exists.").format(email)
+        )
 
     if not password:
         frappe.throw(_("Password is required."))
@@ -222,9 +225,11 @@ def create_user(
     if password != confirm_password:
         frappe.throw(_("Passwords do not match."))
 
+    # Validate the selected roles.
     selected_roles = _parse_roles(roles)
     _validate_fa_roles(selected_roles)
 
+    # Create the User document.
     user = frappe.new_doc("User")
     user.email = email
     user.first_name = first_name
@@ -233,29 +238,42 @@ def create_user(
     user.user_type = "System User"
     user.send_welcome_email = 0
 
-    user.flags.ignore_permissions = True
-    user.insert()
-
-    # Replace default roles with the selected Financial Assessment roles.
-    user.set("roles", [])
-
+    # Add roles BEFORE inserting the document.
     for role in selected_roles:
         user.append("roles", {"role": role})
 
+    # Restrict access to modules outside Financial Assessment.
     _set_financial_assessment_module_access(user)
 
+    # Bypass standard document permissions for this authorized operation.
     user.flags.ignore_permissions = True
-    user.save()
 
+    # Set the password before the first insert/save operation.
     user.new_password = password
-    user.save()
 
-    frappe.db.commit()
+    # Insert the user with the selected roles.
+    user.insert(ignore_permissions=True)
+
+    # Verify that the requested roles were persisted.
+    assigned_roles = _get_user_roles(email)
+
+    missing_roles = [
+        role for role in selected_roles
+        if role not in assigned_roles
+    ]
+
+    if missing_roles:
+        frappe.throw(
+            _("The following roles were not assigned: {0}").format(
+                ", ".join(missing_roles)
+            )
+        )
 
     return {
         "success": True,
         "message": _("User {0} created successfully.").format(email),
         "user": email,
+        "roles": assigned_roles,
     }
 
 
